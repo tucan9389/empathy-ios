@@ -12,3 +12,8 @@
 
 #### 3. `empathy-ios.xcworkspace` 열기
 
+
+
+## 3. 외부 라이브러리
+
+1. '[CameraManager](https://github.com/imaginary-cloud/CameraManager)', '~> 4.3'

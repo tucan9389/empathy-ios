@@ -11,13 +11,19 @@ import UIKit
 class CapturedImageViewController: UIViewController {
     
     @IBOutlet weak var capturedImageView: UIImageView!
-    var capturedImage: UIImage?
+    var capturedImage: UIImage? {
+        didSet {
+            capturedImageView.image = capturedImage
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        capturedImageView.image = capturedImage
+        if let capturedImage = capturedImage {
+            capturedImageView.image = capturedImage
+        }
     }
     
     @IBAction func tapSave(_ sender: Any) {
