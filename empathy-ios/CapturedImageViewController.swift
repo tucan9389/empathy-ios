@@ -11,18 +11,29 @@ import UIKit
 class CapturedImageViewController: UIViewController {
     
     @IBOutlet weak var capturedImageView: UIImageView!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     var capturedImage: UIImage? {
         didSet {
-            capturedImageView.image = capturedImage
+            if let capturedImage = capturedImage {
+                capturedImageView.image = capturedImage
+                loadingIndicator.stopAnimating()
+                loadingIndicator.alpha = 0
+            } else {
+                loadingIndicator.startAnimating()
+            }
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         if let capturedImage = capturedImage {
             capturedImageView.image = capturedImage
+            loadingIndicator.stopAnimating()
+            loadingIndicator.alpha = 0
+        } else {
+            loadingIndicator.startAnimating()
         }
     }
     
@@ -31,7 +42,7 @@ class CapturedImageViewController: UIViewController {
     }
     
     @IBAction func tapBack(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: false, completion: nil)
     }
     
     @IBAction func tapScale(_ sender: Any) {
@@ -43,7 +54,21 @@ class CapturedImageViewController: UIViewController {
     }
     
     @IBAction func tapExport(_ sender: Any) {
+        // image to share
+        guard let image = capturedImage else {
+            return
+        }
         
+        // set up activity view controller
+        let imageToShare = [ image ]
+        let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+        
+        // exclude some activity types from the list (optional)
+        //activityViewController.excludedActivityTypes = [ UIActivity.ActivityType.airDrop, UIActivityType.postToFacebook ]
+        
+        // present the view controller
+        self.present(activityViewController, animated: true, completion: nil)
     }
     
     /*
