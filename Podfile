@@ -8,6 +8,7 @@ target 'empathy-ios' do
   # Pods for empathy-ios
 
   pod 'CameraManager', '~> 4.3'
+  pod 'FacebookLogin'
 
   target 'empathy-iosTests' do
     inherit! :search_paths

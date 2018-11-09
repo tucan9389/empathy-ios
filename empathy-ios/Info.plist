@@ -43,5 +43,31 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    
+<!--    Facebook login 관련-->
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>fb2144196628937931</string>
+            </array>
+        </dict>
+    </array>
+    <key>FacebookAppID</key>
+    <string>2144196628937931</string>
+    <key>FacebookDisplayName</key>
+    <string>GongGam</string>
+<!---->
+
+<!--    Facebook 앱으로 앱 전환을 수행할 수 있는 Facebook 대화 상자(예: 로그인, 공유, 앱 초대 등)를 사용시 필요-->
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>fbapi</string>
+        <string>fb-messenger-share-api</string>
+        <string>fbauth2</string>
+        <string>fbshareextension</string>
+    </array>
+<!---->
 </dict>
 </plist>
