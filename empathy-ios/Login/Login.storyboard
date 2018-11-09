@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XoA-YD-6Gw">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="gEM-Cp-DGc">
+            <objects>
+                <viewController id="XoA-YD-6Gw" customClass="LoginViewController" customModule="empathy_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Che-kT-UKW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="N6g-fE-TQ2">
+                                <rect key="frame" x="42" y="147" width="180" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="Stc-w2-6La"/>
+                                    <constraint firstAttribute="height" constant="180" id="X23-oG-wGV"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ilz-Xv-DqQ" customClass="RoundedButton" customModule="empathy_ios" customModuleProvider="target">
+                                <rect key="frame" x="56.666666666666657" y="497" width="301" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="Ls1-IY-uA1"/>
+                                    <constraint firstAttribute="width" constant="301" id="o4g-p8-MKG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="16"/>
+                                <state key="normal" title="인스타그램으로 로그인">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BgL-vn-eyU" customClass="RoundedButton" customModule="empathy_ios" customModuleProvider="target">
+                                <rect key="frame" x="56.666666666666657" y="579" width="301" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="301" id="9s9-LF-fCK"/>
+                                    <constraint firstAttribute="height" constant="52" id="QrQ-ZB-rgQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="16"/>
+                                <state key="normal" title="페이스북으로 로그인">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.16435712575912476" green="0.17195159196853638" blue="0.20514744520187378" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="BgL-vn-eyU" firstAttribute="centerX" secondItem="Che-kT-UKW" secondAttribute="centerX" id="KGT-nO-Zbj"/>
+                            <constraint firstItem="BgL-vn-eyU" firstAttribute="top" secondItem="Ilz-Xv-DqQ" secondAttribute="bottom" constant="30" id="KXQ-jd-seg"/>
+                            <constraint firstItem="Ilz-Xv-DqQ" firstAttribute="centerX" secondItem="Che-kT-UKW" secondAttribute="centerX" id="Q8d-ZR-Us9"/>
+                            <constraint firstItem="N6g-fE-TQ2" firstAttribute="top" secondItem="jdb-5s-3ht" secondAttribute="top" constant="127" id="URw-70-FGC"/>
+                            <constraint firstItem="Ilz-Xv-DqQ" firstAttribute="top" secondItem="N6g-fE-TQ2" secondAttribute="bottom" constant="170" id="Zao-9T-BDZ"/>
+                            <constraint firstItem="N6g-fE-TQ2" firstAttribute="leading" secondItem="jdb-5s-3ht" secondAttribute="leading" constant="42" id="pni-5N-2qZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jdb-5s-3ht"/>
+                    </view>
+                    <connections>
+                        <outlet property="facebookLoginButton" destination="BgL-vn-eyU" id="EZh-1r-rHw"/>
+                        <outlet property="instagramLoginButton" destination="Ilz-Xv-DqQ" id="mzZ-jQ-9f9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7kX-Qg-VMm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-135" y="-302"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon" width="180" height="180"/>
+    </resources>
+</document>
