@@ -27,6 +27,9 @@ class ViewController: UIViewController {
     lazy var imagePicker = UIImagePickerController()
     
     var currentFilterInfos: [[String:String]] = []
+    
+    var filterController: FilterController = FilterController()
+    
     // filter data
     var timeFilterInfos = [
         ["imageName": "b\(Int(arc4random_uniform(5) + 1))"],
@@ -84,6 +87,7 @@ class ViewController: UIViewController {
         imagePicker.delegate = self
         topBlurView.alpha = 0;
         bottomBlurView.alpha = 0;
+        filterController.superView = previewView
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -91,6 +95,9 @@ class ViewController: UIViewController {
         // Setup your camera here...
         cameraManager.addPreviewLayerToView(self.previewView)
         cameraManager.writeFilesToPhoneLibrary = false
+//        cameraManager.shouldEnableTapToFocus = false
+//        cameraManager.shouldEnablePinchToZoom = false
+        
         libraryButton.layer.cornerRadius = libraryButton.frame.size.width/2
         libraryButton.layer.masksToBounds = true
         libraryButton.imageView?.contentMode = .scaleAspectFill
@@ -231,7 +238,15 @@ extension ViewController: UIImagePickerControllerDelegate & UINavigationControll
 }
 
 extension ViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("select \(indexPath.row)")
+        filterController.putPoseFilter(with: FilterInfo(imageName: currentFilterInfos[indexPath.row]["imageName"]))
+        disappearFilterView()
+    }
     
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        print("deselect \(indexPath.row)")
+    }
 }
 
 extension ViewController: UICollectionViewDataSource {

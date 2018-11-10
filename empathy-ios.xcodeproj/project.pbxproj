@@ -10,6 +10,7 @@
 		33DA86A549580FBFD094A31A /* Pods_empathy_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08D4E3B912BC44511566E01C /* Pods_empathy_iosUITests.framework */; };
 		55A3317421900944005DFA01 /* CapturedImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A3317321900944005DFA01 /* CapturedImageViewController.swift */; };
 		55A331772191A84D005DFA01 /* FilterCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A331762191A84D005DFA01 /* FilterCollectionView.swift */; };
+		55A331792192A0A0005DFA01 /* FilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A331782192A0A0005DFA01 /* FilterController.swift */; };
 		55BC061B21809A7300FE43CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BC061A21809A7300FE43CA /* AppDelegate.swift */; };
 		55BC061D21809A7300FE43CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BC061C21809A7300FE43CA /* ViewController.swift */; };
 		55BC062021809A7300FE43CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55BC061E21809A7300FE43CA /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 		4A99C37BD44035FBF70FDAAA /* Pods_empathy_iosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_empathy_iosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A3317321900944005DFA01 /* CapturedImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturedImageViewController.swift; sourceTree = "<group>"; };
 		55A331762191A84D005DFA01 /* FilterCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionView.swift; sourceTree = "<group>"; };
+		55A331782192A0A0005DFA01 /* FilterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterController.swift; sourceTree = "<group>"; };
 		55BC061721809A7300FE43CA /* empathy-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "empathy-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55BC061A21809A7300FE43CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55BC061C21809A7300FE43CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				55A331762191A84D005DFA01 /* FilterCollectionView.swift */,
+				55A331782192A0A0005DFA01 /* FilterController.swift */,
 			);
 			path = FilterView;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55A331792192A0A0005DFA01 /* FilterController.swift in Sources */,
 				55BC061D21809A7300FE43CA /* ViewController.swift in Sources */,
 				55BC061B21809A7300FE43CA /* AppDelegate.swift in Sources */,
 				55A331772191A84D005DFA01 /* FilterCollectionView.swift in Sources */,
@@ -575,7 +579,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.empathy.tucan9389;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mgeeks.empathy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -594,7 +598,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.empathy.tucan9389;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mgeeks.empathy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
