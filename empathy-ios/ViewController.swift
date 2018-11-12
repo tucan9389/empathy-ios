@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var topBlurView: UIVisualEffectView!
     @IBOutlet weak var bottomBlurView: UIVisualEffectView!
+    @IBOutlet weak var filterTypeStackView: UIStackView!
     @IBOutlet weak var filterCollectionview: FilterCollectionView!
     
     
@@ -26,59 +27,30 @@ class ViewController: UIViewController {
     var latestPhotoAssetsFetched: PHFetchResult<PHAsset>? = nil
     lazy var imagePicker = UIImagePickerController()
     
-    var currentFilterInfos: [[String:String]] = []
+    //var currentFilterInfos: [[String:String]] = []
     
     var filterController: FilterController = FilterController()
     
-    // filter data
-    var timeFilterInfos = [
-        ["imageName": "b\(Int(arc4random_uniform(5) + 1))"],
-        ["imageName": "b\(Int(arc4random_uniform(5) + 1))"],
-        ["imageName": "b\(Int(arc4random_uniform(5) + 1))"],
-        ["imageName": "b\(Int(arc4random_uniform(5) + 1))"],
-        ["imageName": "b\(Int(arc4random_uniform(5) + 1))"],
-        ["imageName": "b\(Int(arc4random_uniform(5) + 1))"],
-        ["imageName": "b\(Int(arc4random_uniform(5) + 1))"],
-        ["imageName": "b\(Int(arc4random_uniform(5) + 1))"],
-        ["imageName": "b\(Int(arc4random_uniform(5) + 1))"],
-        ["imageName": "b\(Int(arc4random_uniform(5) + 1))"],
-        ["imageName": "b\(Int(arc4random_uniform(5) + 1))"],
-    ]
+    // time filter
+    var humanFilters: [Filter] = []
+    var textFilters: [Filter] = []
+    var funnyFilters: [Filter] = []
+    var backgroundFilters: [Filter] = []
     
-    // filter data
-    var humanFilterInfos = [
-        ["imageName": "h\(Int(arc4random_uniform(5) + 1))"],
-        ["imageName": "h\(Int(arc4random_uniform(5) + 1))"],
-        ["imageName": "h\(Int(arc4random_uniform(5) + 1))"],
-        ["imageName": "h\(Int(arc4random_uniform(5) + 1))"],
-        ["imageName": "h\(Int(arc4random_uniform(5) + 1))"],
-        ["imageName": "h\(Int(arc4random_uniform(5) + 1))"],
-        ["imageName": "h\(Int(arc4random_uniform(5) + 1))"],
-        ["imageName": "h\(Int(arc4random_uniform(5) + 1))"],
-        ["imageName": "h\(Int(arc4random_uniform(5) + 1))"],
-        ["imageName": "h\(Int(arc4random_uniform(5) + 1))"],
-        ["imageName": "h\(Int(arc4random_uniform(5) + 1))"],
-        ["imageName": "h\(Int(arc4random_uniform(5) + 1))"],
-        ["imageName": "h\(Int(arc4random_uniform(5) + 1))"],
-        ["imageName": "h\(Int(arc4random_uniform(5) + 1))"],
-        ["imageName": "h\(Int(arc4random_uniform(5) + 1))"],
-        ["imageName": "h\(Int(arc4random_uniform(5) + 1))"],
-        ["imageName": "h\(Int(arc4random_uniform(5) + 1))"],
-        ["imageName": "h\(Int(arc4random_uniform(5) + 1))"],
-        ["imageName": "h\(Int(arc4random_uniform(5) + 1))"],
-        ["imageName": "h\(Int(arc4random_uniform(5) + 1))"],
-        ["imageName": "h\(Int(arc4random_uniform(5) + 1))"],
-        ["imageName": "h\(Int(arc4random_uniform(5) + 1))"],
-        ["imageName": "h\(Int(arc4random_uniform(5) + 1))"],
-        ["imageName": "h\(Int(arc4random_uniform(5) + 1))"],
-        ["imageName": "h\(Int(arc4random_uniform(5) + 1))"],
-        ["imageName": "h\(Int(arc4random_uniform(5) + 1))"],
-        ["imageName": "h\(Int(arc4random_uniform(5) + 1))"],
-        ["imageName": "h\(Int(arc4random_uniform(5) + 1))"],
-        ["imageName": "h\(Int(arc4random_uniform(5) + 1))"],
-        ["imageName": "h\(Int(arc4random_uniform(5) + 1))"],
-        ["imageName": "h\(Int(arc4random_uniform(5) + 1))"],
-        ]
+    // pose filter
+    var poseFilters: [Filter] = []
+    
+    enum SelectedFilterType {
+        case human(filters: [Filter])
+        case text(filters: [Filter])
+        case funny(filters: [Filter])
+        case background(filters: [Filter])
+        case pose(filters: [Filter])
+        case none
+    }
+    
+    var filterType: SelectedFilterType = .none
+    var filters: [Filter] = []
 
     
     override func viewDidLoad() {
@@ -88,6 +60,53 @@ class ViewController: UIViewController {
         topBlurView.alpha = 0;
         bottomBlurView.alpha = 0;
         filterController.superView = previewView
+        
+        
+        // parsing temp
+        if let path = Bundle.main.path(forResource: "temp-camera-filter", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
+                if let filterGroups = jsonResult as? Array<Dictionary<String, AnyObject>> {
+                    print(filterGroups.count)
+                    let decoder = JSONDecoder()
+
+                    for filterGroup in filterGroups {
+                        guard let groupType: String = filterGroup["type"] as? String else {continue}
+                        if groupType == "time-filter" {
+                            if let filterDictionarys = filterGroup["filters"] as? Array<Dictionary<String, AnyObject>> {
+                                let data = try! JSONSerialization.data(withJSONObject: filterDictionarys,     options: .prettyPrinted)
+                                let filters = try decoder.decode([Filter].self, from: data)
+                                for filter: Filter in filters {
+                                    if filter.type == "human" {
+                                        humanFilters.append(filter)
+                                    } else if filter.type == "text" {
+                                        textFilters.append(filter)
+                                    } else if filter.type == "funny" {
+                                        funnyFilters.append(filter)
+                                    } else if filter.type == "background" {
+                                        backgroundFilters.append(filter)
+                                    } else {
+                                        
+                                    }
+                                }
+                            }
+                        } else if groupType == "pose-filter" {
+                            if let filterDictionarys = filterGroup["filters"] as? Array<Dictionary<String, AnyObject>> {
+                                let data = try! JSONSerialization.data(withJSONObject: filterDictionarys,     options: .prettyPrinted)
+                                let filters = try decoder.decode([Filter].self, from: data)
+                                for filter: Filter in filters {
+                                    poseFilters.append(filter)
+                                }
+                            }
+                        }
+                    }
+                }
+            } catch let error {
+                // handle error
+                print(error.localizedDescription)
+            }
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -155,10 +174,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func tapTimeFilter(_ sender: Any) {
+        
+        prepareTimeFilterView()
         appearTimeFilterView()
     }
     
     @IBAction func tapHumanFilter(_ sender: Any) {
+        self.filterType = .pose(filters: self.poseFilters)
+        self.filters = self.poseFilters
+        preparePoseFilterView()
         appearHumanFilterView()
     }
     
@@ -202,19 +226,50 @@ class ViewController: UIViewController {
     }
     
     @IBAction func tapFilterCategory(_ sender: Any) {
+        if let button: UIButton = sender as? UIButton {
+            print(button.tag)
+            if button.tag == 1 {
+                self.filterType = .human(filters: self.humanFilters)
+                self.filters = self.humanFilters
+            } else if button.tag == 2 {
+                self.filterType = .text(filters: self.textFilters)
+                self.filters = self.textFilters
+            } else if button.tag == 3 {
+                self.filterType = .funny(filters: self.funnyFilters)
+                self.filters = self.funnyFilters
+            } else if button.tag == 4 {
+                self.filterType = .background(filters: self.backgroundFilters)
+                self.filters = self.backgroundFilters
+            } else {
+                self.filterType = .none
+                self.filters = []
+            }
+        }
+        
+        self.filterCollectionview.reloadData()
+    }
+    
+    func setFilterGroup(filters: [Filter]) {
         
     }
     
+    func prepareTimeFilterView() {
+        filterTypeStackView.subviews.forEach({ if $0.tag != 0 { $0.alpha = 1 } })
+    }
+    
+    func preparePoseFilterView() {
+        filterTypeStackView.subviews.forEach({ if $0.tag != 0 { $0.alpha = 0 } })
+    }
     
     func appearTimeFilterView() {
-        self.currentFilterInfos = self.timeFilterInfos
+        //self.currentFilterInfos = self.timeFilterInfos
         self.filterCollectionview.reloadData()
         
         self.bottomBlurView.alpha = 1
     }
     
     func appearHumanFilterView() {
-        self.currentFilterInfos = self.humanFilterInfos
+        //self.currentFilterInfos = self.humanFilterInfos
         self.filterCollectionview.reloadData()
         
         self.bottomBlurView.alpha = 1
@@ -223,6 +278,8 @@ class ViewController: UIViewController {
     
     func disappearFilterView() {
         self.bottomBlurView.alpha = 0
+        self.filterType = .none
+        self.filters = []
     }
 }
 
@@ -240,7 +297,15 @@ extension ViewController: UIImagePickerControllerDelegate & UINavigationControll
 extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("select \(indexPath.row)")
-        filterController.putPoseFilter(with: FilterInfo(imageName: currentFilterInfos[indexPath.row]["imageName"]))
+        switch self.filterType {
+        case .pose(filters: _):
+            filterController.putPoseFilter(with: filters[indexPath.row])
+        case .none:
+            break;
+        default:
+            filterController.putTimeFilter(with: filters[indexPath.row])
+        }
+        
         disappearFilterView()
     }
     
@@ -251,17 +316,26 @@ extension ViewController: UICollectionViewDelegate {
 
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return currentFilterInfos.count
+        return filters.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FilterCollectionCell", for: indexPath)
         if let cell = cell as? FilterCollectionCell {
-            let imageName = currentFilterInfos[indexPath.row]["imageName"]
+            let imageName = filters[indexPath.row].imageURL
             cell.info = FilterInfo(imageName: imageName)
         }
         
         return cell
+    }
+}
+
+extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
+    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
+            return
+        }
+        
     }
 }

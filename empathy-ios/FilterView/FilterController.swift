@@ -14,11 +14,24 @@ class FilterController {
     var timeFilterView: FilterImageView?
     var poseFilterView: FilterImageView?
     
-    func putTimeFilter(with info: FilterInfo) {
+    func putTimeFilter(with filter: Filter) {
+        if timeFilterView == nil {
+            timeFilterView = FilterImageView()
+            timeFilterView?.closeButton?.addTarget(self, action: #selector(self.tapTimeFilterClose), for: UIControl.Event.touchUpInside)
+            if let timeFilterView = timeFilterView {
+                self.superView?.addSubview(timeFilterView)
+            }
+        }
         
+        guard let filterView = self.timeFilterView else {
+            return
+        }
+        
+        filterView.alpha = 1
+        filterView.set(filter: filter)
     }
     
-    func putPoseFilter(with info: FilterInfo) {
+    func putPoseFilter(with filter: Filter) {
         if poseFilterView == nil {
             poseFilterView = FilterImageView()
             poseFilterView?.closeButton?.addTarget(self, action: #selector(self.tapPoseFilterClose), for: UIControl.Event.touchUpInside)
@@ -32,7 +45,7 @@ class FilterController {
         }
         
         filterView.alpha = 1
-        filterView.set(info: info)
+        filterView.set(filter: filter)
     }
     
     @objc func tapPoseFilterClose(_ sender: Any) {
@@ -40,6 +53,9 @@ class FilterController {
         poseFilterView?.alpha = 0
     }
     
+    @objc func tapTimeFilterClose(_ sender: Any) {
+        timeFilterView?.alpha = 0
+    }
     
 }
 
@@ -104,20 +120,20 @@ class FilterImageView: UIView {
         }
     }
     
-    func set(info: FilterInfo) {
+    func set(filter: Filter) {
         self.transform = CGAffineTransform.identity
         
         self.lastScale = nil
         self.lastRotateAngle = nil
         
+        
         // 이미지 넣기
-        if let image = info.image {
-            imageView?.image = image
-        }
+        guard let image = UIImage(named: filter.imageURL) else { print("no image!!");return; }
+        imageView?.image = image
         imageView?.sizeToFit()
         
         // auto scale mode
-        if let image = info.image {
+        //if let image = info.image {
             let targetScale: CGFloat = 0.35
             let scaledW: CGFloat = (self.superview?.frame.width ?? 0) * targetScale
             let scaledH: CGFloat = (self.superview?.frame.height ?? 0) * targetScale
@@ -127,7 +143,7 @@ class FilterImageView: UIView {
             imageView?.frame = CGRect(x: 0, y: 0,
                                       width: image.size.width * minScaleRate,
                                       height: image.size.height * minScaleRate)
-        }
+        //}
         
         
         

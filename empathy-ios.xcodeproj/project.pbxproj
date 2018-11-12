@@ -18,6 +18,7 @@
 		55BC062521809A7400FE43CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55BC062321809A7400FE43CA /* LaunchScreen.storyboard */; };
 		55BC063021809A7400FE43CA /* empathy_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BC062F21809A7400FE43CA /* empathy_iosTests.swift */; };
 		55BC063B21809A7400FE43CA /* empathy_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BC063A21809A7400FE43CA /* empathy_iosUITests.swift */; };
+		55DF3E9821991DF60080252C /* temp-camera-filter.json in Resources */ = {isa = PBXBuildFile; fileRef = 55DF3E9721991DF60080252C /* temp-camera-filter.json */; };
 		7BFA4A1761F4D603677913B1 /* Pods_empathy_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CE5B306E7759201DA997162 /* Pods_empathy_ios.framework */; };
 		870933C9F5F93E1CB4A299BC /* Pods_empathy_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A99C37BD44035FBF70FDAAA /* Pods_empathy_iosTests.framework */; };
 /* End PBXBuildFile section */
@@ -61,6 +62,7 @@
 		55BC063621809A7400FE43CA /* empathy-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "empathy-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55BC063A21809A7400FE43CA /* empathy_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = empathy_iosUITests.swift; sourceTree = "<group>"; };
 		55BC063C21809A7400FE43CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55DF3E9721991DF60080252C /* temp-camera-filter.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "temp-camera-filter.json"; sourceTree = "<group>"; };
 		A4B7E75F6DB94BEDBFF9D610 /* Pods-empathy-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-empathy-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-empathy-ios/Pods-empathy-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		BDCAE4EBA85808B6A6F58B4A /* Pods-empathy-iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-empathy-iosUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-empathy-iosUITests/Pods-empathy-iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C8066D378E5BA86AFFB2257E /* Pods-empathy-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-empathy-iosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-empathy-iosTests/Pods-empathy-iosTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 		55BC061921809A7300FE43CA /* empathy-ios */ = {
 			isa = PBXGroup;
 			children = (
+				55DF3E9721991DF60080252C /* temp-camera-filter.json */,
 				55BC061A21809A7300FE43CA /* AppDelegate.swift */,
 				55BC061C21809A7300FE43CA /* ViewController.swift */,
 				55A331752191A7E1005DFA01 /* FilterView */,
@@ -292,6 +295,7 @@
 			files = (
 				55BC062521809A7400FE43CA /* LaunchScreen.storyboard in Resources */,
 				55BC062221809A7400FE43CA /* Assets.xcassets in Resources */,
+				55DF3E9821991DF60080252C /* temp-camera-filter.json in Resources */,
 				55BC062021809A7300FE43CA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -582,7 +586,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mgeeks.empathy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -601,7 +605,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mgeeks.empathy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

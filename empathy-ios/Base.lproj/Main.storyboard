@@ -248,28 +248,28 @@
                                                         <action selector="tapFilterClose:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v3c-RF-ci3"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rM5-zR-YJP">
+                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rM5-zR-YJP">
                                                     <rect key="frame" x="70" y="0.0" width="45" height="45"/>
                                                     <state key="normal" image="iconBf"/>
                                                     <connections>
                                                         <action selector="tapFilterCategory:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W4A-ao-cDZ"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Syl-9D-QZd">
+                                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Syl-9D-QZd">
                                                     <rect key="frame" x="140" y="0.0" width="45" height="45"/>
                                                     <state key="normal" image="iconTxt"/>
                                                     <connections>
                                                         <action selector="tapFilterCategory:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a1r-5n-q9n"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhg-ZP-h8q">
+                                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhg-ZP-h8q">
                                                     <rect key="frame" x="210" y="0.0" width="45" height="45"/>
                                                     <state key="normal" image="iconFunny"/>
                                                     <connections>
                                                         <action selector="tapFilterCategory:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rQd-DN-6Ln"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zd4-JU-8k6">
+                                                <button opaque="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zd4-JU-8k6">
                                                     <rect key="frame" x="280" y="0.0" width="47" height="45"/>
                                                     <state key="normal" image="iconLand"/>
                                                     <connections>
@@ -359,6 +359,7 @@
                     <connections>
                         <outlet property="bottomBlurView" destination="ybl-uy-MoZ" id="l5o-mx-205"/>
                         <outlet property="filterCollectionview" destination="PiD-JI-8di" id="Ieo-4B-Ll4"/>
+                        <outlet property="filterTypeStackView" destination="Uec-av-g7y" id="PYa-vC-osE"/>
                         <outlet property="flashButton" destination="SKH-vx-cys" id="ggp-Fy-XSL"/>
                         <outlet property="libraryButton" destination="PSP-ln-Ywj" id="L8s-3T-ht9"/>
                         <outlet property="previewView" destination="25c-5W-jRd" id="Rdx-g2-0R8"/>
