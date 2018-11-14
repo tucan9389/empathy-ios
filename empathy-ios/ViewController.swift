@@ -8,7 +8,7 @@
 
 import UIKit
 import AVFoundation
-import CameraManager
+//import CameraManager
 import Photos
 
 class ViewController: UIViewController {

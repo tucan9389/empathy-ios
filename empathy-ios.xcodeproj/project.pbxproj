@@ -19,6 +19,7 @@
 		55BC063021809A7400FE43CA /* empathy_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BC062F21809A7400FE43CA /* empathy_iosTests.swift */; };
 		55BC063B21809A7400FE43CA /* empathy_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BC063A21809A7400FE43CA /* empathy_iosUITests.swift */; };
 		55DF3E9821991DF60080252C /* temp-camera-filter.json in Resources */ = {isa = PBXBuildFile; fileRef = 55DF3E9721991DF60080252C /* temp-camera-filter.json */; };
+		55DFA361219C3DCE001B23AC /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DFA360219C3DCE001B23AC /* CameraManager.swift */; };
 		7BFA4A1761F4D603677913B1 /* Pods_empathy_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CE5B306E7759201DA997162 /* Pods_empathy_ios.framework */; };
 		870933C9F5F93E1CB4A299BC /* Pods_empathy_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A99C37BD44035FBF70FDAAA /* Pods_empathy_iosTests.framework */; };
 /* End PBXBuildFile section */
@@ -63,6 +64,7 @@
 		55BC063A21809A7400FE43CA /* empathy_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = empathy_iosUITests.swift; sourceTree = "<group>"; };
 		55BC063C21809A7400FE43CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55DF3E9721991DF60080252C /* temp-camera-filter.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "temp-camera-filter.json"; sourceTree = "<group>"; };
+		55DFA360219C3DCE001B23AC /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
 		A4B7E75F6DB94BEDBFF9D610 /* Pods-empathy-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-empathy-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-empathy-ios/Pods-empathy-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		BDCAE4EBA85808B6A6F58B4A /* Pods-empathy-iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-empathy-iosUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-empathy-iosUITests/Pods-empathy-iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C8066D378E5BA86AFFB2257E /* Pods-empathy-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-empathy-iosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-empathy-iosTests/Pods-empathy-iosTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				55BC061C21809A7300FE43CA /* ViewController.swift */,
 				55A331752191A7E1005DFA01 /* FilterView */,
 				55A3317321900944005DFA01 /* CapturedImageViewController.swift */,
+				55DFA360219C3DCE001B23AC /* CameraManager.swift */,
 				55BC061E21809A7300FE43CA /* Main.storyboard */,
 				55BC062121809A7400FE43CA /* Assets.xcassets */,
 				55BC062321809A7400FE43CA /* LaunchScreen.storyboard */,
@@ -196,7 +199,6 @@
 				55BC061321809A7300FE43CA /* Sources */,
 				55BC061421809A7300FE43CA /* Frameworks */,
 				55BC061521809A7300FE43CA /* Resources */,
-				236019B50856E95E6BA1C382 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -317,24 +319,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		236019B50856E95E6BA1C382 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-empathy-ios/Pods-empathy-ios-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/CameraManager/CameraManager.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CameraManager.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-empathy-ios/Pods-empathy-ios-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		2D8C5358B6505C2542DFB5F4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -397,6 +381,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55A331792192A0A0005DFA01 /* FilterController.swift in Sources */,
+				55DFA361219C3DCE001B23AC /* CameraManager.swift in Sources */,
 				55BC061D21809A7300FE43CA /* ViewController.swift in Sources */,
 				55BC061B21809A7300FE43CA /* AppDelegate.swift in Sources */,
 				55A331772191A84D005DFA01 /* FilterCollectionView.swift in Sources */,
@@ -579,10 +564,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5WXJ4Z4H69;
 				INFOPLIST_FILE = "empathy-ios/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mgeeks.empathy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -598,10 +580,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5WXJ4Z4H69;
 				INFOPLIST_FILE = "empathy-ios/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mgeeks.empathy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -618,11 +597,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5WXJ4Z4H69;
 				INFOPLIST_FILE = "empathy-iosTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tucan9389.empathy-iosTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -640,11 +615,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5WXJ4Z4H69;
 				INFOPLIST_FILE = "empathy-iosTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tucan9389.empathy-iosTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -661,11 +632,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5WXJ4Z4H69;
 				INFOPLIST_FILE = "empathy-iosUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tucan9389.empathy-iosUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -682,11 +649,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5WXJ4Z4H69;
 				INFOPLIST_FILE = "empathy-iosUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tucan9389.empathy-iosUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
