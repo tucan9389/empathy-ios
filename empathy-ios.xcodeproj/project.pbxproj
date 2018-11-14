@@ -19,7 +19,20 @@
 		55BC063021809A7400FE43CA /* empathy_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BC062F21809A7400FE43CA /* empathy_iosTests.swift */; };
 		55BC063B21809A7400FE43CA /* empathy_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BC063A21809A7400FE43CA /* empathy_iosUITests.swift */; };
 		55DF3E9821991DF60080252C /* temp-camera-filter.json in Resources */ = {isa = PBXBuildFile; fileRef = 55DF3E9721991DF60080252C /* temp-camera-filter.json */; };
-		55DFA361219C3DCE001B23AC /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DFA360219C3DCE001B23AC /* CameraManager.swift */; };
+		55DFA365219C4675001B23AC /* ssd_mobilenet_feature_extractor.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 55DFA364219C4675001B23AC /* ssd_mobilenet_feature_extractor.mlmodel */; };
+		55DFA369219C47D3001B23AC /* SSDPostprocessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DFA366219C47D2001B23AC /* SSDPostprocessor.swift */; };
+		55DFA36A219C47D3001B23AC /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DFA367219C47D3001B23AC /* Utility.swift */; };
+		55DFA36B219C47D3001B23AC /* Anchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DFA368219C47D3001B23AC /* Anchors.swift */; };
+		55DFA378219C4996001B23AC /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DFA36F219C4996001B23AC /* Math.swift */; };
+		55DFA379219C4996001B23AC /* UIImage+CVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DFA370219C4996001B23AC /* UIImage+CVPixelBuffer.swift */; };
+		55DFA37A219C4996001B23AC /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DFA371219C4996001B23AC /* Array.swift */; };
+		55DFA37B219C4996001B23AC /* BoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DFA372219C4996001B23AC /* BoundingBox.swift */; };
+		55DFA37C219C4996001B23AC /* Predictions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DFA373219C4996001B23AC /* Predictions.swift */; };
+		55DFA37D219C4996001B23AC /* MultiArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DFA374219C4996001B23AC /* MultiArray.swift */; };
+		55DFA37E219C4996001B23AC /* CVPixelBuffer+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DFA375219C4996001B23AC /* CVPixelBuffer+Helpers.swift */; };
+		55DFA37F219C4996001B23AC /* NonMaxSuppression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DFA376219C4996001B23AC /* NonMaxSuppression.swift */; };
+		55DFA380219C4996001B23AC /* MLMultiArray+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DFA377219C4996001B23AC /* MLMultiArray+Image.swift */; };
+		55DFA382219C4D8E001B23AC /* coco_labels_list.txt in Resources */ = {isa = PBXBuildFile; fileRef = 55DFA381219C4D8E001B23AC /* coco_labels_list.txt */; };
 		7BFA4A1761F4D603677913B1 /* Pods_empathy_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CE5B306E7759201DA997162 /* Pods_empathy_ios.framework */; };
 		870933C9F5F93E1CB4A299BC /* Pods_empathy_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A99C37BD44035FBF70FDAAA /* Pods_empathy_iosTests.framework */; };
 /* End PBXBuildFile section */
@@ -64,7 +77,20 @@
 		55BC063A21809A7400FE43CA /* empathy_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = empathy_iosUITests.swift; sourceTree = "<group>"; };
 		55BC063C21809A7400FE43CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55DF3E9721991DF60080252C /* temp-camera-filter.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "temp-camera-filter.json"; sourceTree = "<group>"; };
-		55DFA360219C3DCE001B23AC /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
+		55DFA364219C4675001B23AC /* ssd_mobilenet_feature_extractor.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ssd_mobilenet_feature_extractor.mlmodel; sourceTree = "<group>"; };
+		55DFA366219C47D2001B23AC /* SSDPostprocessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSDPostprocessor.swift; sourceTree = "<group>"; };
+		55DFA367219C47D3001B23AC /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		55DFA368219C47D3001B23AC /* Anchors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Anchors.swift; sourceTree = "<group>"; };
+		55DFA36F219C4996001B23AC /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
+		55DFA370219C4996001B23AC /* UIImage+CVPixelBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+CVPixelBuffer.swift"; sourceTree = "<group>"; };
+		55DFA371219C4996001B23AC /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		55DFA372219C4996001B23AC /* BoundingBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoundingBox.swift; sourceTree = "<group>"; };
+		55DFA373219C4996001B23AC /* Predictions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Predictions.swift; sourceTree = "<group>"; };
+		55DFA374219C4996001B23AC /* MultiArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiArray.swift; sourceTree = "<group>"; };
+		55DFA375219C4996001B23AC /* CVPixelBuffer+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CVPixelBuffer+Helpers.swift"; sourceTree = "<group>"; };
+		55DFA376219C4996001B23AC /* NonMaxSuppression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NonMaxSuppression.swift; sourceTree = "<group>"; };
+		55DFA377219C4996001B23AC /* MLMultiArray+Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MLMultiArray+Image.swift"; sourceTree = "<group>"; };
+		55DFA381219C4D8E001B23AC /* coco_labels_list.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = coco_labels_list.txt; sourceTree = "<group>"; };
 		A4B7E75F6DB94BEDBFF9D610 /* Pods-empathy-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-empathy-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-empathy-ios/Pods-empathy-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		BDCAE4EBA85808B6A6F58B4A /* Pods-empathy-iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-empathy-iosUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-empathy-iosUITests/Pods-empathy-iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C8066D378E5BA86AFFB2257E /* Pods-empathy-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-empathy-iosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-empathy-iosTests/Pods-empathy-iosTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -146,9 +172,9 @@
 				55DF3E9721991DF60080252C /* temp-camera-filter.json */,
 				55BC061A21809A7300FE43CA /* AppDelegate.swift */,
 				55BC061C21809A7300FE43CA /* ViewController.swift */,
+				55DFA385219C5CD7001B23AC /* ResNet Related */,
 				55A331752191A7E1005DFA01 /* FilterView */,
 				55A3317321900944005DFA01 /* CapturedImageViewController.swift */,
-				55DFA360219C3DCE001B23AC /* CameraManager.swift */,
 				55BC061E21809A7300FE43CA /* Main.storyboard */,
 				55BC062121809A7400FE43CA /* Assets.xcassets */,
 				55BC062321809A7400FE43CA /* LaunchScreen.storyboard */,
@@ -175,6 +201,35 @@
 			path = "empathy-iosUITests";
 			sourceTree = "<group>";
 		};
+		55DFA36E219C4996001B23AC /* CoreMLHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				55DFA36F219C4996001B23AC /* Math.swift */,
+				55DFA370219C4996001B23AC /* UIImage+CVPixelBuffer.swift */,
+				55DFA371219C4996001B23AC /* Array.swift */,
+				55DFA372219C4996001B23AC /* BoundingBox.swift */,
+				55DFA373219C4996001B23AC /* Predictions.swift */,
+				55DFA374219C4996001B23AC /* MultiArray.swift */,
+				55DFA375219C4996001B23AC /* CVPixelBuffer+Helpers.swift */,
+				55DFA376219C4996001B23AC /* NonMaxSuppression.swift */,
+				55DFA377219C4996001B23AC /* MLMultiArray+Image.swift */,
+			);
+			path = CoreMLHelpers;
+			sourceTree = "<group>";
+		};
+		55DFA385219C5CD7001B23AC /* ResNet Related */ = {
+			isa = PBXGroup;
+			children = (
+				55DFA364219C4675001B23AC /* ssd_mobilenet_feature_extractor.mlmodel */,
+				55DFA381219C4D8E001B23AC /* coco_labels_list.txt */,
+				55DFA36E219C4996001B23AC /* CoreMLHelpers */,
+				55DFA368219C47D3001B23AC /* Anchors.swift */,
+				55DFA366219C47D2001B23AC /* SSDPostprocessor.swift */,
+				55DFA367219C47D3001B23AC /* Utility.swift */,
+			);
+			path = "ResNet Related";
+			sourceTree = "<group>";
+		};
 		588151332AA3D2928A1C5DB5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +254,7 @@
 				55BC061321809A7300FE43CA /* Sources */,
 				55BC061421809A7300FE43CA /* Frameworks */,
 				55BC061521809A7300FE43CA /* Resources */,
+				B74C7109AD0AC1FAB02DE064 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -295,6 +351,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55DFA382219C4D8E001B23AC /* coco_labels_list.txt in Resources */,
 				55BC062521809A7400FE43CA /* LaunchScreen.storyboard in Resources */,
 				55BC062221809A7400FE43CA /* Assets.xcassets in Resources */,
 				55DF3E9821991DF60080252C /* temp-camera-filter.json in Resources */,
@@ -335,6 +392,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B74C7109AD0AC1FAB02DE064 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-empathy-ios/Pods-empathy-ios-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Toaster/Toaster.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toaster.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-empathy-ios/Pods-empathy-ios-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C4CA6ED71E05DC30FB196A44 /* [CP] Check Pods Manifest.lock */ = {
@@ -380,12 +455,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55DFA380219C4996001B23AC /* MLMultiArray+Image.swift in Sources */,
+				55DFA37C219C4996001B23AC /* Predictions.swift in Sources */,
+				55DFA37B219C4996001B23AC /* BoundingBox.swift in Sources */,
+				55DFA37D219C4996001B23AC /* MultiArray.swift in Sources */,
+				55DFA36A219C47D3001B23AC /* Utility.swift in Sources */,
+				55DFA379219C4996001B23AC /* UIImage+CVPixelBuffer.swift in Sources */,
 				55A331792192A0A0005DFA01 /* FilterController.swift in Sources */,
-				55DFA361219C3DCE001B23AC /* CameraManager.swift in Sources */,
+				55DFA37F219C4996001B23AC /* NonMaxSuppression.swift in Sources */,
+				55DFA369219C47D3001B23AC /* SSDPostprocessor.swift in Sources */,
 				55BC061D21809A7300FE43CA /* ViewController.swift in Sources */,
 				55BC061B21809A7300FE43CA /* AppDelegate.swift in Sources */,
+				55DFA365219C4675001B23AC /* ssd_mobilenet_feature_extractor.mlmodel in Sources */,
+				55DFA37A219C4996001B23AC /* Array.swift in Sources */,
 				55A331772191A84D005DFA01 /* FilterCollectionView.swift in Sources */,
+				55DFA36B219C47D3001B23AC /* Anchors.swift in Sources */,
+				55DFA37E219C4996001B23AC /* CVPixelBuffer+Helpers.swift in Sources */,
 				55A3317421900944005DFA01 /* CapturedImageViewController.swift in Sources */,
+				55DFA378219C4996001B23AC /* Math.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

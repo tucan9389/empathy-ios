@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Toaster
 
 class CapturedImageViewController: UIViewController {
     
@@ -38,7 +39,11 @@ class CapturedImageViewController: UIViewController {
     }
     
     @IBAction func tapSave(_ sender: Any) {
-        
+        guard let image = capturedImage else {
+            print("Image not found!")
+            return
+        }
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
     }
     
     @IBAction func tapBack(_ sender: Any) {
@@ -64,10 +69,6 @@ class CapturedImageViewController: UIViewController {
         let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
         
-        // exclude some activity types from the list (optional)
-        //activityViewController.excludedActivityTypes = [ UIActivity.ActivityType.airDrop, UIActivityType.postToFacebook ]
-        
-        // present the view controller
         self.present(activityViewController, animated: true, completion: nil)
     }
     
@@ -80,5 +81,22 @@ class CapturedImageViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    //MARK: - Add image to Library
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        if let error = error {
+            // we got back an error!
+            showAlertWith(title: "저장 실패", message: error.localizedDescription)
+        } else {
+            dismiss(animated: false, completion: {
+                Toast(text: "저장 성공!").show()
+            })
+        }
+    }
 
+    func showAlertWith(title: String, message: String) {
+        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
+    }
 }

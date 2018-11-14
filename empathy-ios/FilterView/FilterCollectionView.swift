@@ -80,6 +80,35 @@ class Filter: Decodable {
                    imageURL: imageURL, standard: standard,
                    align_left: align_left, gravity: gravity)
     }
+    
+    enum Gravity {
+        case bottom_left
+        case center_left
+        case top_left
+        
+        case bottom_right
+        case center_right
+        case top_right
+        
+        case bottom_middle
+        case center_middle
+        case top_middle
+        
+        case none
+    }
+    
+    var alignGravity: Gravity {
+        if gravity == "bottom-left" { return .bottom_left }
+        else if gravity == "center-left" { return .center_left }
+        else if gravity == "top-left" { return .top_left }
+        else if gravity == "bottom-right" { return .bottom_right }
+        else if gravity == "center-right" { return .center_right }
+        else if gravity == "top-right" { return .top_right }
+        else if gravity == "bottom-middle" { return .bottom_middle }
+        else if gravity == "center-middle" { return .center_middle }
+        else if gravity == "top-middle" { return .top_middle }
+        else { return .none }
+    }
 }
 
 

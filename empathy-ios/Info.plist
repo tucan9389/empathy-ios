@@ -17,13 +17,15 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.12</string>
+	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>0.1202</string>
+	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>User can take a picture and share it</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Save picture which create by user</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>User can share pictures from library</string>
 	<key>UILaunchStoryboardName</key>

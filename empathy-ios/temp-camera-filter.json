@@ -6,18 +6,18 @@
                 "type_id" : 1,
                 "type" : "human" ,
                 "name" : "human_1" ,
-                "imageURL" : "b1" ,
+                "imageURL" : "filter_human_1" ,
                 "standard" : "1" ,
                 "align-left" : true ,
-                "gravity" : "bottom-center"
+                "gravity" : "center-right"
             }, {
                 "type_id" : 2,
-                "type" : "text" ,
-                "name" : "human_1" ,
-                "imageURL" : "b2" ,
+                "type" : "human" ,
+                "name" : "human_2" ,
+                "imageURL" : "filter_human_2" ,
                 "standard" : "1" ,
                 "align-left" : true ,
-                "gravity" : "top-center"
+                "gravity" : "center-left"
             }, {
                 "type_id" : 3,
                 "type" : "funny" ,

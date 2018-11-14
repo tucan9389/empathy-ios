@@ -22,13 +22,13 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W15-hw-ufc">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="175"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="167"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="zSH-Ub-sXC">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="175"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="167"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="s0A-WF-V5r">
-                                            <rect key="frame" x="21" y="98" width="333" height="61"/>
+                                            <rect key="frame" x="21" y="90" width="333" height="61"/>
                                             <subviews>
                                                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Fm-9G-AWf">
                                                     <rect key="frame" x="0.0" y="0.0" width="61" height="61"/>
@@ -77,40 +77,41 @@
                                 <blurEffect style="dark"/>
                             </visualEffectView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kkN-zt-00f" userLabel="Top View">
-                                <rect key="frame" x="0.0" y="20" width="375" height="93"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="85"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKH-vx-cys">
-                                        <rect key="frame" x="32" y="28" width="38" height="37"/>
-                                        <state key="normal" image="iconLightOff"/>
-                                        <state key="selected" image="iconLightOn"/>
-                                        <connections>
-                                            <action selector="tapFlash:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1TD-Ux-jpy"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKm-lI-4gG">
-                                        <rect key="frame" x="102" y="28" width="38" height="37"/>
-                                        <state key="normal" image="iconScale"/>
-                                        <connections>
-                                            <action selector="tapOpenScale:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Vs-Vy-Ys1"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4vu-xh-WtS">
-                                        <rect key="frame" x="172" y="28" width="38" height="37"/>
-                                        <state key="normal" image="iconChange"/>
-                                        <connections>
-                                            <action selector="tapBackFront:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iJv-u9-4v7"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" alpha="0.0" contentMode="scaleToFill" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pg9-zx-1ih">
+                                        <rect key="frame" x="32" y="22" width="170" height="37"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKH-vx-cys">
+                                                <rect key="frame" x="0.0" y="0.0" width="38" height="37"/>
+                                                <state key="normal" image="iconLightOff"/>
+                                                <state key="selected" image="iconLightOn"/>
+                                                <connections>
+                                                    <action selector="tapFlash:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1TD-Ux-jpy"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4vu-xh-WtS">
+                                                <rect key="frame" x="66" y="0.0" width="38" height="37"/>
+                                                <state key="normal" image="iconChange"/>
+                                                <connections>
+                                                    <action selector="tapBackFront:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iJv-u9-4v7"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKm-lI-4gG">
+                                                <rect key="frame" x="132" y="0.0" width="38" height="37"/>
+                                                <state key="normal" image="iconScale"/>
+                                                <connections>
+                                                    <action selector="tapOpenScale:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Vs-Vy-Ys1"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="vKm-lI-4gG" firstAttribute="centerY" secondItem="SKH-vx-cys" secondAttribute="centerY" id="1hD-G5-gaQ"/>
-                                    <constraint firstItem="SKH-vx-cys" firstAttribute="top" secondItem="kkN-zt-00f" secondAttribute="top" constant="28" id="F6a-Es-xjO"/>
-                                    <constraint firstItem="vKm-lI-4gG" firstAttribute="leading" secondItem="SKH-vx-cys" secondAttribute="trailing" constant="32" id="Mhq-I2-Z1C"/>
-                                    <constraint firstItem="4vu-xh-WtS" firstAttribute="centerY" secondItem="SKH-vx-cys" secondAttribute="centerY" id="Rfp-pN-v7s"/>
-                                    <constraint firstItem="4vu-xh-WtS" firstAttribute="leading" secondItem="vKm-lI-4gG" secondAttribute="trailing" constant="32" id="evg-Yy-ITm"/>
-                                    <constraint firstAttribute="bottom" secondItem="SKH-vx-cys" secondAttribute="bottom" constant="28" id="xP7-Fy-vdb"/>
-                                    <constraint firstItem="SKH-vx-cys" firstAttribute="leading" secondItem="kkN-zt-00f" secondAttribute="leading" constant="32" id="zPR-t6-wdG"/>
+                                    <constraint firstItem="Pg9-zx-1ih" firstAttribute="leading" secondItem="kkN-zt-00f" secondAttribute="leading" constant="32" id="Ihq-Ad-AiF"/>
+                                    <constraint firstItem="Pg9-zx-1ih" firstAttribute="top" secondItem="kkN-zt-00f" secondAttribute="top" constant="22" id="dOI-BT-Um7"/>
+                                    <constraint firstAttribute="bottom" secondItem="Pg9-zx-1ih" secondAttribute="bottom" constant="26" id="yfb-P5-vMz"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Geb-5c-YQk" userLabel="Botton View">
@@ -147,7 +148,7 @@
                                         <rect key="frame" x="0.0" y="40" width="22" height="68"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GY3-9f-YsE">
+                                    <button opaque="NO" alpha="0.0" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GY3-9f-YsE">
                                         <rect key="frame" x="309" y="52" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="2ZR-cH-mTg"/>
@@ -180,7 +181,7 @@
                                             <action selector="tapConfiguration:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xBv-tC-DW0"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSP-ln-Ywj">
+                                    <button opaque="NO" alpha="0.0" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSP-ln-Ywj">
                                         <rect key="frame" x="22" y="52" width="44" height="44"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -248,28 +249,28 @@
                                                         <action selector="tapFilterClose:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v3c-RF-ci3"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rM5-zR-YJP">
+                                                <button opaque="NO" alpha="0.0" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rM5-zR-YJP">
                                                     <rect key="frame" x="70" y="0.0" width="45" height="45"/>
                                                     <state key="normal" image="iconBf"/>
                                                     <connections>
                                                         <action selector="tapFilterCategory:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W4A-ao-cDZ"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Syl-9D-QZd">
+                                                <button opaque="NO" alpha="0.0" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Syl-9D-QZd">
                                                     <rect key="frame" x="140" y="0.0" width="45" height="45"/>
                                                     <state key="normal" image="iconTxt"/>
                                                     <connections>
                                                         <action selector="tapFilterCategory:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a1r-5n-q9n"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhg-ZP-h8q">
+                                                <button opaque="NO" alpha="0.0" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhg-ZP-h8q">
                                                     <rect key="frame" x="210" y="0.0" width="45" height="45"/>
                                                     <state key="normal" image="iconFunny"/>
                                                     <connections>
                                                         <action selector="tapFilterCategory:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rQd-DN-6Ln"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zd4-JU-8k6">
+                                                <button opaque="NO" alpha="0.0" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zd4-JU-8k6">
                                                     <rect key="frame" x="280" y="0.0" width="47" height="45"/>
                                                     <state key="normal" image="iconLand"/>
                                                     <connections>
@@ -433,7 +434,7 @@
                                             <action selector="tapExport:" destination="AgZ-8j-h8b" eventType="touchUpInside" id="QUz-0f-a7c"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcC-sU-sJr">
+                                    <button opaque="NO" alpha="0.0" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcC-sU-sJr">
                                         <rect key="frame" x="238.5" y="45" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="44" id="7F6-kX-S1a"/>
@@ -444,7 +445,7 @@
                                             <action selector="tapFlag:" destination="AgZ-8j-h8b" eventType="touchUpInside" id="J44-Ws-xig"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4NJ-Cd-ObQ">
+                                    <button opaque="NO" alpha="0.0" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4NJ-Cd-ObQ">
                                         <rect key="frame" x="92.5" y="45" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="9mS-dW-Wbb"/>
