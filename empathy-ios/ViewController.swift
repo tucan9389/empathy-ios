@@ -431,6 +431,10 @@ extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
             return
         }
         
+        let imageBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)!
+        let ciimage : CIImage = CIImage(cvPixelBuffer: imageBuffer)
+        self.capturedImage = UIImage.convert(cimage: ciimage)
+        
         var requestOptions:[VNImageOption : Any] = [:]
         if let cameraIntrinsicData = CMGetAttachment(sampleBuffer, key: kCMSampleBufferAttachmentKey_CameraIntrinsicMatrix, attachmentModeOut: nil) {
             requestOptions = [.cameraIntrinsics:cameraIntrinsicData]
@@ -444,11 +448,6 @@ extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
                 let prediction = predictions
                     .filter({classNames[$0.detectedClass]=="person"})
                     .max(by: {self.sigmoid($0.score) < self.sigmoid($1.score)}) {
-                
-                let imageBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)!
-                let ciimage : CIImage = CIImage(cvPixelBuffer: imageBuffer)
-                self.capturedImage = UIImage.convert(cimage: ciimage)
-
                 
                 self.detected(prediction: prediction)
 //                for debug
