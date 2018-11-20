@@ -1,0 +1,53 @@
+[
+    {
+        "type" : "time-filter" ,
+        "filters": [
+            {
+                "type_id" : 1,
+                "type" : "human" ,
+                "name" : "human_1" ,
+                "imageURL" : "filter_human_1" ,
+                "standard" : "1" ,
+                "align-left" : true ,
+                "gravity" : "center-right"
+            }, {
+                "type_id" : 2,
+                "type" : "human" ,
+                "name" : "human_2" ,
+                "imageURL" : "filter_human_2" ,
+                "standard" : "1" ,
+                "align-left" : true ,
+                "gravity" : "center-left"
+            }, {
+                "type_id" : 3,
+                "type" : "funny" ,
+                "name" : "human_1" ,
+                "imageURL" : "b3" ,
+                "standard" : "1" ,
+                "align-left" : true ,
+                "gravity" : "center-center"
+            }, {
+                "type_id" : 4,
+                "type" : "background" ,
+                "name" : "human_1" ,
+                "imageURL" : "b4" ,
+                "standard" : "1" ,
+                "align-left" : true ,
+                "gravity" : "center-left"
+            }
+        ]
+    } , {
+        "type" : "pose-filter" ,
+        "filters": [
+            {
+                "type_id" : 3,
+                "type" : "one" ,
+                "name" : "human_1" ,
+                "imageURL" : "b5" ,
+                "standard" : "1" ,
+                "align-left" : true ,
+                "gravity" : "bottom-left"
+            }
+        ]
+    }
+]
