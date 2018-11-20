@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WebKit
 import FacebookLogin
 
 class LoginViewController: UIViewController {
@@ -18,7 +19,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        facebookLoginButton.addTarget(self, action: #selector(loginButtonClicked), for: .touchUpInside)
+        facebookLoginButton.addTarget(self, action: #selector(facebookLoginButtonClicked), for: .touchUpInside)
         
         
     }
@@ -35,7 +36,7 @@ class LoginViewController: UIViewController {
     */
     // Once the button is clicked, show the login dialog
     //
-    @objc func loginButtonClicked() {
+    @objc func facebookLoginButtonClicked() {
         let loginManager = LoginManager()
         loginManager.logIn(readPermissions: [.publicProfile], viewController: self) { loginResult in
             switch loginResult {
@@ -45,6 +46,7 @@ class LoginViewController: UIViewController {
                 print("User cancelled login.")
             case .success(let grantedPermissions, let declinedPermissions, let accessToken):
                 print("Logged in!")
+                print(accessToken)
             }
         }
     }
