@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>공감</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -15,19 +17,41 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.11</string>
+	<string>1.0</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb2144196628937931</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
-	<string>0.1101</string>
+	<string>1.0001</string>
+	<key>FacebookAppID</key>
+	<string>2144196628937931</string>
+	<key>FacebookDisplayName</key>
+	<string>GongGam</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-share-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>User can take a picture and share it</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Save picture which create by user</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>User can share pictures from library</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
-	<string>Login</string>
+	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -43,31 +67,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    
-<!--    Facebook login 관련-->
-    <key>CFBundleURLTypes</key>
-    <array>
-        <dict>
-            <key>CFBundleURLSchemes</key>
-            <array>
-                <string>fb2144196628937931</string>
-            </array>
-        </dict>
-    </array>
-    <key>FacebookAppID</key>
-    <string>2144196628937931</string>
-    <key>FacebookDisplayName</key>
-    <string>GongGam</string>
-<!---->
-
-<!--    Facebook 앱으로 앱 전환을 수행할 수 있는 Facebook 대화 상자(예: 로그인, 공유, 앱 초대 등)를 사용시 필요-->
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-        <string>fbapi</string>
-        <string>fb-messenger-share-api</string>
-        <string>fbauth2</string>
-        <string>fbshareextension</string>
-    </array>
-<!---->
 </dict>
 </plist>

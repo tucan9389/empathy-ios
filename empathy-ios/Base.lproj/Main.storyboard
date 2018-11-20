@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_9" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -14,21 +14,21 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="empathy_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="25c-5W-jRd">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W15-hw-ufc">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="199"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="167"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="zSH-Ub-sXC">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="199"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="167"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="s0A-WF-V5r">
-                                            <rect key="frame" x="21" y="122" width="333" height="61"/>
+                                            <rect key="frame" x="21" y="90" width="333" height="61"/>
                                             <subviews>
                                                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Fm-9G-AWf">
                                                     <rect key="frame" x="0.0" y="0.0" width="61" height="61"/>
@@ -77,78 +77,79 @@
                                 <blurEffect style="dark"/>
                             </visualEffectView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kkN-zt-00f" userLabel="Top View">
-                                <rect key="frame" x="0.0" y="44" width="375" height="93"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="85"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKH-vx-cys">
-                                        <rect key="frame" x="32" y="28" width="38" height="37"/>
-                                        <state key="normal" image="iconLightOff"/>
-                                        <state key="selected" image="iconLightOn"/>
-                                        <connections>
-                                            <action selector="tapFlash:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1TD-Ux-jpy"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKm-lI-4gG">
-                                        <rect key="frame" x="102" y="28" width="38" height="37"/>
-                                        <state key="normal" image="iconScale"/>
-                                        <connections>
-                                            <action selector="tapOpenScale:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Vs-Vy-Ys1"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4vu-xh-WtS">
-                                        <rect key="frame" x="172" y="28" width="38" height="37"/>
-                                        <state key="normal" image="iconChange"/>
-                                        <connections>
-                                            <action selector="tapBackFront:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iJv-u9-4v7"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" alpha="0.0" contentMode="scaleToFill" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pg9-zx-1ih">
+                                        <rect key="frame" x="32" y="22" width="170" height="37"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKH-vx-cys">
+                                                <rect key="frame" x="0.0" y="0.0" width="38" height="37"/>
+                                                <state key="normal" image="iconLightOff"/>
+                                                <state key="selected" image="iconLightOn"/>
+                                                <connections>
+                                                    <action selector="tapFlash:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1TD-Ux-jpy"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4vu-xh-WtS">
+                                                <rect key="frame" x="66" y="0.0" width="38" height="37"/>
+                                                <state key="normal" image="iconChange"/>
+                                                <connections>
+                                                    <action selector="tapBackFront:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iJv-u9-4v7"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKm-lI-4gG">
+                                                <rect key="frame" x="132" y="0.0" width="38" height="37"/>
+                                                <state key="normal" image="iconScale"/>
+                                                <connections>
+                                                    <action selector="tapOpenScale:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Vs-Vy-Ys1"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="vKm-lI-4gG" firstAttribute="centerY" secondItem="SKH-vx-cys" secondAttribute="centerY" id="1hD-G5-gaQ"/>
-                                    <constraint firstItem="SKH-vx-cys" firstAttribute="top" secondItem="kkN-zt-00f" secondAttribute="top" constant="28" id="F6a-Es-xjO"/>
-                                    <constraint firstItem="vKm-lI-4gG" firstAttribute="leading" secondItem="SKH-vx-cys" secondAttribute="trailing" constant="32" id="Mhq-I2-Z1C"/>
-                                    <constraint firstItem="4vu-xh-WtS" firstAttribute="centerY" secondItem="SKH-vx-cys" secondAttribute="centerY" id="Rfp-pN-v7s"/>
-                                    <constraint firstItem="4vu-xh-WtS" firstAttribute="leading" secondItem="vKm-lI-4gG" secondAttribute="trailing" constant="32" id="evg-Yy-ITm"/>
-                                    <constraint firstAttribute="bottom" secondItem="SKH-vx-cys" secondAttribute="bottom" constant="28" id="xP7-Fy-vdb"/>
-                                    <constraint firstItem="SKH-vx-cys" firstAttribute="leading" secondItem="kkN-zt-00f" secondAttribute="leading" constant="32" id="zPR-t6-wdG"/>
+                                    <constraint firstItem="Pg9-zx-1ih" firstAttribute="leading" secondItem="kkN-zt-00f" secondAttribute="leading" constant="32" id="Ihq-Ad-AiF"/>
+                                    <constraint firstItem="Pg9-zx-1ih" firstAttribute="top" secondItem="kkN-zt-00f" secondAttribute="top" constant="22" id="dOI-BT-Um7"/>
+                                    <constraint firstAttribute="bottom" secondItem="Pg9-zx-1ih" secondAttribute="bottom" constant="26" id="yfb-P5-vMz"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Geb-5c-YQk" userLabel="Botton View">
-                                <rect key="frame" x="0.0" y="630" width="375" height="148"/>
+                                <rect key="frame" x="0.0" y="519" width="375" height="148"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Xw-dn-TnZ">
-                                        <rect key="frame" x="153.66666666666666" y="40" width="68" height="68"/>
+                                        <rect key="frame" x="153.5" y="40" width="68" height="68"/>
                                         <state key="normal" image="btnCapture"/>
                                         <connections>
                                             <action selector="tapCapture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="afX-31-79h"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IPh-2d-z68">
-                                        <rect key="frame" x="131.66666666666666" y="40" width="22" height="68"/>
+                                        <rect key="frame" x="131.5" y="40" width="22" height="68"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f2w-TJ-sGQ">
-                                        <rect key="frame" x="221.66666666666666" y="40" width="21.666666666666657" height="68"/>
+                                        <rect key="frame" x="221.5" y="40" width="22" height="68"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="77A-D2-0M3">
-                                        <rect key="frame" x="287.33333333333331" y="40" width="22" height="68"/>
+                                        <rect key="frame" x="287.5" y="40" width="21.5" height="68"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="na2-wg-lBW">
-                                        <rect key="frame" x="353.33333333333331" y="40" width="21.666666666666686" height="68"/>
+                                        <rect key="frame" x="353" y="40" width="22" height="68"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N3q-Fl-zzm">
-                                        <rect key="frame" x="66" y="40" width="21.666666666666671" height="68"/>
+                                        <rect key="frame" x="66" y="40" width="21.5" height="68"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ga2-hT-1ra">
                                         <rect key="frame" x="0.0" y="40" width="22" height="68"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GY3-9f-YsE">
-                                        <rect key="frame" x="309.33333333333331" y="52" width="44" height="44"/>
+                                    <button opaque="NO" alpha="0.0" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GY3-9f-YsE">
+                                        <rect key="frame" x="309" y="52" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="2ZR-cH-mTg"/>
                                             <constraint firstAttribute="width" constant="44" id="aXP-8w-yUr"/>
@@ -159,7 +160,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XmE-Zi-okB">
-                                        <rect key="frame" x="243.33333333333337" y="52" width="44" height="44"/>
+                                        <rect key="frame" x="243.5" y="52" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="QDT-s4-Jue"/>
                                             <constraint firstAttribute="width" constant="44" id="zjq-S6-WOj"/>
@@ -170,7 +171,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" alpha="0.0" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOA-FU-veD">
-                                        <rect key="frame" x="87.666666666666671" y="52" width="44.000000000000014" height="44"/>
+                                        <rect key="frame" x="87.5" y="52" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="44" id="IT6-Al-Ec4"/>
                                             <constraint firstAttribute="height" constant="44" id="kVf-Iw-SdT"/>
@@ -180,7 +181,7 @@
                                             <action selector="tapConfiguration:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xBv-tC-DW0"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSP-ln-Ywj">
+                                    <button opaque="NO" alpha="0.0" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSP-ln-Ywj">
                                         <rect key="frame" x="22" y="52" width="44" height="44"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -233,7 +234,7 @@
                                 </constraints>
                             </view>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ybl-uy-MoZ">
-                                <rect key="frame" x="0.0" y="562" width="375" height="250"/>
+                                <rect key="frame" x="0.0" y="417" width="375" height="250"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="wMN-u1-mrX">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -248,28 +249,28 @@
                                                         <action selector="tapFilterClose:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v3c-RF-ci3"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rM5-zR-YJP">
+                                                <button opaque="NO" alpha="0.0" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rM5-zR-YJP">
                                                     <rect key="frame" x="70" y="0.0" width="45" height="45"/>
                                                     <state key="normal" image="iconBf"/>
                                                     <connections>
                                                         <action selector="tapFilterCategory:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W4A-ao-cDZ"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Syl-9D-QZd">
+                                                <button opaque="NO" alpha="0.0" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Syl-9D-QZd">
                                                     <rect key="frame" x="140" y="0.0" width="45" height="45"/>
                                                     <state key="normal" image="iconTxt"/>
                                                     <connections>
                                                         <action selector="tapFilterCategory:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a1r-5n-q9n"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhg-ZP-h8q">
+                                                <button opaque="NO" alpha="0.0" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhg-ZP-h8q">
                                                     <rect key="frame" x="210" y="0.0" width="45" height="45"/>
                                                     <state key="normal" image="iconFunny"/>
                                                     <connections>
                                                         <action selector="tapFilterCategory:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rQd-DN-6Ln"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zd4-JU-8k6">
+                                                <button opaque="NO" alpha="0.0" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zd4-JU-8k6">
                                                     <rect key="frame" x="280" y="0.0" width="47" height="45"/>
                                                     <state key="normal" image="iconLand"/>
                                                     <connections>
@@ -342,7 +343,7 @@
                             <constraint firstItem="kkN-zt-00f" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7cI-gn-Kdi"/>
                             <constraint firstItem="ybl-uy-MoZ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="9bX-fj-rVw"/>
                             <constraint firstItem="kkN-zt-00f" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="CSn-Wn-QRU"/>
-                            <constraint firstItem="ybl-uy-MoZ" firstAttribute="bottom" secondItem="25c-5W-jRd" secondAttribute="bottom" id="GIw-AY-bdo"/>
+                            <constraint firstItem="ybl-uy-MoZ" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="GIw-AY-bdo"/>
                             <constraint firstItem="W15-hw-ufc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="GwK-Zj-Stc"/>
                             <constraint firstItem="kkN-zt-00f" firstAttribute="bottom" secondItem="W15-hw-ufc" secondAttribute="bottom" constant="-62" id="Mym-Du-wet"/>
                             <constraint firstItem="ybl-uy-MoZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="R6t-hd-ila"/>
@@ -359,6 +360,7 @@
                     <connections>
                         <outlet property="bottomBlurView" destination="ybl-uy-MoZ" id="l5o-mx-205"/>
                         <outlet property="filterCollectionview" destination="PiD-JI-8di" id="Ieo-4B-Ll4"/>
+                        <outlet property="filterTypeStackView" destination="Uec-av-g7y" id="PYa-vC-osE"/>
                         <outlet property="flashButton" destination="SKH-vx-cys" id="ggp-Fy-XSL"/>
                         <outlet property="libraryButton" destination="PSP-ln-Ywj" id="L8s-3T-ht9"/>
                         <outlet property="previewView" destination="25c-5W-jRd" id="Rdx-g2-0R8"/>
@@ -380,17 +382,17 @@
             <objects>
                 <viewController storyboardIdentifier="CapturedImageViewController" id="AgZ-8j-h8b" customClass="CapturedImageViewController" customModule="empathy_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Opa-fs-IVF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f6A-1K-jWA">
-                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1qq-SA-rTU" userLabel="Botton View">
-                                <rect key="frame" x="0.0" y="644" width="375" height="134"/>
+                                <rect key="frame" x="0.0" y="533" width="375" height="134"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rbi-yg-s6N">
-                                        <rect key="frame" x="160.66666666666666" y="40" width="54" height="54"/>
+                                        <rect key="frame" x="160.5" y="40" width="54" height="54"/>
                                         <state key="normal" image="btnSave"/>
                                         <connections>
                                             <action selector="tapCapture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C7W-eQ-hTi"/>
@@ -398,15 +400,15 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ju2-0n-Brq">
-                                        <rect key="frame" x="136.33333333333334" y="40" width="24.333333333333343" height="54"/>
+                                        <rect key="frame" x="136.5" y="40" width="24" height="54"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dj2-0T-0AG">
-                                        <rect key="frame" x="214.66666666666666" y="40" width="24" height="54"/>
+                                        <rect key="frame" x="214.5" y="40" width="24" height="54"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WlY-fv-9ug">
-                                        <rect key="frame" x="282.66666666666669" y="40" width="24.333333333333314" height="54"/>
+                                        <rect key="frame" x="282.5" y="40" width="24.5" height="54"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wix-vS-75v">
@@ -414,11 +416,11 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lGI-2v-aQ4">
-                                        <rect key="frame" x="68.333333333333329" y="40" width="24" height="54"/>
+                                        <rect key="frame" x="68" y="40" width="24.5" height="54"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FtV-85-Myr">
-                                        <rect key="frame" x="0.0" y="40" width="24.333333333333332" height="54"/>
+                                        <rect key="frame" x="0.0" y="40" width="24" height="54"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYO-Ou-9Sw">
@@ -432,8 +434,8 @@
                                             <action selector="tapExport:" destination="AgZ-8j-h8b" eventType="touchUpInside" id="QUz-0f-a7c"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcC-sU-sJr">
-                                        <rect key="frame" x="238.66666666666663" y="45" width="44" height="44"/>
+                                    <button opaque="NO" alpha="0.0" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcC-sU-sJr">
+                                        <rect key="frame" x="238.5" y="45" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="44" id="7F6-kX-S1a"/>
                                             <constraint firstAttribute="height" constant="44" id="QOP-ak-2cp"/>
@@ -443,8 +445,8 @@
                                             <action selector="tapFlag:" destination="AgZ-8j-h8b" eventType="touchUpInside" id="J44-Ws-xig"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4NJ-Cd-ObQ">
-                                        <rect key="frame" x="92.333333333333329" y="45" width="43.999999999999986" height="44"/>
+                                    <button opaque="NO" alpha="0.0" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4NJ-Cd-ObQ">
+                                        <rect key="frame" x="92.5" y="45" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="9mS-dW-Wbb"/>
                                             <constraint firstAttribute="width" constant="44" id="hrA-rf-A3u"/>
@@ -455,7 +457,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QSv-Fx-WJ6">
-                                        <rect key="frame" x="24.333333333333329" y="45" width="44" height="44"/>
+                                        <rect key="frame" x="24" y="45" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="44" id="ILI-BJ-h0T"/>
                                             <constraint firstAttribute="height" constant="44" id="TUA-Xk-gdw"/>
@@ -507,7 +509,7 @@
                                 </constraints>
                             </view>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="JhX-4C-ubd">
-                                <rect key="frame" x="177.66666666666666" y="396" width="20" height="20"/>
+                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
