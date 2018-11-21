@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import WebKit
 import FacebookLogin
 
 class LoginViewController: UIViewController {
