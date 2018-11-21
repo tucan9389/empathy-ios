@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XoA-YD-6Gw">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="gEM-Cp-DGc">
+            <objects>
+                <viewController id="XoA-YD-6Gw" customClass="LoginViewController" customModule="empathy_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Che-kT-UKW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="N6g-fE-TQ2">
+                                <rect key="frame" x="42" y="147" width="180" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="N6g-fE-TQ2" secondAttribute="height" multiplier="1:1" id="m48-Xl-H8W"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ilz-Xv-DqQ" customClass="RoundedButton" customModule="empathy_ios" customModuleProvider="target">
+                                <rect key="frame" x="56" y="497" width="302" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="Ls1-IY-uA1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="16"/>
+                                <state key="normal" title="인스타그램으로 로그인">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="mRV-Y6-uoC" kind="show" id="A13-g8-qFq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BgL-vn-eyU" customClass="RoundedButton" customModule="empathy_ios" customModuleProvider="target">
+                                <rect key="frame" x="56" y="579" width="302" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="QrQ-ZB-rgQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="16"/>
+                                <state key="normal" title="페이스북으로 로그인">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.16435712575912476" green="0.17195159196853638" blue="0.20514744520187378" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jdb-5s-3ht" firstAttribute="trailing" secondItem="BgL-vn-eyU" secondAttribute="trailing" constant="56" id="EFI-cF-scn"/>
+                            <constraint firstItem="BgL-vn-eyU" firstAttribute="centerX" secondItem="Che-kT-UKW" secondAttribute="centerX" id="KGT-nO-Zbj"/>
+                            <constraint firstItem="BgL-vn-eyU" firstAttribute="top" secondItem="Ilz-Xv-DqQ" secondAttribute="bottom" constant="30" id="KXQ-jd-seg"/>
+                            <constraint firstItem="Ilz-Xv-DqQ" firstAttribute="centerX" secondItem="Che-kT-UKW" secondAttribute="centerX" id="Q8d-ZR-Us9"/>
+                            <constraint firstItem="N6g-fE-TQ2" firstAttribute="top" secondItem="jdb-5s-3ht" secondAttribute="top" constant="127" id="URw-70-FGC"/>
+                            <constraint firstItem="Ilz-Xv-DqQ" firstAttribute="leading" secondItem="jdb-5s-3ht" secondAttribute="leading" constant="56" id="VTk-vt-cdD"/>
+                            <constraint firstItem="Ilz-Xv-DqQ" firstAttribute="top" secondItem="N6g-fE-TQ2" secondAttribute="bottom" constant="170" id="Zao-9T-BDZ"/>
+                            <constraint firstItem="jdb-5s-3ht" firstAttribute="trailing" secondItem="N6g-fE-TQ2" secondAttribute="trailing" constant="192" id="ilQ-uI-jdA"/>
+                            <constraint firstItem="jdb-5s-3ht" firstAttribute="trailing" secondItem="Ilz-Xv-DqQ" secondAttribute="trailing" constant="56" id="l76-ch-0kd"/>
+                            <constraint firstItem="N6g-fE-TQ2" firstAttribute="leading" secondItem="jdb-5s-3ht" secondAttribute="leading" constant="42" id="pni-5N-2qZ"/>
+                            <constraint firstItem="BgL-vn-eyU" firstAttribute="leading" secondItem="jdb-5s-3ht" secondAttribute="leading" constant="56" id="xfA-Am-vqt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jdb-5s-3ht"/>
+                    </view>
+                    <connections>
+                        <outlet property="facebookLoginButton" destination="BgL-vn-eyU" id="EZh-1r-rHw"/>
+                        <outlet property="instagramLoginButton" destination="Ilz-Xv-DqQ" id="mzZ-jQ-9f9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7kX-Qg-VMm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-135" y="-302"/>
+        </scene>
+        <!--Instagram Login View Controller-->
+        <scene sceneID="gZC-A9-XzJ">
+            <objects>
+                <viewController id="mRV-Y6-uoC" customClass="InstagramLoginViewController" customModule="empathy_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c7q-Eo-Jyg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sXE-iJ-aId">
+                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="zgP-OK-crh">
+                                <rect key="frame" x="182" y="343" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="461-bK-d09"/>
+                                    <constraint firstAttribute="height" constant="50" id="eVe-Fi-lU4"/>
+                                </constraints>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="sXE-iJ-aId" firstAttribute="leading" secondItem="foj-ZI-Jey" secondAttribute="leading" id="6qn-tV-VE8"/>
+                            <constraint firstItem="zgP-OK-crh" firstAttribute="centerX" secondItem="c7q-Eo-Jyg" secondAttribute="centerX" id="B6N-w2-9Ac"/>
+                            <constraint firstItem="sXE-iJ-aId" firstAttribute="top" secondItem="foj-ZI-Jey" secondAttribute="top" id="Ipe-YW-cM3"/>
+                            <constraint firstItem="foj-ZI-Jey" firstAttribute="bottom" secondItem="sXE-iJ-aId" secondAttribute="bottom" id="Kkj-FI-BDD"/>
+                            <constraint firstItem="zgP-OK-crh" firstAttribute="centerY" secondItem="c7q-Eo-Jyg" secondAttribute="centerY" id="LXd-xI-P7R"/>
+                            <constraint firstItem="foj-ZI-Jey" firstAttribute="trailing" secondItem="sXE-iJ-aId" secondAttribute="trailing" id="liD-5e-snW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="foj-ZI-Jey"/>
+                    </view>
+                    <connections>
+                        <outlet property="loginIndicator" destination="zgP-OK-crh" id="Jiu-KX-lLw"/>
+                        <outlet property="loginWebView" destination="sXE-iJ-aId" id="5Yo-YJ-NhV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7kP-dw-xoY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="561" y="-302"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon" width="180" height="180"/>
+    </resources>
+</document>
