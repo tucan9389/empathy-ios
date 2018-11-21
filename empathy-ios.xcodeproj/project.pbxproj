@@ -11,6 +11,7 @@
 		03F2F10D219529EE00A98241 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F2F10C219529EE00A98241 /* LoginViewController.swift */; };
 		03F2F10F21952DEA00A98241 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F2F10E21952DEA00A98241 /* RoundedButton.swift */; };
 		03F88CF521A477FD00084E8E /* InstagramLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F88CF421A477FD00084E8E /* InstagramLoginViewController.swift */; };
+		03F88CF821A5129900084E8E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F88CF721A5129900084E8E /* Constants.swift */; };
 		33DA86A549580FBFD094A31A /* Pods_empathy_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08D4E3B912BC44511566E01C /* Pods_empathy_iosUITests.framework */; };
 		55A3317421900944005DFA01 /* CapturedImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A3317321900944005DFA01 /* CapturedImageViewController.swift */; };
 		55A331772191A84D005DFA01 /* FilterCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A331762191A84D005DFA01 /* FilterCollectionView.swift */; };
@@ -63,6 +64,7 @@
 		03F2F10C219529EE00A98241 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		03F2F10E21952DEA00A98241 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		03F88CF421A477FD00084E8E /* InstagramLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramLoginViewController.swift; sourceTree = "<group>"; };
+		03F88CF721A5129900084E8E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		08D4E3B912BC44511566E01C /* Pods_empathy_iosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_empathy_iosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D9DBF9EF2F98F5A9E4280D /* Pods-empathy-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-empathy-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-empathy-ios/Pods-empathy-ios.release.xcconfig"; sourceTree = "<group>"; };
 		1CE5B306E7759201DA997162 /* Pods_empathy_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_empathy_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +142,7 @@
 				03F2F10C219529EE00A98241 /* LoginViewController.swift */,
 				03F2F10E21952DEA00A98241 /* RoundedButton.swift */,
 				03F88CF421A477FD00084E8E /* InstagramLoginViewController.swift */,
+				03F88CF721A5129900084E8E /* Constants.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55DFA380219C4996001B23AC /* MLMultiArray+Image.swift in Sources */,
+				03F88CF821A5129900084E8E /* Constants.swift in Sources */,
 				55DFA37C219C4996001B23AC /* Predictions.swift in Sources */,
 				55DFA37B219C4996001B23AC /* BoundingBox.swift in Sources */,
 				55DFA37D219C4996001B23AC /* MultiArray.swift in Sources */,
