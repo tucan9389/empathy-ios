@@ -55,7 +55,12 @@ class CapturedImageViewController: UIViewController {
     }
     
     @IBAction func tapFlag(_ sender: Any) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "WriteFeed", bundle: nil)
         
+        if let writeFeedViewController = storyboard.instantiateViewController(withIdentifier: "WriteFeedViewController") as? WriteFeedViewController {
+            writeFeedViewController.image = capturedImage
+            present(writeFeedViewController, animated: true, completion: nil)
+        }
     }
     
     @IBAction func tapExport(_ sender: Any) {

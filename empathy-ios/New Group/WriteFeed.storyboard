@@ -12,7 +12,7 @@
         <!--Write Feed View Controller-->
         <scene sceneID="DBp-uT-lRk">
             <objects>
-                <viewController id="ZiH-F2-pbK" customClass="WriteFeedViewController" customModule="empathy_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WriteFeedViewController" id="ZiH-F2-pbK" customClass="WriteFeedViewController" customModule="empathy_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CNX-Wr-vT6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -265,14 +265,14 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="mQI-Ms-YIy" firstAttribute="leading" secondItem="D2i-YH-iLZ" secondAttribute="leading" id="D11-aT-7Ts"/>
                             <constraint firstItem="mQI-Ms-YIy" firstAttribute="top" secondItem="D2i-YH-iLZ" secondAttribute="top" constant="-20" id="DL5-yN-Rer"/>
                             <constraint firstItem="D2i-YH-iLZ" firstAttribute="bottom" secondItem="mQI-Ms-YIy" secondAttribute="bottom" id="DRi-wY-Nc8"/>
                             <constraint firstItem="D2i-YH-iLZ" firstAttribute="trailing" secondItem="mQI-Ms-YIy" secondAttribute="trailing" id="jAs-od-MBs"/>
                             <constraint firstItem="TP3-w9-59b" firstAttribute="trailing" secondItem="D2i-YH-iLZ" secondAttribute="trailing" id="l2E-4C-mIA"/>
-                            <constraint firstItem="TP3-w9-59b" firstAttribute="top" secondItem="D2i-YH-iLZ" secondAttribute="top" constant="-20" id="mmN-Jp-EIk"/>
+                            <constraint firstItem="TP3-w9-59b" firstAttribute="top" secondItem="CNX-Wr-vT6" secondAttribute="top" id="mmN-Jp-EIk"/>
                             <constraint firstItem="TP3-w9-59b" firstAttribute="leading" secondItem="D2i-YH-iLZ" secondAttribute="leading" id="nZh-8Y-8GE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="D2i-YH-iLZ"/>
