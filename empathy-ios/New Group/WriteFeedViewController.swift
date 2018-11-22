@@ -16,6 +16,9 @@ class WriteFeedViewController: UIViewController {
     @IBOutlet weak var detailWordCountLabel: UILabel!
     @IBOutlet weak var selectedPictureImageView: UIImageView!
     
+    
+    var image: UIImage?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
