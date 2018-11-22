@@ -210,7 +210,7 @@
 				55DF3E9721991DF60080252C /* temp-camera-filter.json */,
 				55BC061A21809A7300FE43CA /* AppDelegate.swift */,
 				55BC061C21809A7300FE43CA /* ViewController.swift */,
-				55DFA385219C5CD7001B23AC /* ResNet Related */,
+				55DFA385219C5CD7001B23AC /* SSD Related */,
 				55A331752191A7E1005DFA01 /* FilterView */,
 				55A3317321900944005DFA01 /* CapturedImageViewController.swift */,
 				55BC061E21809A7300FE43CA /* Main.storyboard */,
@@ -255,7 +255,7 @@
 			path = CoreMLHelpers;
 			sourceTree = "<group>";
 		};
-		55DFA385219C5CD7001B23AC /* ResNet Related */ = {
+		55DFA385219C5CD7001B23AC /* SSD Related */ = {
 			isa = PBXGroup;
 			children = (
 				55DFA364219C4675001B23AC /* ssd_mobilenet_feature_extractor.mlmodel */,
@@ -265,7 +265,7 @@
 				55DFA366219C47D2001B23AC /* SSDPostprocessor.swift */,
 				55DFA367219C47D3001B23AC /* Utility.swift */,
 			);
-			path = "ResNet Related";
+			path = "SSD Related";
 			sourceTree = "<group>";
 		};
 		588151332AA3D2928A1C5DB5 /* Pods */ = {
