@@ -68,30 +68,32 @@ class FilterController {
     
     func imageCompound(backgroundImage: UIImage, previewFrameSize: CGSize) -> UIImage? {
         let bottomImage: UIImage = backgroundImage
-        let topImage: UIImage = timeFilterView!.imageView!.image!
-        
-        // Change here the new image size if you want
-        let newSize = CGSize(width: bottomImage.size.width, height: bottomImage.size.height)
-        UIGraphicsBeginImageContextWithOptions(newSize, false, bottomImage.scale)
-        
-        let bottomRect: CGRect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
-        bottomImage.draw(in: bottomRect)
-        
-        let oldWidth: CGFloat = newSize.height * (previewFrameSize.width / previewFrameSize.height)
-        let verticalMargin: CGFloat = (newSize.width - oldWidth) * 0.75
-        let oldSize: CGSize = CGSize(width: oldWidth, height: newSize.height)
-        
-        let topRateRect: CGRect = timeFilterView?.imageViewRateRect ?? .zero
-        let topRect: CGRect = CGRect(x: topRateRect.origin.x * oldSize.width + verticalMargin,
-                                     y: topRateRect.origin.y * oldSize.height,
-                                     width: topRateRect.width * oldSize.width,
-                                     height: topRateRect.height * oldSize.height)
-        topImage.draw(in: topRect, blendMode: CGBlendMode.normal, alpha:1.0)
-        
-        let newImage: UIImage? = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        return newImage
+        if let topImage: UIImage = timeFilterView?.imageView?.image {
+            // Change here the new image size if you want
+            let newSize = CGSize(width: bottomImage.size.width, height: bottomImage.size.height)
+            UIGraphicsBeginImageContextWithOptions(newSize, false, bottomImage.scale)
+            
+            let bottomRect: CGRect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+            bottomImage.draw(in: bottomRect)
+            
+            let oldWidth: CGFloat = newSize.height * (previewFrameSize.width / previewFrameSize.height)
+            let verticalMargin: CGFloat = (newSize.width - oldWidth) * 0.75
+            let oldSize: CGSize = CGSize(width: oldWidth, height: newSize.height)
+            
+            let topRateRect: CGRect = timeFilterView?.imageViewRateRect ?? .zero
+            let topRect: CGRect = CGRect(x: topRateRect.origin.x * oldSize.width + verticalMargin,
+                                         y: topRateRect.origin.y * oldSize.height,
+                                         width: topRateRect.width * oldSize.width,
+                                         height: topRateRect.height * oldSize.height)
+            topImage.draw(in: topRect, blendMode: CGBlendMode.normal, alpha:1.0)
+            
+            let newImage: UIImage? = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            
+            return newImage
+        } else {
+            return bottomImage
+        }
     }
 }
 
