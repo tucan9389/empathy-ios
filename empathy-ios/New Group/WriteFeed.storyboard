@@ -61,20 +61,20 @@
                                                         </constraints>
                                                     </view>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconQuotation" translatesAutoresizingMaskIntoConstraints="NO" id="64I-MA-LZl">
-                                                        <rect key="frame" x="195" y="151" width="24" height="24"/>
+                                                        <rect key="frame" x="195" y="162.66666666666666" width="24" height="24"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="24" id="EZv-7W-LVI"/>
                                                             <constraint firstAttribute="width" constant="24" id="MaC-nF-nNe"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울특별시 성북구 석관동" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UWK-Ae-fln">
-                                                        <rect key="frame" x="126.66666666666667" y="189" width="160.66666666666663" height="20"/>
+                                                        <rect key="frame" x="126.66666666666667" y="198.66666666666666" width="160.66666666666663" height="20"/>
                                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="16"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018.11.20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CA4-37-gWV">
-                                                        <rect key="frame" x="171" y="219" width="72" height="20"/>
+                                                        <rect key="frame" x="171" y="230.66666666666666" width="72" height="20"/>
                                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="16"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -85,11 +85,11 @@
                                                     <constraint firstAttribute="trailing" secondItem="ZQf-jW-PTe" secondAttribute="trailing" constant="138" id="0Zp-UL-ZW0"/>
                                                     <constraint firstItem="e0V-af-C68" firstAttribute="leading" secondItem="AHj-fr-3dq" secondAttribute="leading" id="28U-Zp-sof"/>
                                                     <constraint firstItem="gAr-WJ-Ak9" firstAttribute="leading" secondItem="AHj-fr-3dq" secondAttribute="leading" id="4WD-en-zP6"/>
-                                                    <constraint firstItem="CA4-37-gWV" firstAttribute="top" secondItem="UWK-Ae-fln" secondAttribute="bottom" constant="10" id="5Cp-e2-i00"/>
+                                                    <constraint firstItem="CA4-37-gWV" firstAttribute="top" secondItem="UWK-Ae-fln" secondAttribute="bottom" constant="12" id="5Cp-e2-i00"/>
                                                     <constraint firstItem="64I-MA-LZl" firstAttribute="centerX" secondItem="AHj-fr-3dq" secondAttribute="centerX" id="5UU-DY-bNb"/>
-                                                    <constraint firstItem="UWK-Ae-fln" firstAttribute="top" secondItem="64I-MA-LZl" secondAttribute="bottom" constant="14" id="COt-OK-ePG"/>
+                                                    <constraint firstItem="UWK-Ae-fln" firstAttribute="top" secondItem="64I-MA-LZl" secondAttribute="bottom" constant="12" id="COt-OK-ePG"/>
                                                     <constraint firstAttribute="bottom" secondItem="ZQf-jW-PTe" secondAttribute="bottom" id="FU9-nF-M1C"/>
-                                                    <constraint firstItem="64I-MA-LZl" firstAttribute="top" secondItem="AHj-fr-3dq" secondAttribute="top" constant="151" id="KCL-90-geH"/>
+                                                    <constraint firstItem="UWK-Ae-fln" firstAttribute="centerY" secondItem="AHj-fr-3dq" secondAttribute="centerY" id="IEq-Hn-BrV"/>
                                                     <constraint firstItem="5tk-V9-FEi" firstAttribute="top" secondItem="AHj-fr-3dq" secondAttribute="top" id="Ngr-aG-jwy"/>
                                                     <constraint firstAttribute="trailing" secondItem="gAr-WJ-Ak9" secondAttribute="trailing" id="Ybt-XD-bpM"/>
                                                     <constraint firstItem="5tk-V9-FEi" firstAttribute="leading" secondItem="AHj-fr-3dq" secondAttribute="leading" constant="138" id="Z7D-vr-rFQ"/>
