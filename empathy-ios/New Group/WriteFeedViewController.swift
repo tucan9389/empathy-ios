@@ -29,6 +29,11 @@ class WriteFeedViewController: UIViewController {
         detailTextView.delegate = self
         detailTextView.isScrollEnabled = false
     }
+    @IBAction func tapCancel(_ sender: UIButton) {
+    }
+    
+    @IBAction func tapConfirm(_ sender: UIButton) {
+    }
     
     /*
     // MARK: - Navigation

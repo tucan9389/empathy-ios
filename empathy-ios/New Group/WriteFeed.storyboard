@@ -242,6 +242,9 @@
                                         <state key="normal" title="취소">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tapCancel:" destination="ZiH-F2-pbK" eventType="touchUpInside" id="SqF-NG-TN8"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RVN-sW-ZRX">
                                         <rect key="frame" x="364" y="52" width="30" height="19"/>
@@ -249,6 +252,9 @@
                                         <state key="normal" title="확인">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tapConfirm:" destination="ZiH-F2-pbK" eventType="touchUpInside" id="fEn-3Y-8gf"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.1647058824" green="0.17254901959999999" blue="0.20392156859999999" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
