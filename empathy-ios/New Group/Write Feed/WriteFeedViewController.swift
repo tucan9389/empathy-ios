@@ -10,12 +10,19 @@ import UIKit
 
 class WriteFeedViewController: UIViewController {
 
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var titleTextView: UITextView!
     @IBOutlet weak var detailTextView: UITextView!
     @IBOutlet weak var titleWordCountLabel: UILabel!
     @IBOutlet weak var detailWordCountLabel: UILabel!
     @IBOutlet weak var selectedPictureImageView: UIImageView!
+    @IBOutlet weak var privateSwitch: UISwitch!
     
+    @IBOutlet weak var topHorizontalLineConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bottomHorizontalLineConstraint: NSLayoutConstraint!
+    @IBOutlet weak var leadingVerticalLineConstraint: NSLayoutConstraint!
+    @IBOutlet weak var trailingVerticalLineConstraint: NSLayoutConstraint!
     
     var image: UIImage?
     
@@ -28,11 +35,33 @@ class WriteFeedViewController: UIViewController {
         titleTextView.isScrollEnabled = false
         detailTextView.delegate = self
         detailTextView.isScrollEnabled = false
+        
+        privateSwitch.onTintColor = #colorLiteral(red: 1, green: 0.3450980392, blue: 0.3450980392, alpha: 1)
+        dateLabel.text = getCurrentDate()
+        
+        topHorizontalLineConstraint.constant = view.frame.width/3
+        bottomHorizontalLineConstraint.constant = view.frame.width/3
+        leadingVerticalLineConstraint.constant = view.frame.width/3
+        trailingVerticalLineConstraint.constant = view.frame.width/3
+        
+        
+        selectedPictureImageView.image = image
+        hideKeyboardByTap()
     }
+    
     @IBAction func tapCancel(_ sender: UIButton) {
     }
     
     @IBAction func tapConfirm(_ sender: UIButton) {
+    }
+    
+    func getCurrentDate() -> String {
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "kr_KR")
+        dateFormatter.dateFormat = "yyyy.MM.dd"
+        
+        return dateFormatter.string(from: date)
     }
     
     /*
@@ -76,15 +105,17 @@ extension WriteFeedViewController : UITextViewDelegate {
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
-        if textView.text == "" {
-            switch textView {
-            case titleTextView :
+        switch textView {
+        case titleTextView :
+            titleWordCountLabel.text = "\(textView.text.count)/20"
+            if textView.text.count == 0 {
                 textView.text = "제목을 입력해주세요."
-                titleWordCountLabel.text = "0/20"
                 textView.textColor = UIColor.lightGray
-            default:
+            }
+        default:
+            detailWordCountLabel.text = "\(textView.text.count)/40"
+            if textView.text.count == 0 {
                 textView.text = "설명을 입력해주세요."
-                detailWordCountLabel.text = "0/40"
                 textView.textColor = UIColor.lightGray
             }
         }
@@ -100,7 +131,16 @@ extension WriteFeedViewController : UITextViewDelegate {
             length = 40
             detailWordCountLabel.text = "\(textView.text.count)/40"
         }
-
+        
         return textView.text.count + (text.count - range.length) <= length
+    }
+    
+    func hideKeyboardByTap() {
+        let tapGestureRecognizer = UITapGestureRecognizer(target:self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }

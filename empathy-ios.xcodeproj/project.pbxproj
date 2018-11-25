@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		036BC0A721A5D58100400924 /* WriteFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036BC0A621A5D58100400924 /* WriteFeedViewController.swift */; };
+		03A9EF4921AA970400FD7F2D /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03A9EF4821AA970400FD7F2D /* Color.xcassets */; };
 		03F2F10B2194AEE200A98241 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03F2F10A2194AEE200A98241 /* Login.storyboard */; };
 		03F2F10D219529EE00A98241 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F2F10C219529EE00A98241 /* LoginViewController.swift */; };
 		03F2F10F21952DEA00A98241 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F2F10E21952DEA00A98241 /* RoundedButton.swift */; };
@@ -63,6 +64,7 @@
 
 /* Begin PBXFileReference section */
 		036BC0A621A5D58100400924 /* WriteFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteFeedViewController.swift; sourceTree = "<group>"; };
+		03A9EF4821AA970400FD7F2D /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		03F2F10A2194AEE200A98241 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		03F2F10C219529EE00A98241 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		03F2F10E21952DEA00A98241 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
@@ -139,6 +141,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03A9EF4A21AA981200FD7F2D /* Write Feed */ = {
+			isa = PBXGroup;
+			children = (
+				03F88CFA21A5215C00084E8E /* WriteFeed.storyboard */,
+				036BC0A621A5D58100400924 /* WriteFeedViewController.swift */,
+			);
+			path = "Write Feed";
+			sourceTree = "<group>";
+		};
 		03F2F1092194AECE00A98241 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,8 +165,7 @@
 		03F88CF921A520C900084E8E /* Feed */ = {
 			isa = PBXGroup;
 			children = (
-				03F88CFA21A5215C00084E8E /* WriteFeed.storyboard */,
-				036BC0A621A5D58100400924 /* WriteFeedViewController.swift */,
+				03A9EF4A21AA981200FD7F2D /* Write Feed */,
 			);
 			name = Feed;
 			path = "New Group";
@@ -217,6 +227,7 @@
 				55BC062121809A7400FE43CA /* Assets.xcassets */,
 				55BC062321809A7400FE43CA /* LaunchScreen.storyboard */,
 				55BC062621809A7400FE43CA /* Info.plist */,
+				03A9EF4821AA970400FD7F2D /* Color.xcassets */,
 			);
 			path = "empathy-ios";
 			sourceTree = "<group>";
@@ -390,6 +401,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03F2F10B2194AEE200A98241 /* Login.storyboard in Resources */,
+				03A9EF4921AA970400FD7F2D /* Color.xcassets in Resources */,
 				55DFA382219C4D8E001B23AC /* coco_labels_list.txt in Resources */,
 				55BC062521809A7400FE43CA /* LaunchScreen.storyboard in Resources */,
 				55BC062221809A7400FE43CA /* Assets.xcassets in Resources */,
