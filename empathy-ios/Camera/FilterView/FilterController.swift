@@ -49,7 +49,6 @@ class FilterController {
     }
     
     @objc func tapPoseFilterClose(_ sender: Any) {
-        //print("tapPoseFilterClose!!")
         poseFilterView?.alpha = 0
     }
     
@@ -66,49 +65,89 @@ class FilterController {
         timeFilterView.detectdHuman(rect: rect, confidence: confidence)
     }
     
-    func imageCompound(backgroundImage: UIImage, previewFrameSize: CGSize) -> UIImage? {
+    func imageCompound(backgroundImage: UIImage, previewFrameSize: CGSize, cameraViewRect: CGRect) -> UIImage? {
         let bottomImage: UIImage = backgroundImage
+        let newWidth: CGFloat = bottomImage.size.height * previewFrameSize.width / previewFrameSize.height
+        let cameraViewRatio: CGFloat = cameraViewRect.size.width / cameraViewRect.size.height
+        var croppingImageRect: CGRect = CGRect(x: (backgroundImage.size.width - newWidth)/2,
+                                               y: 0, width: newWidth, height: backgroundImage.size.height)
+        
+        //print("croppingImageRect:", croppingImageRect)
+        //print("bottomImage.size:", bottomImage.size)
+        let newHeight: CGFloat = croppingImageRect.width / cameraViewRatio
+        croppingImageRect.origin.y = (croppingImageRect.height - newHeight) / 2
+        croppingImageRect.size.height = newHeight
+        
+        let croppedBottomImage: UIImage = bottomImage.croppedImage(inRect: croppingImageRect)
+        //print("croppedBottomImage.size:", croppedBottomImage.size)
         if let topImage: UIImage = timeFilterView?.imageView?.image {
+            let targetViewRect = cameraViewRect
+            let (topImageCenterRate, topImageSizeRate) = timeFilterView?.rateCenterAndSize(targetViewRect: targetViewRect) ?? (.zero, .zero)
             
-            let backgroundFrameRate: CGFloat = previewFrameSize.width / previewFrameSize.height
-            let topImageRateRect: CGRect = timeFilterView?.imageViewRateRect ?? .zero
-            
-            return bottomImage.compound(backgroundFrameRate: backgroundFrameRate,
-                                        topImage: topImage,
-                                        topImageRateRect: topImageRateRect)
+            return croppedBottomImage.compound(topImage: topImage,
+                                               topImageCenter: topImageCenterRate,
+                                               topImageSize: topImageSizeRate)
         } else {
-            return bottomImage
+            return croppedBottomImage
         }
+        
     }
 }
 
 extension UIImage {
-    // - backgroundFrameRate: width / height
-    func compound(backgroundFrameRate: CGFloat, topImage: UIImage, topImageRateRect: CGRect) -> UIImage? {
+    // self와 topImage를 합쳐서 새로운 이미지 반환
+    func compound(topImage: UIImage, topImageCenter: CGPoint, topImageSize: CGSize) -> UIImage? {
         let bottomImage: UIImage = self
         
         // Change here the new image size if you want
-        let newSize = CGSize(width: bottomImage.size.width, height: bottomImage.size.height)
-        UIGraphicsBeginImageContextWithOptions(newSize, false, bottomImage.scale)
+        UIGraphicsBeginImageContextWithOptions(bottomImage.size, false, bottomImage.scale)
         
-        let bottomRect: CGRect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+        let bottomRect: CGRect = CGRect(x: 0, y: 0,
+                                        width: bottomImage.size.width,
+                                        height: bottomImage.size.height)
+        // background image rect
         bottomImage.draw(in: bottomRect)
         
-        let oldWidth: CGFloat = newSize.height * backgroundFrameRate
-        let verticalMargin: CGFloat = (newSize.width - oldWidth) * 0.75
-        let oldSize: CGSize = CGSize(width: oldWidth, height: newSize.height)
+        let oldSize: CGSize = bottomImage.size//CGSize(width: oldWidth, height: newSize.height)
         
-        let topImageRect: CGRect = CGRect(x: topImageRateRect.origin.x * oldSize.width + verticalMargin,
-                                     y: topImageRateRect.origin.y * oldSize.height,
-                                     width: topImageRateRect.width * oldSize.width,
-                                     height: topImageRateRect.height * oldSize.height)
+        //let topImageY: CGFloat = topImageRateRect.origin.x
+        let topImageRect: CGRect = CGRect(x: (topImageCenter.x - topImageSize.width/2) * oldSize.width,
+                                          y: (topImageCenter.y - topImageSize.height/2) * oldSize.height,
+                                          width: topImageSize.width * oldSize.width,
+                                          height: topImageSize.height * oldSize.height)
+        // foreground image rect
         topImage.draw(in: topImageRect, blendMode: CGBlendMode.normal, alpha:1.0)
         
         let newImage: UIImage? = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
         return newImage
-        
+    }
+    
+    // 어디선가 가져온 cropping 코드
+    func croppedImage(inRect rect: CGRect) -> UIImage {
+        let rad: (Double) -> CGFloat = { deg in
+            return CGFloat(deg / 180.0 * .pi)
+        }
+        var rectTransform: CGAffineTransform
+        switch imageOrientation {
+        case .left:
+            let rotation = CGAffineTransform(rotationAngle: rad(90))
+            rectTransform = rotation.translatedBy(x: 0, y: -size.height)
+        case .right:
+            let rotation = CGAffineTransform(rotationAngle: rad(-90))
+            rectTransform = rotation.translatedBy(x: -size.width, y: 0)
+        case .down:
+            let rotation = CGAffineTransform(rotationAngle: rad(-180))
+            rectTransform = rotation.translatedBy(x: -size.width, y: -size.height)
+        default:
+            rectTransform = .identity
+        }
+        rectTransform = rectTransform.scaledBy(x: scale, y: scale)
+        let transformedRect = rect.applying(rectTransform)
+        let imageRef = cgImage!.cropping(to: transformedRect)!
+        let result = UIImage(cgImage: imageRef, scale: scale, orientation: imageOrientation)
+        return result
     }
 }
 
@@ -129,13 +168,37 @@ class FilterImageView: UIView {
         var x: CGFloat = (self.center.x)
         x -= (imageView?.frame.width ?? 0)/2
         x /= (self.superview?.frame.width ?? 1)
+        
         var y: CGFloat = (self.center.y)
         y -= (imageView?.frame.height ?? 0)/2
         y -= (closeButton?.frame.height ?? 0) / 2
         y /= (self.superview?.frame.height ?? 1)
+        
         let w: CGFloat = (imageView?.frame.width ?? 0) / (self.superview?.frame.width ?? 1)
         let h: CGFloat = (imageView?.frame.height ?? 0) / (self.superview?.frame.height ?? 1)
+        
         return CGRect(x: x, y: y, width: w, height: h)
+    }
+    
+    func rateCenterAndSize(targetViewRect: CGRect) -> (CGPoint, CGSize) {
+        // targetViewRect: 20, 80, 516, 744
+        let superViewRect: CGRect = superview?.frame ?? .zero
+        
+        var x: CGFloat = (self.center.x) + (imageView?.center.x ?? 0) - self.frame.size.width/2
+        var y: CGFloat = (self.center.y) + (imageView?.center.y ?? 0) - self.frame.size.height/2
+        
+        x -= (targetViewRect.origin.x - superViewRect.origin.x)
+        y -= (targetViewRect.origin.y - superViewRect.origin.y)
+        
+        var w: CGFloat = (imageView?.frame.width ?? 0)
+        var h: CGFloat = (imageView?.frame.height ?? 0)
+        
+        x /= (targetViewRect.width)
+        y /= (targetViewRect.height)
+        w /= (targetViewRect.width)
+        h /= (targetViewRect.height)
+        
+        return (CGPoint(x: x, y: y), CGSize(width: w, height: h))
     }
     
     init() {

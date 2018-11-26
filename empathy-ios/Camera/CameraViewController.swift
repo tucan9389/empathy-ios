@@ -96,28 +96,11 @@ class CameraViewController: UIViewController {
         bottomBlurView.alpha = 0;
         filterController.superView = previewView
         
-//        // 카메라 세팅
-//        setUpCamera()
-//
-//        // ResNet 세팅
-//        setupVision()
-//
-//        //
-//        setupBoxes()
-//
-//        screenWidth = Double(view.frame.width)
-//        screenHeight = Double(view.frame.height)
+        // 카메라 세팅
+        setUpCamera()
         
-        self.previewView?.layer.addSublayer(self.cameraLayer)
-        cameraLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
-        cameraLayer.connection?.videoOrientation = .portrait
-        //self.previewView?.bringSubview(toFront: self.frameLabel)
-        //self.frameLabel.textAlignment = .left
-        let videoOutput = AVCaptureVideoDataOutput()
-        videoOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "MyQueue"))
-        videoOutput.connection(with: AVMediaType.video)?.videoOrientation = .portrait
-        self.captureSession.addOutput(videoOutput)
-        self.captureSession.startRunning()
+        
+        // SSD 세팅
         setupVision()
         
         setupBoxes()
@@ -219,6 +202,18 @@ class CameraViewController: UIViewController {
         resizePreviewLayer()
     }
     
+    func setUpCamera() {
+        self.previewView?.layer.addSublayer(self.cameraLayer)
+        cameraLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        cameraLayer.connection?.videoOrientation = .portrait
+        
+        let videoOutput = AVCaptureVideoDataOutput()
+        videoOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "MyQueue"))
+        videoOutput.connection(with: AVMediaType.video)?.videoOrientation = .portrait
+        self.captureSession.addOutput(videoOutput)
+        self.captureSession.startRunning()
+    }
+    
     func resizePreviewLayer() {
         //videoCapture.previewLayer?.frame = previewView.bounds
         // cameraLayer.frame = previewView.layer.bounds
@@ -272,7 +267,6 @@ class CameraViewController: UIViewController {
     }
     
     @IBAction func tapTimeFilter(_ sender: Any) {
-        
         prepareTimeFilterView()
         appearTimeFilterView()
         
@@ -295,7 +289,8 @@ class CameraViewController: UIViewController {
         self.present(capturedImageViewController, animated: false, completion: nil)
         if let capturedImage = self.capturedImage {
             // 이미지 합치기
-            let filteredImage = filterController.imageCompound(backgroundImage: capturedImage, previewFrameSize: previewView.frame.size)
+            //let cameraViewRatio: CGFloat = cameraRatioView.frame.width / cameraRatioView.frame.height
+            let filteredImage = filterController.imageCompound(backgroundImage: capturedImage, previewFrameSize: previewView.frame.size, cameraViewRect: cameraRatioView.frame)
             capturedImageViewController.capturedImage = filteredImage
         }
     }
