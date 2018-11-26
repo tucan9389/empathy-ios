@@ -22,8 +22,8 @@
 		55A331772191A84D005DFA01 /* FilterCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A331762191A84D005DFA01 /* FilterCollectionView.swift */; };
 		55A331792192A0A0005DFA01 /* FilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A331782192A0A0005DFA01 /* FilterController.swift */; };
 		55BC061B21809A7300FE43CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BC061A21809A7300FE43CA /* AppDelegate.swift */; };
-		55BC061D21809A7300FE43CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BC061C21809A7300FE43CA /* ViewController.swift */; };
-		55BC062021809A7300FE43CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55BC061E21809A7300FE43CA /* Main.storyboard */; };
+		55BC061D21809A7300FE43CA /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BC061C21809A7300FE43CA /* CameraViewController.swift */; };
+		55BC062021809A7300FE43CA /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55BC061E21809A7300FE43CA /* Camera.storyboard */; };
 		55BC062221809A7400FE43CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55BC062121809A7400FE43CA /* Assets.xcassets */; };
 		55BC062521809A7400FE43CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55BC062321809A7400FE43CA /* LaunchScreen.storyboard */; };
 		55BC063021809A7400FE43CA /* empathy_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BC062F21809A7400FE43CA /* empathy_iosTests.swift */; };
@@ -85,8 +85,8 @@
 		55A331782192A0A0005DFA01 /* FilterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterController.swift; sourceTree = "<group>"; };
 		55BC061721809A7300FE43CA /* empathy-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "empathy-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55BC061A21809A7300FE43CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		55BC061C21809A7300FE43CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		55BC061F21809A7300FE43CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		55BC061C21809A7300FE43CA /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		55BC061F21809A7300FE43CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Camera.storyboard; sourceTree = "<group>"; };
 		55BC062121809A7400FE43CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55BC062421809A7400FE43CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55BC062621809A7400FE43CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -196,6 +196,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5577097E21AA144800363CE3 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				55DF3E9721991DF60080252C /* temp-camera-filter.json */,
+				55BC061C21809A7300FE43CA /* CameraViewController.swift */,
+				55DFA385219C5CD7001B23AC /* SSD Related */,
+				55A331752191A7E1005DFA01 /* FilterView */,
+				55A3317321900944005DFA01 /* CapturedImageViewController.swift */,
+				55BC061E21809A7300FE43CA /* Camera.storyboard */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
 		55A331752191A7E1005DFA01 /* FilterView */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,15 +243,10 @@
 		55BC061921809A7300FE43CA /* empathy-ios */ = {
 			isa = PBXGroup;
 			children = (
+				55BC061A21809A7300FE43CA /* AppDelegate.swift */,
+				5577097E21AA144800363CE3 /* Camera */,
 				03F88CF921A520C900084E8E /* Feed */,
 				03F2F1092194AECE00A98241 /* Login */,
-				55DF3E9721991DF60080252C /* temp-camera-filter.json */,
-				55BC061A21809A7300FE43CA /* AppDelegate.swift */,
-				55BC061C21809A7300FE43CA /* ViewController.swift */,
-				55DFA385219C5CD7001B23AC /* SSD Related */,
-				55A331752191A7E1005DFA01 /* FilterView */,
-				55A3317321900944005DFA01 /* CapturedImageViewController.swift */,
-				55BC061E21809A7300FE43CA /* Main.storyboard */,
 				55BC062121809A7400FE43CA /* Assets.xcassets */,
 				55BC062321809A7400FE43CA /* LaunchScreen.storyboard */,
 				55BC062621809A7400FE43CA /* Info.plist */,
@@ -423,7 +431,7 @@
 				55BC062221809A7400FE43CA /* Assets.xcassets in Resources */,
 				55DF3E9821991DF60080252C /* temp-camera-filter.json in Resources */,
 				03F88CFB21A5215C00084E8E /* WriteFeed.storyboard in Resources */,
-				55BC062021809A7300FE43CA /* Main.storyboard in Resources */,
+				55BC062021809A7300FE43CA /* Camera.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,7 +553,7 @@
 				036BC0A721A5D58100400924 /* WriteFeedViewController.swift in Sources */,
 				55DFA37F219C4996001B23AC /* NonMaxSuppression.swift in Sources */,
 				55DFA369219C47D3001B23AC /* SSDPostprocessor.swift in Sources */,
-				55BC061D21809A7300FE43CA /* ViewController.swift in Sources */,
+				55BC061D21809A7300FE43CA /* CameraViewController.swift in Sources */,
 				03F2F10F21952DEA00A98241 /* RoundedButton.swift in Sources */,
 				55BC061B21809A7300FE43CA /* AppDelegate.swift in Sources */,
 				55DFA365219C4675001B23AC /* ssd_mobilenet_feature_extractor.mlmodel in Sources */,
@@ -592,12 +600,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		55BC061E21809A7300FE43CA /* Main.storyboard */ = {
+		55BC061E21809A7300FE43CA /* Camera.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				55BC061F21809A7300FE43CA /* Base */,
 			);
-			name = Main.storyboard;
+			name = Camera.storyboard;
 			sourceTree = "<group>";
 		};
 		55BC062321809A7400FE43CA /* LaunchScreen.storyboard */ = {
@@ -733,7 +741,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WG2S2TXYL2;
+				DEVELOPMENT_TEAM = 5WXJ4Z4H69;
 				INFOPLIST_FILE = "empathy-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -752,7 +760,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WG2S2TXYL2;
+				DEVELOPMENT_TEAM = 5WXJ4Z4H69;
 				INFOPLIST_FILE = "empathy-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
