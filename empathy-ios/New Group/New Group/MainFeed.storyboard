@@ -19,25 +19,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I4T-ol-UuX">
-                                <rect key="frame" x="17" y="37" width="26" height="26"/>
+                                <rect key="frame" x="17" y="37" width="26" height="28.666666666666671"/>
                                 <state key="normal" image="iconEditArea"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울특별시 왕십로 222 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fM9-5j-eqh">
-                                <rect key="frame" x="137" y="41" width="140" height="18"/>
+                                <rect key="frame" x="137" y="42.333333333333336" width="140" height="18"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="다른 사람의 여정들" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1S-ee-zkV">
-                                <rect key="frame" x="18" y="98" width="135" height="22"/>
+                                <rect key="frame" x="18" y="100.66666666666667" width="135" height="22"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oQv-js-YXK">
-                                <rect key="frame" x="0.0" y="133" width="414" height="217.66666666666663"/>
+                                <rect key="frame" x="0.0" y="135.66666666666669" width="414" height="216.66666666666669"/>
                                 <color key="backgroundColor" name="charcoalgrey"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dmo-Ax-SUf">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dmo-Ax-SUf">
                                     <size key="itemSize" width="158" height="213"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -45,7 +45,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="peopleJourney" id="v7u-2l-YIR">
-                                        <rect key="frame" x="0.0" y="0.0" width="158" height="213"/>
+                                        <rect key="frame" x="0.0" y="2" width="158" height="213"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="158" height="213"/>
@@ -91,46 +91,39 @@
                                     <outlet property="delegate" destination="Mno-GZ-aOy" id="En3-Y4-jb9"/>
                                 </connections>
                             </collectionView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bhQ-eW-qwP">
-                                <rect key="frame" x="0.0" y="350.66666666666669" width="414" height="250.00000000000006"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="bhQ-eW-qwP">
+                                <rect key="frame" x="0.0" y="352.33333333333331" width="414" height="248.99999999999994"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Os-zs-t7b">
-                                <rect key="frame" x="34" y="389.33333333333331" width="14" height="27"/>
+                                <rect key="frame" x="34" y="400.66666666666669" width="14" height="27"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="하루하루가 모여 여정이 될" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UY1-jf-7Xu">
-                                <rect key="frame" x="34" y="423.33333333333331" width="103" height="43.333333333333314"/>
+                                <rect key="frame" x="34" y="434.66666666666669" width="103" height="43.333333333333314"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나의 오늘을 기록해보세요" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFJ-pL-nCW">
-                                <rect key="frame" x="34.000000000000007" y="475.66666666666669" width="93.666666666666686" height="43.333333333333314"/>
+                                <rect key="frame" x="34.000000000000007" y="487" width="93.666666666666686" height="43.333333333333371"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hzJ-fn-EPu">
-                                <rect key="frame" x="269" y="546.66666666666663" width="125" height="30"/>
+                                <rect key="frame" x="269" y="547.33333333333337" width="125" height="30"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
                                 <state key="normal" title="나의 여정 기록하기 &gt;">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="br4-13-x3g">
-                                <rect key="frame" x="0.0" y="600.66666666666663" width="414" height="135.33333333333337"/>
+                                <rect key="frame" x="0.0" y="601.33333333333337" width="414" height="134.66666666666663"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="i" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDI-tK-WJ7">
-                                        <rect key="frame" x="390" y="8" width="5" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhf-We-Oin">
-                                        <rect key="frame" x="161" y="31.666666666666742" width="92" height="72"/>
+                                        <rect key="frame" x="161" y="31.333333333333258" width="92" height="72"/>
                                         <attributedString key="attributedText">
                                             <fragment content="왕십리">
                                                 <attributes>
@@ -158,19 +151,23 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G5O-pV-LuO">
-                                        <rect key="frame" x="39.333333333333336" y="31.666666666666742" width="111.66666666666666" height="2"/>
+                                        <rect key="frame" x="39.333333333333336" y="31.333333333333258" width="111.66666666666666" height="2"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="2" id="qXm-st-N84"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Dc-9k-9td">
-                                        <rect key="frame" x="0.0" y="96.666666666666742" width="132.33333333333334" height="2"/>
+                                        <rect key="frame" x="0.0" y="96.333333333333258" width="132.33333333333334" height="2"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="2" id="KxZ-aL-LR4"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xvg-JQ-o2O">
+                                        <rect key="frame" x="373" y="17" width="24" height="24"/>
+                                        <state key="normal" image="info"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" name="grapefruit"/>
                                 <constraints>
@@ -181,7 +178,9 @@
                                     <constraint firstItem="rhf-We-Oin" firstAttribute="centerX" secondItem="br4-13-x3g" secondAttribute="centerX" id="Ldu-as-dRp"/>
                                     <constraint firstItem="rhf-We-Oin" firstAttribute="centerY" secondItem="br4-13-x3g" secondAttribute="centerY" id="PuR-nl-1nU"/>
                                     <constraint firstItem="9Dc-9k-9td" firstAttribute="bottom" secondItem="rhf-We-Oin" secondAttribute="bottom" constant="-5" id="ZEJ-ga-QDR"/>
+                                    <constraint firstItem="Xvg-JQ-o2O" firstAttribute="top" secondItem="br4-13-x3g" secondAttribute="top" constant="17" id="fFt-ZY-EEk"/>
                                     <constraint firstItem="rhf-We-Oin" firstAttribute="left" secondItem="G5O-pV-LuO" secondAttribute="right" constant="10" id="sZk-iU-0zm"/>
+                                    <constraint firstAttribute="trailing" secondItem="Xvg-JQ-o2O" secondAttribute="trailing" constant="17" id="v9D-6i-rhC"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -198,7 +197,7 @@
                             <constraint firstItem="yFJ-pL-nCW" firstAttribute="leading" secondItem="UY1-jf-7Xu" secondAttribute="leading" id="Oks-wN-aY5"/>
                             <constraint firstItem="bhQ-eW-qwP" firstAttribute="height" secondItem="br4-13-x3g" secondAttribute="height" multiplier="1.85" id="P6f-iK-Fjt"/>
                             <constraint firstItem="I4T-ol-UuX" firstAttribute="top" secondItem="ad2-Cf-3tD" secondAttribute="top" constant="17" id="RQy-OM-oHe"/>
-                            <constraint firstItem="yFJ-pL-nCW" firstAttribute="top" secondItem="bhQ-eW-qwP" secondAttribute="centerY" id="SJA-uT-cog"/>
+                            <constraint firstItem="yFJ-pL-nCW" firstAttribute="top" secondItem="bhQ-eW-qwP" secondAttribute="centerY" constant="10" id="SJA-uT-cog"/>
                             <constraint firstItem="I4T-ol-UuX" firstAttribute="leading" secondItem="ad2-Cf-3tD" secondAttribute="leading" constant="17" id="UAv-XE-zSl"/>
                             <constraint firstItem="ad2-Cf-3tD" firstAttribute="trailing" secondItem="bhQ-eW-qwP" secondAttribute="trailing" id="Y9y-j6-UCl"/>
                             <constraint firstItem="yFJ-pL-nCW" firstAttribute="leading" secondItem="ad2-Cf-3tD" secondAttribute="leading" constant="34" id="YLv-IJ-cDb"/>
@@ -208,7 +207,7 @@
                             <constraint firstItem="UY1-jf-7Xu" firstAttribute="leading" secondItem="ad2-Cf-3tD" secondAttribute="leading" constant="34" id="b3V-B5-8ID"/>
                             <constraint firstItem="br4-13-x3g" firstAttribute="top" secondItem="hzJ-fn-EPu" secondAttribute="bottom" constant="24" id="ezj-qb-E81"/>
                             <constraint firstItem="br4-13-x3g" firstAttribute="leading" secondItem="XYr-qd-NYW" secondAttribute="leading" id="kb1-mh-APU"/>
-                            <constraint firstItem="oQv-js-YXK" firstAttribute="height" secondItem="bhQ-eW-qwP" secondAttribute="height" multiplier="0.87" priority="750" id="lpO-nu-kOU"/>
+                            <constraint firstItem="oQv-js-YXK" firstAttribute="height" secondItem="bhQ-eW-qwP" secondAttribute="height" multiplier="0.87" id="lpO-nu-kOU"/>
                             <constraint firstItem="yFJ-pL-nCW" firstAttribute="top" secondItem="UY1-jf-7Xu" secondAttribute="bottom" constant="9" id="pCA-cC-XAe"/>
                             <constraint firstItem="ad2-Cf-3tD" firstAttribute="trailing" secondItem="hzJ-fn-EPu" secondAttribute="trailing" constant="20" id="pQ9-FG-B3N"/>
                             <constraint firstItem="bhQ-eW-qwP" firstAttribute="leading" secondItem="ad2-Cf-3tD" secondAttribute="leading" id="pkP-XU-IV7"/>
@@ -229,6 +228,8 @@
     </scenes>
     <resources>
         <image name="iconEditArea" width="26" height="26"/>
+        <image name="imgPlaceholder" width="414" height="249"/>
+        <image name="info" width="24" height="24"/>
         <namedColor name="charcoalgrey">
             <color red="0.16470588235294117" green="0.17254901960784313" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
