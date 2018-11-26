@@ -42,18 +42,9 @@ class CameraViewController: UIViewController {
     let multiClass = true
     
     // MARK: - AV Property
-    private lazy var cameraLayer: AVCaptureVideoPreviewLayer = AVCaptureVideoPreviewLayer(session: self.captureSession)
-    private lazy var captureSession: AVCaptureSession = {
-        let session = AVCaptureSession()
-        session.sessionPreset = AVCaptureSession.Preset.hd1280x720
-        
-        guard
-            let backCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back),
-            let input = try? AVCaptureDeviceInput(device: backCamera)
-            else { return session }
-        session.addInput(input)
-        return session
-    }()
+    private var cameraLayer: AVCaptureVideoPreviewLayer?
+    private var captureSession: AVCaptureSession?
+    private var cameraPosition: AVCaptureDevice.Position?
 
     var capturedImage: UIImage?
     var capturedRect: CGRect?
@@ -96,11 +87,14 @@ class CameraViewController: UIViewController {
         bottomBlurView.alpha = 0;
         filterController.superView = previewView
         
-        // 카메라 세팅
+        // ===========================
+        // ========= 카메라 세팅 ========
+        // ===========================
         setUpCamera()
         
-        
-        // SSD 세팅
+        // ===========================
+        // ========= SSD 세팅 =========
+        // ===========================
         setupVision()
         
         setupBoxes()
@@ -203,21 +197,50 @@ class CameraViewController: UIViewController {
     }
     
     func setUpCamera() {
-        self.previewView?.layer.addSublayer(self.cameraLayer)
+        if let captureSession = self.captureSession {
+            captureSession.stopRunning()
+        }
+        if let cameraLayer = self.cameraLayer {
+            cameraLayer.removeFromSuperlayer()
+        }
+        
+        let captureSession: AVCaptureSession = AVCaptureSession()
+        captureSession.sessionPreset = AVCaptureSession.Preset.high
+            
+        if let device = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back),
+            let input = try? AVCaptureDeviceInput(device: device) {
+            captureSession.addInput(input)
+        }
+    
+        let cameraLayer: AVCaptureVideoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        self.captureSession = captureSession
+        self.cameraLayer = cameraLayer
+        
+        self.previewView?.layer.addSublayer(cameraLayer)
         cameraLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         cameraLayer.connection?.videoOrientation = .portrait
         
         let videoOutput = AVCaptureVideoDataOutput()
         videoOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "MyQueue"))
         videoOutput.connection(with: AVMediaType.video)?.videoOrientation = .portrait
-        self.captureSession.addOutput(videoOutput)
-        self.captureSession.startRunning()
+        captureSession.addOutput(videoOutput)
+        
+        captureSession.startRunning()
     }
     
     func resizePreviewLayer() {
-        //videoCapture.previewLayer?.frame = previewView.bounds
-        // cameraLayer.frame = previewView.layer.bounds
-        self.cameraLayer.frame = self.previewView?.bounds ?? .zero
+        self.cameraLayer?.frame = self.previewView?.bounds ?? .zero
+    }
+    
+    // Find a camera with the specified AVCaptureDevicePosition, returning nil if one is not found
+    func cameraWithPosition(position: AVCaptureDevice.Position) -> AVCaptureDevice? {
+        let discoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaType.video, position: .unspecified)
+        for device in discoverySession.devices {
+            if device.position == position {
+                return device
+            }
+        }
+        return nil
     }
     
     
@@ -234,7 +257,6 @@ class CameraViewController: UIViewController {
     
     @IBAction func tapOpenScale(_ sender: Any) {
         if topScaleView.alpha == 0 {
-            //topBlurView.alpha = 1
             topScaleView.alpha = 1
             
             if topBlurView.frame.origin.y + topBlurView.frame.height < ratioTopView.frame.origin.y + ratioTopView.frame.height {
@@ -243,17 +265,52 @@ class CameraViewController: UIViewController {
                 topBlurView.alpha = 1
             }
         } else {
-            //topBlurView.alpha = 0
             topScaleView.alpha = 0
         }
     }
     
     @IBAction func tapBackFront(_ sender: Any) {
-//        if cameraManager.cameraDevice == .front {
-//            cameraManager.cameraDevice = .back
-//        } else {
-//            cameraManager.cameraDevice = .front
-//        }
+        //Change camera source
+        if let session = captureSession {
+            //Indicate that some changes will be made to the session
+            session.beginConfiguration()
+            
+            //Remove existing input
+            guard let currentCameraInput: AVCaptureInput = session.inputs.first else {
+                return
+            }
+            
+            session.removeInput(currentCameraInput)
+            
+            //Get new input
+            var newCamera: AVCaptureDevice! = nil
+            if let input = currentCameraInput as? AVCaptureDeviceInput {
+                if (input.device.position == .back) {
+                    newCamera = cameraWithPosition(position: .front)
+                } else {
+                    newCamera = cameraWithPosition(position: .back)
+                }
+            }
+            
+            //Add input to session
+            var err: NSError?
+            var newVideoInput: AVCaptureDeviceInput!
+            do {
+                newVideoInput = try AVCaptureDeviceInput(device: newCamera)
+            } catch let err1 as NSError {
+                err = err1
+                newVideoInput = nil
+            }
+            
+            if newVideoInput == nil || err != nil {
+                print("Error creating capture device input: \(String(describing: err?.localizedDescription))")
+            } else {
+                session.addInput(newVideoInput)
+            }
+            
+            //Commit all the configuration changes at once
+            session.commitConfiguration()
+        }
     }
     
     @IBAction func tapLibrary(_ sender: Any) {
@@ -497,6 +554,9 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         let imageBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)!
         let ciimage : CIImage = CIImage(cvPixelBuffer: imageBuffer)
         self.capturedImage = UIImage.convert(cimage: ciimage)
+        
+        // ================ human filter 아니면 SSD 사용 X ================
+        guard filterController.shouldHumanTracking() else { return }
         
         var requestOptions:[VNImageOption : Any] = [:]
         if let cameraIntrinsicData = CMGetAttachment(sampleBuffer, key: kCMSampleBufferAttachmentKey_CameraIntrinsicMatrix, attachmentModeOut: nil) {

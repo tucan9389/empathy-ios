@@ -32,7 +32,7 @@
                 "name" : "human_1" ,
                 "imageURL" : "b4" ,
                 "standard" : "1" ,
-                "align-left" : true ,
+                "align-left" : false ,
                 "gravity" : "center-left"
             }
         ]
@@ -45,7 +45,7 @@
                 "name" : "human_1" ,
                 "imageURL" : "b5" ,
                 "standard" : "1" ,
-                "align-left" : true ,
+                "align-left" : false ,
                 "gravity" : "bottom-left"
             }
         ]

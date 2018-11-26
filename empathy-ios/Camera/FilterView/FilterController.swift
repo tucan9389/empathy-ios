@@ -31,6 +31,10 @@ class FilterController {
         filterView.set(filter: filter)
     }
     
+    func shouldHumanTracking() -> Bool {
+        return timeFilterView?.shouldHumanTracking() ?? false
+    }
+    
     func putPoseFilter(with filter: Filter) {
         if poseFilterView == nil {
             poseFilterView = FilterImageView()
@@ -405,5 +409,7 @@ class FilterImageView: UIView {
         }
     }
     
-    
+    func shouldHumanTracking() -> Bool {
+        return filter?.align_left ?? false
+    }
 }
