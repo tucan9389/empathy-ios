@@ -16,9 +16,12 @@ import VideoToolbox
 class CameraViewController: UIViewController {
 
     @IBOutlet weak var previewView: UIView!
+    @IBOutlet weak var filterView: UIView!
     @IBOutlet weak var flashButton: UIButton!
     @IBOutlet weak var libraryButton: UIButton!
     
+    @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var topScaleView: UIView!
     @IBOutlet weak var topBlurView: UIVisualEffectView!
     @IBOutlet weak var bottomBlurView: UIVisualEffectView!
@@ -28,8 +31,10 @@ class CameraViewController: UIViewController {
     var cameraRatioConstraint: NSLayoutConstraint?
     @IBOutlet weak var cameraRatioView: UIView!
     @IBOutlet weak var ratioBottomView: UIVisualEffectView!
+    @IBOutlet weak var libraryImageView: UIImageView!
     @IBOutlet weak var ratioTopView: UIVisualEffectView!
     @IBOutlet weak var ratioButtonStackView: UIStackView!
+    @IBOutlet weak var libraryImageCloseButton: UIButton!
     
     let ssdPostProcessor = SSDPostProcessor(numAnchors: 1917, numClasses: 90)
     var visionModel: VNCoreMLModel?
@@ -85,7 +90,8 @@ class CameraViewController: UIViewController {
         //topBlurView.alpha = 0;
         topScaleView.alpha = 0;
         bottomBlurView.alpha = 0;
-        filterController.superView = previewView
+        filterController.superView = filterView//previewView
+        
         
         // ===========================
         // ========= 카메라 세팅 ========
@@ -338,16 +344,24 @@ class CameraViewController: UIViewController {
     }
     
     @IBAction func tapCapture(_ sender: Any) {
-        AudioServicesPlaySystemSound(1108);
+        // AudioServicesPlaySystemSound(1108);
         
         let storyboard: UIStoryboard = self.storyboard!
         guard let capturedImageViewController: CapturedImageViewController = storyboard.instantiateViewController(withIdentifier: "CapturedImageViewController") as? CapturedImageViewController else { return }
         
         self.present(capturedImageViewController, animated: false, completion: nil)
-        if let capturedImage = self.capturedImage {
+        
+        if let capturedImage = self.libraryImageView.image {
             // 이미지 합치기
-            //let cameraViewRatio: CGFloat = cameraRatioView.frame.width / cameraRatioView.frame.height
-            let filteredImage = filterController.imageCompound(backgroundImage: capturedImage, previewFrameSize: previewView.frame.size, cameraViewRect: cameraRatioView.frame)
+            let filteredImage = filterController.imageCompound(backgroundImage: capturedImage,
+                                                               previewFrameSize: cameraRatioView.frame.size,
+                                                               cameraViewRect: cameraRatioView.frame)
+            capturedImageViewController.capturedImage = filteredImage
+        } else if let capturedImage = self.capturedImage {
+            // 이미지 합치기
+            let filteredImage = filterController.imageCompound(backgroundImage: capturedImage,
+                                                               previewFrameSize: filterView.frame.size,
+                                                               cameraViewRect: cameraRatioView.frame)
             capturedImageViewController.capturedImage = filteredImage
         }
     }
@@ -372,6 +386,8 @@ class CameraViewController: UIViewController {
         case ratio(ratio: CGFloat)
         case full
     }
+    
+    var cameraRatio: CameraRatio = .full
     
     @IBAction func tapScale(_ sender: Any) {
         topScaleView.alpha = 0
@@ -404,6 +420,8 @@ class CameraViewController: UIViewController {
             // cameraRatioView.removeConstraint(cameraRatioConstraint)
         }
         
+        cameraRatio = ratio
+        
         switch ratio {
         case .ratio(let ratio):
             cameraRatioConstraint = cameraRatioView.widthAnchor.constraint(equalTo: cameraRatioView.heightAnchor, multiplier: ratio)
@@ -412,7 +430,6 @@ class CameraViewController: UIViewController {
             cameraRatioConstraint?.isActive = false
             cameraRatioConstraint = nil
         }
-        
     }
     
     @IBAction func tapFilterClose(_ sender: Any) {
@@ -492,11 +509,63 @@ class CameraViewController: UIViewController {
         self.filterType = .none
         self.filters = []
     }
+    
+    func setPhotoLibraryImage(image: UIImage) {
+        libraryImageView.image = image
+        libraryImageCloseButton.alpha = 1
+        topView.alpha = 0
+        captureSession?.stopRunning()
+        
+        let ratio: CGFloat = image.size.width / image.size.height
+        
+        if let cameraRatioConstraint = cameraRatioConstraint {
+            cameraRatioConstraint.isActive = false
+            // cameraRatioView.removeConstraint(cameraRatioConstraint)
+        }
+        
+        cameraRatioConstraint = cameraRatioView.widthAnchor.constraint(equalTo: cameraRatioView.heightAnchor, multiplier: ratio)
+        cameraRatioConstraint?.isActive = true
+        
+        view.bringSubviewToFront(filterView)
+        view.bringSubviewToFront(ratioTopView)
+        view.bringSubviewToFront(ratioBottomView)
+        view.bringSubviewToFront(topScaleView)
+        view.bringSubviewToFront(libraryImageCloseButton)
+        view.bringSubviewToFront(topView)
+        view.bringSubviewToFront(bottomView)
+        view.bringSubviewToFront(bottomBlurView)
+    }
+    
+    func setVideoPreviewImage() {
+        libraryImageView.image = nil
+        libraryImageCloseButton.alpha = 0
+        topView.alpha = 1
+        captureSession?.startRunning()
+        
+        updateCameraRatio(with: cameraRatio)
+        
+        view.bringSubviewToFront(previewView)
+        view.bringSubviewToFront(filterView)
+        view.bringSubviewToFront(ratioTopView)
+        view.bringSubviewToFront(ratioBottomView)
+        view.bringSubviewToFront(topScaleView)
+        view.bringSubviewToFront(libraryImageCloseButton)
+        view.bringSubviewToFront(topView)
+        view.bringSubviewToFront(bottomView)
+        view.bringSubviewToFront(bottomBlurView)
+    }
+    
+    @IBAction func tapLibraryImageClose(_ sender: Any) {
+        setVideoPreviewImage()
+    }
 }
 
 extension CameraViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            
+            setPhotoLibraryImage(image: image)
+        }
         picker.dismiss(animated: true, completion: nil)
     }
     

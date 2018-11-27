@@ -6,7 +6,7 @@
                 "type_id" : 1,
                 "type" : "human" ,
                 "name" : "human_1" ,
-                "imageURL" : "filter_human_1" ,
+                "imageURL" : "king" ,
                 "standard" : "1" ,
                 "align-left" : true ,
                 "gravity" : "center-right"
@@ -14,27 +14,36 @@
                 "type_id" : 2,
                 "type" : "human" ,
                 "name" : "human_2" ,
-                "imageURL" : "filter_human_2" ,
+                "imageURL" : "palacegirl_gray" ,
+                "standard" : "1" ,
+                "align-left" : true ,
+                "gravity" : "center-right"
+            }, {
+                "type_id" : 3,
+                "type" : "human" ,
+                "name" : "human_3" ,
+                "imageURL" : "palacegirl" ,
                 "standard" : "1" ,
                 "align-left" : true ,
                 "gravity" : "center-left"
             }, {
-                "type_id" : 3,
-                "type" : "funny" ,
-                "name" : "human_1" ,
-                "imageURL" : "b3" ,
+                "type_id" : 4,
+                "type" : "human" ,
+                "name" : "human_4" ,
+                "imageURL" : "prince" ,
                 "standard" : "1" ,
                 "align-left" : true ,
-                "gravity" : "center-center"
+                "gravity" : "center-left"
             }, {
-                "type_id" : 4,
+                "type_id" : 5,
                 "type" : "background" ,
-                "name" : "human_1" ,
+                "name" : "human_4" ,
                 "imageURL" : "b4" ,
                 "standard" : "1" ,
                 "align-left" : false ,
                 "gravity" : "center-left"
             }
+            
         ]
     } , {
         "type" : "pose-filter" ,
