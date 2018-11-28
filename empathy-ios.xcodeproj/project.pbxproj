@@ -60,6 +60,8 @@
 		C204F82B21AEEE4800E8ABEB /* FetchMyFeeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = C204F82A21AEEE4800E8ABEB /* FetchMyFeeds.swift */; };
 		C204F82D21AEEECF00E8ABEB /* Commons.swift in Sources */ = {isa = PBXBuildFile; fileRef = C204F82C21AEEECF00E8ABEB /* Commons.swift */; };
 		C204F82F21AEEFD200E8ABEB /* NetworkErrorNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C204F82E21AEEFD200E8ABEB /* NetworkErrorNotification.swift */; };
+		C204F83321AF107F00E8ABEB /* FeedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C204F83221AF107F00E8ABEB /* FeedDetailViewController.swift */; };
+		C204F83521AF109000E8ABEB /* FeedDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C204F83421AF109000E8ABEB /* FeedDetail.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +145,8 @@
 		C204F82A21AEEE4800E8ABEB /* FetchMyFeeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMyFeeds.swift; sourceTree = "<group>"; };
 		C204F82C21AEEECF00E8ABEB /* Commons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commons.swift; sourceTree = "<group>"; };
 		C204F82E21AEEFD200E8ABEB /* NetworkErrorNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorNotification.swift; sourceTree = "<group>"; };
+		C204F83221AF107F00E8ABEB /* FeedDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailViewController.swift; sourceTree = "<group>"; };
+		C204F83421AF109000E8ABEB /* FeedDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedDetail.storyboard; sourceTree = "<group>"; };
 		C8066D378E5BA86AFFB2257E /* Pods-empathy-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-empathy-iosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-empathy-iosTests/Pods-empathy-iosTests.release.xcconfig"; sourceTree = "<group>"; };
 		F1B9ABD4F70B5C2271C58475 /* Pods-empathy-iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-empathy-iosUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-empathy-iosUITests/Pods-empathy-iosUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -305,6 +309,7 @@
 		55BC061921809A7300FE43CA /* empathy-ios */ = {
 			isa = PBXGroup;
 			children = (
+				C204F83121AF106700E8ABEB /* FeedDetail */,
 				C204F82921AEEE3300E8ABEB /* Request */,
 				C204F82521AECCA900E8ABEB /* Common */,
 				C204749821A9B644005742C0 /* Model */,
@@ -414,6 +419,15 @@
 				C204F82E21AEEFD200E8ABEB /* NetworkErrorNotification.swift */,
 			);
 			path = Request;
+			sourceTree = "<group>";
+		};
+		C204F83121AF106700E8ABEB /* FeedDetail */ = {
+			isa = PBXGroup;
+			children = (
+				C204F83221AF107F00E8ABEB /* FeedDetailViewController.swift */,
+				C204F83421AF109000E8ABEB /* FeedDetail.storyboard */,
+			);
+			path = FeedDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -527,6 +541,7 @@
 				03F2F10B2194AEE200A98241 /* Login.storyboard in Resources */,
 				03A9EF4921AA970400FD7F2D /* Color.xcassets in Resources */,
 				03A9EF5321AAADB200FD7F2D /* MainFeed.storyboard in Resources */,
+				C204F83521AF109000E8ABEB /* FeedDetail.storyboard in Resources */,
 				55DFA382219C4D8E001B23AC /* coco_labels_list.txt in Resources */,
 				C204747521A7FC13005742C0 /* MyFeed.storyboard in Resources */,
 				55BC062521809A7400FE43CA /* LaunchScreen.storyboard in Resources */,
@@ -657,6 +672,7 @@
 				03F88CF821A5129900084E8E /* Constants.swift in Sources */,
 				55DFA37C219C4996001B23AC /* Predictions.swift in Sources */,
 				55DFA37B219C4996001B23AC /* BoundingBox.swift in Sources */,
+				C204F83321AF107F00E8ABEB /* FeedDetailViewController.swift in Sources */,
 				55DFA37D219C4996001B23AC /* MultiArray.swift in Sources */,
 				55DFA36A219C47D3001B23AC /* Utility.swift in Sources */,
 				55DFA379219C4996001B23AC /* UIImage+CVPixelBuffer.swift in Sources */,
