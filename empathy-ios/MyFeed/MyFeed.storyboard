@@ -5,7 +5,6 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -39,7 +38,7 @@
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0si-Hr-vCa">
                                 <rect key="frame" x="0.0" y="141" width="375" height="526"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.1647058824" green="0.17254901959999999" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="my_feed_cell" rowHeight="148" id="2Wo-Md-E70" customClass="MyFeedTableViewCell" customModule="empathy_ios" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="148"/>
@@ -127,13 +126,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnFloating" translatesAutoresizingMaskIntoConstraints="NO" id="PGn-94-X5M">
-                                <rect key="frame" x="303" y="115" width="56" height="56"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="56" id="2zL-5b-tv8"/>
-                                    <constraint firstAttribute="height" constant="56" id="LuZ-cX-u6x"/>
-                                </constraints>
-                            </imageView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ifq-Lh-ugd">
                                 <rect key="frame" x="0.0" y="141" width="375" height="526"/>
                                 <subviews>
@@ -165,7 +157,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" name="charcoalgrey"/>
+                                <color key="backgroundColor" red="0.1647058824" green="0.17254901959999999" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="CK8-VX-F9l" firstAttribute="top" secondItem="Ifq-Lh-ugd" secondAttribute="top" constant="100" id="7uC-Gi-tS5"/>
                                     <constraint firstItem="CK8-VX-F9l" firstAttribute="centerX" secondItem="Ifq-Lh-ugd" secondAttribute="centerX" id="ODc-aU-Ap5"/>
@@ -175,6 +167,13 @@
                                     <constraint firstItem="7sU-NJ-Fmc" firstAttribute="top" secondItem="CK8-VX-F9l" secondAttribute="bottom" constant="33" id="owo-0M-0R0"/>
                                 </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnFloating" translatesAutoresizingMaskIntoConstraints="NO" id="PGn-94-X5M">
+                                <rect key="frame" x="303" y="115" width="56" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="56" id="2zL-5b-tv8"/>
+                                    <constraint firstAttribute="height" constant="56" id="LuZ-cX-u6x"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.16470588235294117" green="0.17254901960784313" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -198,6 +197,7 @@
                         <viewLayoutGuide key="safeArea" id="ip1-KW-any"/>
                     </view>
                     <connections>
+                        <outlet property="emptyView" destination="Ifq-Lh-ugd" id="Q4J-3c-MGU"/>
                         <outlet property="tableView" destination="0si-Hr-vCa" id="l3Z-3T-rcD"/>
                     </connections>
                 </viewController>
@@ -210,8 +210,5 @@
         <image name="btnFloating" width="56" height="56"/>
         <image name="iconBack" width="38" height="38"/>
         <image name="iconQuotation" width="24" height="24"/>
-        <namedColor name="charcoalgrey">
-            <color red="0.16470588235294117" green="0.17254901960784313" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
     </resources>
 </document>

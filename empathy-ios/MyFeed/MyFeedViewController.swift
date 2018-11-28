@@ -13,6 +13,7 @@ import UIKit
 class MyFeedViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var emptyView: UIView!
     
     private let cellIdentifier = "my_feed_cell"
     private var myFeeds: [MyFeed] = []
@@ -29,12 +30,7 @@ class MyFeedViewController: UIViewController {
         initializeNotificationObserver()
         
 //        //dummy
-//        myFeeds.append(MyFeed(date: "11.03 2017", title: "왕십리 시장 탐험을 다녀오다", imageUrl: ""))
-//        myFeeds.append(MyFeed(date: "11.03 2017", title: "왕십리 시장 탐험을 다녀오다", imageUrl: ""))
-//        myFeeds.append(MyFeed(date: "11.03 2017", title: "왕십리 시장 탐험을 다녀오다", imageUrl: ""))
-//        myFeeds.append(MyFeed(date: "11.03 2017", title: "왕십리 시장 탐험을 다녀오다", imageUrl: ""))
-//        myFeeds.append(MyFeed(date: "11.03 2017", title: "왕십리 시장 탐험을 다녀오다", imageUrl: ""))
-//        myFeeds.append(MyFeed(date: "11.03 2017", title: "왕십리 시장 탐험을 다녀오다", imageUrl: ""))
+        myFeeds.append(MyFeed(contents: "왕십리 시장 탐험을 다녀오다", creationTime: "11.03 2018", imageUrl: "", journeyId: 1, location: "서울", ownerProfileUrl: "", title: "왕십리 시장 텀험을 다녀오다"))
     }
     
     @objc func didReceiveMyFeedsNotification(_ noti: Notification) {
@@ -45,7 +41,11 @@ class MyFeedViewController: UIViewController {
         self.myFeeds = myFeeds
         
         DispatchQueue.main.async {
-            self.tableView.reloadData()
+            if myFeeds.count == 0 {
+                self.emptyView.isHidden = false
+            } else {
+                self.tableView.reloadData()
+            }
         }
     }
     
@@ -106,14 +106,25 @@ extension MyFeedViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
+
+//    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+//        let remove = UITableViewRowAction(style: .default, title: "") { action, indexPath in
+//            print("delete button tapped")
+//        }
+//
+//        remove.backgroundColor = UIColor(patternImage: UIImage(named: "iconRemove")!)
+//
+//        return [remove]
+//    }
     
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let remove = UITableViewRowAction(style: .default, title: "") { action, indexPath in
-            print("delete button tapped")
-        }
-        
-//        remove.backgroundColor = UIView()
-        
-        return [remove]
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .normal, title:  "", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+            success(true)
+        })
+
+        deleteAction.backgroundColor = UIColor(red: 42/255.0, green: 44/255.0, blue: 52/255.0, alpha: 1.0)
+        deleteAction.image = UIImage(named: "iconRemove")
+
+        return UISwipeActionsConfiguration(actions: [deleteAction])
     }
 }
