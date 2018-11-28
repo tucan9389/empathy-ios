@@ -10,6 +10,7 @@ target 'empathy-ios' do
   pod 'FacebookLogin'
   # pod 'CameraManager', '~> 4.3'
   pod 'Toaster', '~> 2.1.1'
+  pod 'SwiftyGif'
 
   target 'empathy-iosTests' do
     inherit! :search_paths
