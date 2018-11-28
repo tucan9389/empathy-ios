@@ -7,7 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0358621B21ABC3E000CF5727 /* Location.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0358621A21ABC3E000CF5727 /* Location.storyboard */; };
+		035A8A4F21AC4E2500CA3B8C /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035A8A4E21AC4E2500CA3B8C /* LocationViewController.swift */; };
+		035A8A5421AC512700CA3B8C /* TouristSite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 035A8A5321AC512700CA3B8C /* TouristSite.storyboard */; };
+		035A8A5621AC5FD800CA3B8C /* TouristSiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035A8A5521AC5FD800CA3B8C /* TouristSiteViewController.swift */; };
+		035A8A5821AC601500CA3B8C /* Affiliate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 035A8A5721AC601500CA3B8C /* Affiliate.storyboard */; };
+		035A8A5A21AC660B00CA3B8C /* AffiliateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035A8A5921AC660B00CA3B8C /* AffiliateViewController.swift */; };
+		035A8A5C21AC662F00CA3B8C /* AffiliateDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035A8A5B21AC662F00CA3B8C /* AffiliateDetailViewController.swift */; };
+		035A8A5E21AC664D00CA3B8C /* TouristSiteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035A8A5D21AC664D00CA3B8C /* TouristSiteDetailViewController.swift */; };
 		036BC0A721A5D58100400924 /* WriteFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036BC0A621A5D58100400924 /* WriteFeedViewController.swift */; };
+		03A9EF4921AA970400FD7F2D /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03A9EF4821AA970400FD7F2D /* Color.xcassets */; };
+		03A9EF5321AAADB200FD7F2D /* MainFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03A9EF5221AAADB200FD7F2D /* MainFeed.storyboard */; };
+		03A9EF5521AAADBD00FD7F2D /* MainFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A9EF5421AAADBD00FD7F2D /* MainFeedViewController.swift */; };
 		03F2F10B2194AEE200A98241 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03F2F10A2194AEE200A98241 /* Login.storyboard */; };
 		03F2F10D219529EE00A98241 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F2F10C219529EE00A98241 /* LoginViewController.swift */; };
 		03F2F10F21952DEA00A98241 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F2F10E21952DEA00A98241 /* RoundedButton.swift */; };
@@ -19,8 +30,8 @@
 		55A331772191A84D005DFA01 /* FilterCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A331762191A84D005DFA01 /* FilterCollectionView.swift */; };
 		55A331792192A0A0005DFA01 /* FilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A331782192A0A0005DFA01 /* FilterController.swift */; };
 		55BC061B21809A7300FE43CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BC061A21809A7300FE43CA /* AppDelegate.swift */; };
-		55BC061D21809A7300FE43CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BC061C21809A7300FE43CA /* ViewController.swift */; };
-		55BC062021809A7300FE43CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55BC061E21809A7300FE43CA /* Main.storyboard */; };
+		55BC061D21809A7300FE43CA /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BC061C21809A7300FE43CA /* CameraViewController.swift */; };
+		55BC062021809A7300FE43CA /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55BC061E21809A7300FE43CA /* Camera.storyboard */; };
 		55BC062221809A7400FE43CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55BC062121809A7400FE43CA /* Assets.xcassets */; };
 		55BC062521809A7400FE43CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55BC062321809A7400FE43CA /* LaunchScreen.storyboard */; };
 		55BC063021809A7400FE43CA /* empathy_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BC062F21809A7400FE43CA /* empathy_iosTests.swift */; };
@@ -66,7 +77,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0358621A21ABC3E000CF5727 /* Location.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Location.storyboard; sourceTree = "<group>"; };
+		035A8A4E21AC4E2500CA3B8C /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		035A8A5321AC512700CA3B8C /* TouristSite.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TouristSite.storyboard; sourceTree = "<group>"; };
+		035A8A5521AC5FD800CA3B8C /* TouristSiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouristSiteViewController.swift; sourceTree = "<group>"; };
+		035A8A5721AC601500CA3B8C /* Affiliate.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Affiliate.storyboard; sourceTree = "<group>"; };
+		035A8A5921AC660B00CA3B8C /* AffiliateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffiliateViewController.swift; sourceTree = "<group>"; };
+		035A8A5B21AC662F00CA3B8C /* AffiliateDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffiliateDetailViewController.swift; sourceTree = "<group>"; };
+		035A8A5D21AC664D00CA3B8C /* TouristSiteDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouristSiteDetailViewController.swift; sourceTree = "<group>"; };
 		036BC0A621A5D58100400924 /* WriteFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteFeedViewController.swift; sourceTree = "<group>"; };
+		03A9EF4821AA970400FD7F2D /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		03A9EF5221AAADB200FD7F2D /* MainFeed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainFeed.storyboard; sourceTree = "<group>"; };
+		03A9EF5421AAADBD00FD7F2D /* MainFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedViewController.swift; sourceTree = "<group>"; };
 		03F2F10A2194AEE200A98241 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		03F2F10C219529EE00A98241 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		03F2F10E21952DEA00A98241 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
@@ -83,8 +105,8 @@
 		55A331782192A0A0005DFA01 /* FilterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterController.swift; sourceTree = "<group>"; };
 		55BC061721809A7300FE43CA /* empathy-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "empathy-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55BC061A21809A7300FE43CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		55BC061C21809A7300FE43CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		55BC061F21809A7300FE43CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		55BC061C21809A7300FE43CA /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		55BC061F21809A7300FE43CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Camera.storyboard; sourceTree = "<group>"; };
 		55BC062121809A7400FE43CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55BC062421809A7400FE43CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55BC062621809A7400FE43CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -147,6 +169,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0358621921ABC33E00CF5727 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				0358621A21ABC3E000CF5727 /* Location.storyboard */,
+				035A8A4E21AC4E2500CA3B8C /* LocationViewController.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		035A8A5021AC4F8700CA3B8C /* Affiliate */ = {
+			isa = PBXGroup;
+			children = (
+				035A8A5221AC50DA00CA3B8C /* TouristSite */,
+				035A8A5721AC601500CA3B8C /* Affiliate.storyboard */,
+				035A8A5921AC660B00CA3B8C /* AffiliateViewController.swift */,
+				035A8A5B21AC662F00CA3B8C /* AffiliateDetailViewController.swift */,
+			);
+			path = Affiliate;
+			sourceTree = "<group>";
+		};
+		035A8A5221AC50DA00CA3B8C /* TouristSite */ = {
+			isa = PBXGroup;
+			children = (
+				035A8A5321AC512700CA3B8C /* TouristSite.storyboard */,
+				035A8A5521AC5FD800CA3B8C /* TouristSiteViewController.swift */,
+				035A8A5D21AC664D00CA3B8C /* TouristSiteDetailViewController.swift */,
+			);
+			path = TouristSite;
+			sourceTree = "<group>";
+		};
+		03A9EF4A21AA981200FD7F2D /* Write Feed */ = {
+			isa = PBXGroup;
+			children = (
+				03F88CFA21A5215C00084E8E /* WriteFeed.storyboard */,
+				036BC0A621A5D58100400924 /* WriteFeedViewController.swift */,
+			);
+			path = "Write Feed";
+			sourceTree = "<group>";
+		};
+		03A9EF5121AAAD6600FD7F2D /* Main Feed */ = {
+			isa = PBXGroup;
+			children = (
+				03A9EF5221AAADB200FD7F2D /* MainFeed.storyboard */,
+				03A9EF5421AAADBD00FD7F2D /* MainFeedViewController.swift */,
+			);
+			name = "Main Feed";
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		03F2F1092194AECE00A98241 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,8 +233,10 @@
 		03F88CF921A520C900084E8E /* Feed */ = {
 			isa = PBXGroup;
 			children = (
-				03F88CFA21A5215C00084E8E /* WriteFeed.storyboard */,
-				036BC0A621A5D58100400924 /* WriteFeedViewController.swift */,
+				035A8A5021AC4F8700CA3B8C /* Affiliate */,
+				0358621921ABC33E00CF5727 /* Location */,
+				03A9EF5121AAAD6600FD7F2D /* Main Feed */,
+				03A9EF4A21AA981200FD7F2D /* Write Feed */,
 			);
 			name = Feed;
 			path = "New Group";
@@ -177,6 +250,19 @@
 				08D4E3B912BC44511566E01C /* Pods_empathy_iosUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5577097E21AA144800363CE3 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				55DF3E9721991DF60080252C /* temp-camera-filter.json */,
+				55BC061C21809A7300FE43CA /* CameraViewController.swift */,
+				55DFA385219C5CD7001B23AC /* SSD Related */,
+				55A331752191A7E1005DFA01 /* FilterView */,
+				55A3317321900944005DFA01 /* CapturedImageViewController.swift */,
+				55BC061E21809A7300FE43CA /* Camera.storyboard */,
+			);
+			path = Camera;
 			sourceTree = "<group>";
 		};
 		55A331752191A7E1005DFA01 /* FilterView */ = {
@@ -215,18 +301,14 @@
 			children = (
 				C204749821A9B644005742C0 /* Model */,
 				C204747321A7FBE3005742C0 /* MyFeed */,
+				55BC061A21809A7300FE43CA /* AppDelegate.swift */,
+				5577097E21AA144800363CE3 /* Camera */,
 				03F88CF921A520C900084E8E /* Feed */,
 				03F2F1092194AECE00A98241 /* Login */,
-				55DF3E9721991DF60080252C /* temp-camera-filter.json */,
-				55BC061A21809A7300FE43CA /* AppDelegate.swift */,
-				55BC061C21809A7300FE43CA /* ViewController.swift */,
-				55DFA385219C5CD7001B23AC /* SSD Related */,
-				55A331752191A7E1005DFA01 /* FilterView */,
-				55A3317321900944005DFA01 /* CapturedImageViewController.swift */,
-				55BC061E21809A7300FE43CA /* Main.storyboard */,
 				55BC062121809A7400FE43CA /* Assets.xcassets */,
 				55BC062321809A7400FE43CA /* LaunchScreen.storyboard */,
 				55BC062621809A7400FE43CA /* Info.plist */,
+				03A9EF4821AA970400FD7F2D /* Color.xcassets */,
 			);
 			path = "empathy-ios";
 			sourceTree = "<group>";
@@ -418,13 +500,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				03F2F10B2194AEE200A98241 /* Login.storyboard in Resources */,
+				03A9EF4921AA970400FD7F2D /* Color.xcassets in Resources */,
+				03A9EF5321AAADB200FD7F2D /* MainFeed.storyboard in Resources */,
 				55DFA382219C4D8E001B23AC /* coco_labels_list.txt in Resources */,
 				C204747521A7FC13005742C0 /* MyFeed.storyboard in Resources */,
 				55BC062521809A7400FE43CA /* LaunchScreen.storyboard in Resources */,
+				0358621B21ABC3E000CF5727 /* Location.storyboard in Resources */,
+				035A8A5421AC512700CA3B8C /* TouristSite.storyboard in Resources */,
 				55BC062221809A7400FE43CA /* Assets.xcassets in Resources */,
+				035A8A5821AC601500CA3B8C /* Affiliate.storyboard in Resources */,
 				55DF3E9821991DF60080252C /* temp-camera-filter.json in Resources */,
 				03F88CFB21A5215C00084E8E /* WriteFeed.storyboard in Resources */,
-				55BC062021809A7300FE43CA /* Main.storyboard in Resources */,
+				55BC062021809A7300FE43CA /* Camera.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,6 +625,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				035A8A5621AC5FD800CA3B8C /* TouristSiteViewController.swift in Sources */,
 				55DFA380219C4996001B23AC /* MLMultiArray+Image.swift in Sources */,
 				03F88CF821A5129900084E8E /* Constants.swift in Sources */,
 				55DFA37C219C4996001B23AC /* Predictions.swift in Sources */,
@@ -545,13 +633,18 @@
 				55DFA37D219C4996001B23AC /* MultiArray.swift in Sources */,
 				55DFA36A219C47D3001B23AC /* Utility.swift in Sources */,
 				55DFA379219C4996001B23AC /* UIImage+CVPixelBuffer.swift in Sources */,
+				03A9EF5521AAADBD00FD7F2D /* MainFeedViewController.swift in Sources */,
+				035A8A5A21AC660B00CA3B8C /* AffiliateViewController.swift in Sources */,
 				55A331792192A0A0005DFA01 /* FilterController.swift in Sources */,
 				C204747921A96EAE005742C0 /* MyFeedTableViewCell.swift in Sources */,
 				036BC0A721A5D58100400924 /* WriteFeedViewController.swift in Sources */,
+				035A8A4F21AC4E2500CA3B8C /* LocationViewController.swift in Sources */,
 				55DFA37F219C4996001B23AC /* NonMaxSuppression.swift in Sources */,
 				55DFA369219C47D3001B23AC /* SSDPostprocessor.swift in Sources */,
-				55BC061D21809A7300FE43CA /* ViewController.swift in Sources */,
+				035A8A5E21AC664D00CA3B8C /* TouristSiteDetailViewController.swift in Sources */,
+				55BC061D21809A7300FE43CA /* CameraViewController.swift in Sources */,
 				03F2F10F21952DEA00A98241 /* RoundedButton.swift in Sources */,
+				035A8A5C21AC662F00CA3B8C /* AffiliateDetailViewController.swift in Sources */,
 				55BC061B21809A7300FE43CA /* AppDelegate.swift in Sources */,
 				55DFA365219C4675001B23AC /* ssd_mobilenet_feature_extractor.mlmodel in Sources */,
 				55DFA37A219C4996001B23AC /* Array.swift in Sources */,
@@ -599,12 +692,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		55BC061E21809A7300FE43CA /* Main.storyboard */ = {
+		55BC061E21809A7300FE43CA /* Camera.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				55BC061F21809A7300FE43CA /* Base */,
 			);
-			name = Main.storyboard;
+			name = Camera.storyboard;
 			sourceTree = "<group>";
 		};
 		55BC062321809A7400FE43CA /* LaunchScreen.storyboard */ = {
