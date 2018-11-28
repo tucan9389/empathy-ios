@@ -344,7 +344,7 @@ class CameraViewController: UIViewController {
     }
     
     @IBAction func tapCapture(_ sender: Any) {
-        // AudioServicesPlaySystemSound(1108);
+        AudioServicesPlaySystemSound(1108);
         
         let storyboard: UIStoryboard = self.storyboard!
         guard let capturedImageViewController: CapturedImageViewController = storyboard.instantiateViewController(withIdentifier: "CapturedImageViewController") as? CapturedImageViewController else { return }
@@ -494,6 +494,8 @@ class CameraViewController: UIViewController {
         self.filterCollectionview.reloadData()
         
         self.bottomBlurView.alpha = 1
+        
+        self.filterTypeStackView.subviews.forEach({$0.alpha = ($0.tag == 0 || $0.tag == 1) ? 1 : 0})
     }
     
     func appearHumanFilterView() {
@@ -501,8 +503,9 @@ class CameraViewController: UIViewController {
         self.filterCollectionview.reloadData()
         
         self.bottomBlurView.alpha = 1
+        
+        self.filterTypeStackView.subviews.forEach({$0.alpha = ($0.tag == 0) ? 1 : 0})
     }
-    
     
     func disappearFilterView() {
         self.bottomBlurView.alpha = 0
