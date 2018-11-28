@@ -12,22 +12,31 @@ class FeedDetailViewController: UIViewController {
     
     @IBOutlet weak var userImage: UIImageView!
     
+    private var feedDetail: FeedDetail?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        userImage.layer.cornerRadius = userImage.frame.size.width / 2
-        // Do any additional setup after loading the view.
+        initializeView()
+        initializeNotificationObserver()
+        
+//        fetchFeedDetail(targetId: 1)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func didReceiveDetailFeedNotification(_ noti: Notification) {
+        guard let feedDetail: FeedDetail = noti.userInfo?["feedDetail"] as? FeedDetail else {
+            return
+        }
+        
+        self.feedDetail = feedDetail
     }
-    */
+    
+    private func initializeView() {
+        userImage.layer.cornerRadius = userImage.frame.size.width / 2
+    }
+
+    private func initializeNotificationObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didReceiveDetailFeedNotification(_:)), name: DidReceiveFeedDetailNotification, object: nil)
+    }
 
 }

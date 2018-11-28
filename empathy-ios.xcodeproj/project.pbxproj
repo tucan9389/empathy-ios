@@ -62,6 +62,8 @@
 		C204F82F21AEEFD200E8ABEB /* NetworkErrorNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C204F82E21AEEFD200E8ABEB /* NetworkErrorNotification.swift */; };
 		C204F83321AF107F00E8ABEB /* FeedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C204F83221AF107F00E8ABEB /* FeedDetailViewController.swift */; };
 		C204F83521AF109000E8ABEB /* FeedDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C204F83421AF109000E8ABEB /* FeedDetail.storyboard */; };
+		C280DC9321AF1D2700A54D82 /* FeedDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C280DC9221AF1D2700A54D82 /* FeedDetail.swift */; };
+		C280DC9521AF1D5700A54D82 /* FetchDetailFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C280DC9421AF1D5700A54D82 /* FetchDetailFeed.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +149,8 @@
 		C204F82E21AEEFD200E8ABEB /* NetworkErrorNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorNotification.swift; sourceTree = "<group>"; };
 		C204F83221AF107F00E8ABEB /* FeedDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailViewController.swift; sourceTree = "<group>"; };
 		C204F83421AF109000E8ABEB /* FeedDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedDetail.storyboard; sourceTree = "<group>"; };
+		C280DC9221AF1D2700A54D82 /* FeedDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetail.swift; sourceTree = "<group>"; };
+		C280DC9421AF1D5700A54D82 /* FetchDetailFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDetailFeed.swift; sourceTree = "<group>"; };
 		C8066D378E5BA86AFFB2257E /* Pods-empathy-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-empathy-iosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-empathy-iosTests/Pods-empathy-iosTests.release.xcconfig"; sourceTree = "<group>"; };
 		F1B9ABD4F70B5C2271C58475 /* Pods-empathy-iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-empathy-iosUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-empathy-iosUITests/Pods-empathy-iosUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -400,6 +404,7 @@
 			isa = PBXGroup;
 			children = (
 				C204749921A9B64E005742C0 /* MyFeed.swift */,
+				C280DC9221AF1D2700A54D82 /* FeedDetail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -416,6 +421,7 @@
 			isa = PBXGroup;
 			children = (
 				C204F82A21AEEE4800E8ABEB /* FetchMyFeeds.swift */,
+				C280DC9421AF1D5700A54D82 /* FetchDetailFeed.swift */,
 				C204F82E21AEEFD200E8ABEB /* NetworkErrorNotification.swift */,
 			);
 			path = Request;
@@ -678,6 +684,7 @@
 				55DFA379219C4996001B23AC /* UIImage+CVPixelBuffer.swift in Sources */,
 				03A9EF5521AAADBD00FD7F2D /* MainFeedViewController.swift in Sources */,
 				035A8A5A21AC660B00CA3B8C /* AffiliateViewController.swift in Sources */,
+				C280DC9321AF1D2700A54D82 /* FeedDetail.swift in Sources */,
 				55A331792192A0A0005DFA01 /* FilterController.swift in Sources */,
 				C204747921A96EAE005742C0 /* MyFeedTableViewCell.swift in Sources */,
 				036BC0A721A5D58100400924 /* WriteFeedViewController.swift in Sources */,
@@ -691,6 +698,7 @@
 				035A8A5C21AC662F00CA3B8C /* AffiliateDetailViewController.swift in Sources */,
 				55BC061B21809A7300FE43CA /* AppDelegate.swift in Sources */,
 				55DFA365219C4675001B23AC /* ssd_mobilenet_feature_extractor.mlmodel in Sources */,
+				C280DC9521AF1D5700A54D82 /* FetchDetailFeed.swift in Sources */,
 				55DFA37A219C4996001B23AC /* Array.swift in Sources */,
 				55A331772191A84D005DFA01 /* FilterCollectionView.swift in Sources */,
 				03F2F10D219529EE00A98241 /* LoginViewController.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  FetchMyFeeds.swift
+//  FetchDetailFeed.swift
 //  empathy-ios
 //
 //  Created by byungtak on 29/11/2018.
@@ -8,10 +8,11 @@
 
 import Foundation
 
-let DidReceiveMyFeedsNotification: Notification.Name = Notification.Name("DidReceiveMyFeeds")
 
-func fetchMyFeeds(ownerId: Int) {
-    guard let url: URL = URL(string: Commons.baseUrl + "/journey/myjourney/\(ownerId)") else {
+let DidReceiveFeedDetailNotification: Notification.Name = Notification.Name("DidReceiveFeedDetail")
+
+func fetchFeedDetail(targetId: Int) {
+    guard let url: URL = URL(string: Commons.baseUrl + "/journey/\(targetId)") else {
         return
     }
     
@@ -39,9 +40,9 @@ func fetchMyFeeds(ownerId: Int) {
         }
         
         do {
-            let myFeedsApiResponse: MyFeedsApiResponse = try JSONDecoder().decode(MyFeedsApiResponse.self, from: data)
+            let feedDetailApiResponse: FeedDetail = try JSONDecoder().decode(FeedDetail.self, from: data)
             
-            NotificationCenter.default.post(name: DidReceiveMyFeedsNotification, object: nil, userInfo: ["myFeeds" : myFeedsApiResponse.myFeeds])
+            NotificationCenter.default.post(name: DidReceiveFeedDetailNotification, object: nil, userInfo: ["feedDetail" : feedDetailApiResponse])
         } catch(let err) {
             print("fetchcomment_jsondecoder_error:\(err.localizedDescription)")
             
