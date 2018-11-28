@@ -7,6 +7,7 @@
 //
 
 import Kingfisher
+import Alamofire
 import UIKit
 
 class MyFeedViewController: UIViewController {
@@ -23,13 +24,33 @@ class MyFeedViewController: UIViewController {
         tableView.dataSource = self
         tableView.separatorStyle = .none
         
-        //dummy
-        myFeeds.append(MyFeed(date: "11.03 2017", title: "왕십리 시장 탐험을 다녀오다", imageUrl: ""))
-        myFeeds.append(MyFeed(date: "11.03 2017", title: "왕십리 시장 탐험을 다녀오다", imageUrl: ""))
-        myFeeds.append(MyFeed(date: "11.03 2017", title: "왕십리 시장 탐험을 다녀오다", imageUrl: ""))
-        myFeeds.append(MyFeed(date: "11.03 2017", title: "왕십리 시장 탐험을 다녀오다", imageUrl: ""))
-        myFeeds.append(MyFeed(date: "11.03 2017", title: "왕십리 시장 탐험을 다녀오다", imageUrl: ""))
-        myFeeds.append(MyFeed(date: "11.03 2017", title: "왕십리 시장 탐험을 다녀오다", imageUrl: ""))
+        fetchMyFeeds(ownerId: 1)
+        
+        initializeNotificationObserver()
+        
+//        //dummy
+//        myFeeds.append(MyFeed(date: "11.03 2017", title: "왕십리 시장 탐험을 다녀오다", imageUrl: ""))
+//        myFeeds.append(MyFeed(date: "11.03 2017", title: "왕십리 시장 탐험을 다녀오다", imageUrl: ""))
+//        myFeeds.append(MyFeed(date: "11.03 2017", title: "왕십리 시장 탐험을 다녀오다", imageUrl: ""))
+//        myFeeds.append(MyFeed(date: "11.03 2017", title: "왕십리 시장 탐험을 다녀오다", imageUrl: ""))
+//        myFeeds.append(MyFeed(date: "11.03 2017", title: "왕십리 시장 탐험을 다녀오다", imageUrl: ""))
+//        myFeeds.append(MyFeed(date: "11.03 2017", title: "왕십리 시장 탐험을 다녀오다", imageUrl: ""))
+    }
+    
+    @objc func didReceiveMyFeedsNotification(_ noti: Notification) {
+        guard let myFeeds: [MyFeed] = noti.userInfo?["myFeeds"] as? [MyFeed] else {
+            return
+        }
+        
+        self.myFeeds = myFeeds
+        
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
+    private func initializeNotificationObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didReceiveMyFeedsNotification(_:)), name: DidReceiveMyFeedsNotification, object: nil)
     }
     
     private func showDeleteMyFeedAlert(indexPath: IndexPath) {

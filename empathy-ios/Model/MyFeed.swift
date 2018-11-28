@@ -8,9 +8,24 @@
 
 import Foundation
 
+struct MyFeedsApiResponse: Codable {
+    let myFeeds = [MyFeed]()
+    
+    enum CodingKeys: String, CodingKey {
+        case myFeeds
+    }
+}
 
-struct MyFeed {
-    let date: String
-    let title: String
+struct MyFeed: Codable {
+    let contents: String
+    let creationTime: String
     let imageUrl: String
+    let journeyId: Int
+    let location: String
+    let ownerProfileUrl: String
+    let title: String
+    
+    enum CodingKeys: String, CodingKey {
+        case contents, creationTime, imageUrl, journeyId, location, ownerProfileUrl, title
+    }
 }
