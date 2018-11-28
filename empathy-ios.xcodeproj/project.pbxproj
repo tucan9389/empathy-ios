@@ -42,6 +42,10 @@
 		55DFA382219C4D8E001B23AC /* coco_labels_list.txt in Resources */ = {isa = PBXBuildFile; fileRef = 55DFA381219C4D8E001B23AC /* coco_labels_list.txt */; };
 		7BFA4A1761F4D603677913B1 /* Pods_empathy_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CE5B306E7759201DA997162 /* Pods_empathy_ios.framework */; };
 		870933C9F5F93E1CB4A299BC /* Pods_empathy_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A99C37BD44035FBF70FDAAA /* Pods_empathy_iosTests.framework */; };
+		C204747521A7FC13005742C0 /* MyFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C204747421A7FC13005742C0 /* MyFeed.storyboard */; };
+		C204747721A7FC4A005742C0 /* MyFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C204747621A7FC4A005742C0 /* MyFeedViewController.swift */; };
+		C204747921A96EAE005742C0 /* MyFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C204747821A96EAE005742C0 /* MyFeedTableViewCell.swift */; };
+		C204749A21A9B64E005742C0 /* MyFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C204749921A9B64E005742C0 /* MyFeed.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +111,10 @@
 		55DFA381219C4D8E001B23AC /* coco_labels_list.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = coco_labels_list.txt; sourceTree = "<group>"; };
 		A4B7E75F6DB94BEDBFF9D610 /* Pods-empathy-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-empathy-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-empathy-ios/Pods-empathy-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		BDCAE4EBA85808B6A6F58B4A /* Pods-empathy-iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-empathy-iosUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-empathy-iosUITests/Pods-empathy-iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C204747421A7FC13005742C0 /* MyFeed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyFeed.storyboard; sourceTree = "<group>"; };
+		C204747621A7FC4A005742C0 /* MyFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFeedViewController.swift; sourceTree = "<group>"; };
+		C204747821A96EAE005742C0 /* MyFeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFeedTableViewCell.swift; sourceTree = "<group>"; };
+		C204749921A9B64E005742C0 /* MyFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFeed.swift; sourceTree = "<group>"; };
 		C8066D378E5BA86AFFB2257E /* Pods-empathy-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-empathy-iosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-empathy-iosTests/Pods-empathy-iosTests.release.xcconfig"; sourceTree = "<group>"; };
 		F1B9ABD4F70B5C2271C58475 /* Pods-empathy-iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-empathy-iosUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-empathy-iosUITests/Pods-empathy-iosUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -205,6 +213,8 @@
 		55BC061921809A7300FE43CA /* empathy-ios */ = {
 			isa = PBXGroup;
 			children = (
+				C204749821A9B644005742C0 /* Model */,
+				C204747321A7FBE3005742C0 /* MyFeed */,
 				03F88CF921A520C900084E8E /* Feed */,
 				03F2F1092194AECE00A98241 /* Login */,
 				55DF3E9721991DF60080252C /* temp-camera-filter.json */,
@@ -279,6 +289,24 @@
 				F1B9ABD4F70B5C2271C58475 /* Pods-empathy-iosUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		C204747321A7FBE3005742C0 /* MyFeed */ = {
+			isa = PBXGroup;
+			children = (
+				C204747421A7FC13005742C0 /* MyFeed.storyboard */,
+				C204747821A96EAE005742C0 /* MyFeedTableViewCell.swift */,
+				C204747621A7FC4A005742C0 /* MyFeedViewController.swift */,
+			);
+			path = MyFeed;
+			sourceTree = "<group>";
+		};
+		C204749821A9B644005742C0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C204749921A9B64E005742C0 /* MyFeed.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -391,6 +419,7 @@
 			files = (
 				03F2F10B2194AEE200A98241 /* Login.storyboard in Resources */,
 				55DFA382219C4D8E001B23AC /* coco_labels_list.txt in Resources */,
+				C204747521A7FC13005742C0 /* MyFeed.storyboard in Resources */,
 				55BC062521809A7400FE43CA /* LaunchScreen.storyboard in Resources */,
 				55BC062221809A7400FE43CA /* Assets.xcassets in Resources */,
 				55DF3E9821991DF60080252C /* temp-camera-filter.json in Resources */,
@@ -441,20 +470,24 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-empathy-ios/Pods-empathy-ios-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Toaster/Toaster.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toaster.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -513,6 +546,7 @@
 				55DFA36A219C47D3001B23AC /* Utility.swift in Sources */,
 				55DFA379219C4996001B23AC /* UIImage+CVPixelBuffer.swift in Sources */,
 				55A331792192A0A0005DFA01 /* FilterController.swift in Sources */,
+				C204747921A96EAE005742C0 /* MyFeedTableViewCell.swift in Sources */,
 				036BC0A721A5D58100400924 /* WriteFeedViewController.swift in Sources */,
 				55DFA37F219C4996001B23AC /* NonMaxSuppression.swift in Sources */,
 				55DFA369219C47D3001B23AC /* SSDPostprocessor.swift in Sources */,
@@ -525,8 +559,10 @@
 				03F2F10D219529EE00A98241 /* LoginViewController.swift in Sources */,
 				03F88CF521A477FD00084E8E /* InstagramLoginViewController.swift in Sources */,
 				55DFA36B219C47D3001B23AC /* Anchors.swift in Sources */,
+				C204749A21A9B64E005742C0 /* MyFeed.swift in Sources */,
 				55DFA37E219C4996001B23AC /* CVPixelBuffer+Helpers.swift in Sources */,
 				55A3317421900944005DFA01 /* CapturedImageViewController.swift in Sources */,
+				C204747721A7FC4A005742C0 /* MyFeedViewController.swift in Sources */,
 				55DFA378219C4996001B23AC /* Math.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

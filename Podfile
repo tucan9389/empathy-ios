@@ -7,6 +7,8 @@ target 'empathy-ios' do
 
   # Pods for empathy-ios
 
+  pod 'Alamofire', '~> 4.7'
+  pod 'Kingfisher', '~> 4.0'
   pod 'FacebookLogin'
   # pod 'CameraManager', '~> 4.3'
   pod 'Toaster', '~> 2.1.1'
