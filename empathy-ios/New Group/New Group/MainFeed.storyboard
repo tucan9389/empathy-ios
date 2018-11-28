@@ -10,6 +10,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Location-->
+        <scene sceneID="IvD-0G-2IN">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Location" id="uhI-aI-pf9" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Ph-Lp-M8s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="974" y="-351"/>
+        </scene>
         <!--Main Feed View Controller-->
         <scene sceneID="1y0-6G-QZk">
             <objects>
@@ -21,6 +29,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I4T-ol-UuX">
                                 <rect key="frame" x="17" y="37" width="26" height="27.333333333333329"/>
                                 <state key="normal" image="iconEditArea"/>
+                                <connections>
+                                    <segue destination="uhI-aI-pf9" kind="show" id="36d-CT-r6I"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울특별시 왕십로 222 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fM9-5j-eqh">
                                 <rect key="frame" x="137" y="41.666666666666664" width="140" height="18"/>
@@ -120,7 +131,7 @@
                                         <attributedString key="attributedText">
                                             <fragment content="왕십리">
                                                 <attributes>
-                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <font key="NSFont" size="20" name="AppleSDGothicNeo-Medium"/>
                                                     <font key="NSOriginalFont" size="20" name="AppleSDGothicNeo-Medium"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -128,7 +139,7 @@
                                             </fragment>
                                             <fragment content=" ">
                                                 <attributes>
-                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <font key="NSFont" size="17" name="AppleSDGothicNeo-Regular"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
@@ -163,6 +174,7 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="grapefruit"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="9Dc-9k-9td" firstAttribute="leading" secondItem="br4-13-x3g" secondAttribute="leading" id="0fh-l8-akO"/>
                                     <constraint firstItem="G5O-pV-LuO" firstAttribute="top" secondItem="rhf-We-Oin" secondAttribute="top" id="1rz-ZM-iNf"/>

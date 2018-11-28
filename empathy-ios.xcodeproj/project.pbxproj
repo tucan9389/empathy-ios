@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0358621B21ABC3E000CF5727 /* Location.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0358621A21ABC3E000CF5727 /* Location.storyboard */; };
+		035A8A4F21AC4E2500CA3B8C /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035A8A4E21AC4E2500CA3B8C /* LocationViewController.swift */; };
+		035A8A5421AC512700CA3B8C /* TouristSite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 035A8A5321AC512700CA3B8C /* TouristSite.storyboard */; };
+		035A8A5621AC5FD800CA3B8C /* TouristSiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035A8A5521AC5FD800CA3B8C /* TouristSiteViewController.swift */; };
+		035A8A5821AC601500CA3B8C /* Affiliate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 035A8A5721AC601500CA3B8C /* Affiliate.storyboard */; };
+		035A8A5A21AC660B00CA3B8C /* AffiliateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035A8A5921AC660B00CA3B8C /* AffiliateViewController.swift */; };
+		035A8A5C21AC662F00CA3B8C /* AffiliateDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035A8A5B21AC662F00CA3B8C /* AffiliateDetailViewController.swift */; };
+		035A8A5E21AC664D00CA3B8C /* TouristSiteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035A8A5D21AC664D00CA3B8C /* TouristSiteDetailViewController.swift */; };
 		036BC0A721A5D58100400924 /* WriteFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036BC0A621A5D58100400924 /* WriteFeedViewController.swift */; };
 		03A9EF4921AA970400FD7F2D /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03A9EF4821AA970400FD7F2D /* Color.xcassets */; };
 		03A9EF5321AAADB200FD7F2D /* MainFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03A9EF5221AAADB200FD7F2D /* MainFeed.storyboard */; };
@@ -45,6 +53,17 @@
 		55DFA382219C4D8E001B23AC /* coco_labels_list.txt in Resources */ = {isa = PBXBuildFile; fileRef = 55DFA381219C4D8E001B23AC /* coco_labels_list.txt */; };
 		7BFA4A1761F4D603677913B1 /* Pods_empathy_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CE5B306E7759201DA997162 /* Pods_empathy_ios.framework */; };
 		870933C9F5F93E1CB4A299BC /* Pods_empathy_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A99C37BD44035FBF70FDAAA /* Pods_empathy_iosTests.framework */; };
+		C204747521A7FC13005742C0 /* MyFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C204747421A7FC13005742C0 /* MyFeed.storyboard */; };
+		C204747721A7FC4A005742C0 /* MyFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C204747621A7FC4A005742C0 /* MyFeedViewController.swift */; };
+		C204747921A96EAE005742C0 /* MyFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C204747821A96EAE005742C0 /* MyFeedTableViewCell.swift */; };
+		C204749A21A9B64E005742C0 /* MyFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C204749921A9B64E005742C0 /* MyFeed.swift */; };
+		C204F82B21AEEE4800E8ABEB /* FetchMyFeeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = C204F82A21AEEE4800E8ABEB /* FetchMyFeeds.swift */; };
+		C204F82D21AEEECF00E8ABEB /* Commons.swift in Sources */ = {isa = PBXBuildFile; fileRef = C204F82C21AEEECF00E8ABEB /* Commons.swift */; };
+		C204F82F21AEEFD200E8ABEB /* NetworkErrorNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C204F82E21AEEFD200E8ABEB /* NetworkErrorNotification.swift */; };
+		C204F83321AF107F00E8ABEB /* FeedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C204F83221AF107F00E8ABEB /* FeedDetailViewController.swift */; };
+		C204F83521AF109000E8ABEB /* FeedDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C204F83421AF109000E8ABEB /* FeedDetail.storyboard */; };
+		C280DC9321AF1D2700A54D82 /* FeedDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C280DC9221AF1D2700A54D82 /* FeedDetail.swift */; };
+		C280DC9521AF1D5700A54D82 /* FetchDetailFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C280DC9421AF1D5700A54D82 /* FetchDetailFeed.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +84,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0358621A21ABC3E000CF5727 /* Location.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Location.storyboard; sourceTree = "<group>"; };
+		035A8A4E21AC4E2500CA3B8C /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		035A8A5321AC512700CA3B8C /* TouristSite.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TouristSite.storyboard; sourceTree = "<group>"; };
+		035A8A5521AC5FD800CA3B8C /* TouristSiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouristSiteViewController.swift; sourceTree = "<group>"; };
+		035A8A5721AC601500CA3B8C /* Affiliate.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Affiliate.storyboard; sourceTree = "<group>"; };
+		035A8A5921AC660B00CA3B8C /* AffiliateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffiliateViewController.swift; sourceTree = "<group>"; };
+		035A8A5B21AC662F00CA3B8C /* AffiliateDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffiliateDetailViewController.swift; sourceTree = "<group>"; };
+		035A8A5D21AC664D00CA3B8C /* TouristSiteDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouristSiteDetailViewController.swift; sourceTree = "<group>"; };
 		036BC0A621A5D58100400924 /* WriteFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteFeedViewController.swift; sourceTree = "<group>"; };
 		03A9EF4821AA970400FD7F2D /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		03A9EF5221AAADB200FD7F2D /* MainFeed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainFeed.storyboard; sourceTree = "<group>"; };
@@ -113,6 +140,17 @@
 		55DFA381219C4D8E001B23AC /* coco_labels_list.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = coco_labels_list.txt; sourceTree = "<group>"; };
 		A4B7E75F6DB94BEDBFF9D610 /* Pods-empathy-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-empathy-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-empathy-ios/Pods-empathy-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		BDCAE4EBA85808B6A6F58B4A /* Pods-empathy-iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-empathy-iosUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-empathy-iosUITests/Pods-empathy-iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C204747421A7FC13005742C0 /* MyFeed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyFeed.storyboard; sourceTree = "<group>"; };
+		C204747621A7FC4A005742C0 /* MyFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFeedViewController.swift; sourceTree = "<group>"; };
+		C204747821A96EAE005742C0 /* MyFeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFeedTableViewCell.swift; sourceTree = "<group>"; };
+		C204749921A9B64E005742C0 /* MyFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFeed.swift; sourceTree = "<group>"; };
+		C204F82A21AEEE4800E8ABEB /* FetchMyFeeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMyFeeds.swift; sourceTree = "<group>"; };
+		C204F82C21AEEECF00E8ABEB /* Commons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commons.swift; sourceTree = "<group>"; };
+		C204F82E21AEEFD200E8ABEB /* NetworkErrorNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorNotification.swift; sourceTree = "<group>"; };
+		C204F83221AF107F00E8ABEB /* FeedDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailViewController.swift; sourceTree = "<group>"; };
+		C204F83421AF109000E8ABEB /* FeedDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedDetail.storyboard; sourceTree = "<group>"; };
+		C280DC9221AF1D2700A54D82 /* FeedDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetail.swift; sourceTree = "<group>"; };
+		C280DC9421AF1D5700A54D82 /* FetchDetailFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDetailFeed.swift; sourceTree = "<group>"; };
 		C8066D378E5BA86AFFB2257E /* Pods-empathy-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-empathy-iosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-empathy-iosTests/Pods-empathy-iosTests.release.xcconfig"; sourceTree = "<group>"; };
 		F1B9ABD4F70B5C2271C58475 /* Pods-empathy-iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-empathy-iosUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-empathy-iosUITests/Pods-empathy-iosUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,6 +183,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0358621921ABC33E00CF5727 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				0358621A21ABC3E000CF5727 /* Location.storyboard */,
+				035A8A4E21AC4E2500CA3B8C /* LocationViewController.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		035A8A5021AC4F8700CA3B8C /* Affiliate */ = {
+			isa = PBXGroup;
+			children = (
+				035A8A5221AC50DA00CA3B8C /* TouristSite */,
+				035A8A5721AC601500CA3B8C /* Affiliate.storyboard */,
+				035A8A5921AC660B00CA3B8C /* AffiliateViewController.swift */,
+				035A8A5B21AC662F00CA3B8C /* AffiliateDetailViewController.swift */,
+			);
+			path = Affiliate;
+			sourceTree = "<group>";
+		};
+		035A8A5221AC50DA00CA3B8C /* TouristSite */ = {
+			isa = PBXGroup;
+			children = (
+				035A8A5321AC512700CA3B8C /* TouristSite.storyboard */,
+				035A8A5521AC5FD800CA3B8C /* TouristSiteViewController.swift */,
+				035A8A5D21AC664D00CA3B8C /* TouristSiteDetailViewController.swift */,
+			);
+			path = TouristSite;
+			sourceTree = "<group>";
+		};
 		03A9EF4A21AA981200FD7F2D /* Write Feed */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +247,8 @@
 		03F88CF921A520C900084E8E /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				035A8A5021AC4F8700CA3B8C /* Affiliate */,
+				0358621921ABC33E00CF5727 /* Location */,
 				03A9EF5121AAAD6600FD7F2D /* Main Feed */,
 				03A9EF4A21AA981200FD7F2D /* Write Feed */,
 			);
@@ -243,6 +313,11 @@
 		55BC061921809A7300FE43CA /* empathy-ios */ = {
 			isa = PBXGroup;
 			children = (
+				C204F83121AF106700E8ABEB /* FeedDetail */,
+				C204F82921AEEE3300E8ABEB /* Request */,
+				C204F82521AECCA900E8ABEB /* Common */,
+				C204749821A9B644005742C0 /* Model */,
+				C204747321A7FBE3005742C0 /* MyFeed */,
 				55BC061A21809A7300FE43CA /* AppDelegate.swift */,
 				5577097E21AA144800363CE3 /* Camera */,
 				03F88CF921A520C900084E8E /* Feed */,
@@ -313,6 +388,52 @@
 				F1B9ABD4F70B5C2271C58475 /* Pods-empathy-iosUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		C204747321A7FBE3005742C0 /* MyFeed */ = {
+			isa = PBXGroup;
+			children = (
+				C204747421A7FC13005742C0 /* MyFeed.storyboard */,
+				C204747821A96EAE005742C0 /* MyFeedTableViewCell.swift */,
+				C204747621A7FC4A005742C0 /* MyFeedViewController.swift */,
+			);
+			path = MyFeed;
+			sourceTree = "<group>";
+		};
+		C204749821A9B644005742C0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C204749921A9B64E005742C0 /* MyFeed.swift */,
+				C280DC9221AF1D2700A54D82 /* FeedDetail.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C204F82521AECCA900E8ABEB /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C204F82C21AEEECF00E8ABEB /* Commons.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		C204F82921AEEE3300E8ABEB /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				C204F82A21AEEE4800E8ABEB /* FetchMyFeeds.swift */,
+				C280DC9421AF1D5700A54D82 /* FetchDetailFeed.swift */,
+				C204F82E21AEEFD200E8ABEB /* NetworkErrorNotification.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		C204F83121AF106700E8ABEB /* FeedDetail */ = {
+			isa = PBXGroup;
+			children = (
+				C204F83221AF107F00E8ABEB /* FeedDetailViewController.swift */,
+				C204F83421AF109000E8ABEB /* FeedDetail.storyboard */,
+			);
+			path = FeedDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -426,9 +547,14 @@
 				03F2F10B2194AEE200A98241 /* Login.storyboard in Resources */,
 				03A9EF4921AA970400FD7F2D /* Color.xcassets in Resources */,
 				03A9EF5321AAADB200FD7F2D /* MainFeed.storyboard in Resources */,
+				C204F83521AF109000E8ABEB /* FeedDetail.storyboard in Resources */,
 				55DFA382219C4D8E001B23AC /* coco_labels_list.txt in Resources */,
+				C204747521A7FC13005742C0 /* MyFeed.storyboard in Resources */,
 				55BC062521809A7400FE43CA /* LaunchScreen.storyboard in Resources */,
+				0358621B21ABC3E000CF5727 /* Location.storyboard in Resources */,
+				035A8A5421AC512700CA3B8C /* TouristSite.storyboard in Resources */,
 				55BC062221809A7400FE43CA /* Assets.xcassets in Resources */,
+				035A8A5821AC601500CA3B8C /* Affiliate.storyboard in Resources */,
 				55DF3E9821991DF60080252C /* temp-camera-filter.json in Resources */,
 				03F88CFB21A5215C00084E8E /* WriteFeed.storyboard in Resources */,
 				55BC062021809A7300FE43CA /* Camera.storyboard in Resources */,
@@ -477,20 +603,24 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-empathy-ios/Pods-empathy-ios-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Toaster/Toaster.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toaster.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -541,29 +671,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C204F82F21AEEFD200E8ABEB /* NetworkErrorNotification.swift in Sources */,
+				035A8A5621AC5FD800CA3B8C /* TouristSiteViewController.swift in Sources */,
+				C204F82D21AEEECF00E8ABEB /* Commons.swift in Sources */,
 				55DFA380219C4996001B23AC /* MLMultiArray+Image.swift in Sources */,
 				03F88CF821A5129900084E8E /* Constants.swift in Sources */,
 				55DFA37C219C4996001B23AC /* Predictions.swift in Sources */,
 				55DFA37B219C4996001B23AC /* BoundingBox.swift in Sources */,
+				C204F83321AF107F00E8ABEB /* FeedDetailViewController.swift in Sources */,
 				55DFA37D219C4996001B23AC /* MultiArray.swift in Sources */,
 				55DFA36A219C47D3001B23AC /* Utility.swift in Sources */,
 				55DFA379219C4996001B23AC /* UIImage+CVPixelBuffer.swift in Sources */,
 				03A9EF5521AAADBD00FD7F2D /* MainFeedViewController.swift in Sources */,
+				035A8A5A21AC660B00CA3B8C /* AffiliateViewController.swift in Sources */,
+				C280DC9321AF1D2700A54D82 /* FeedDetail.swift in Sources */,
 				55A331792192A0A0005DFA01 /* FilterController.swift in Sources */,
+				C204747921A96EAE005742C0 /* MyFeedTableViewCell.swift in Sources */,
 				036BC0A721A5D58100400924 /* WriteFeedViewController.swift in Sources */,
+				035A8A4F21AC4E2500CA3B8C /* LocationViewController.swift in Sources */,
 				55DFA37F219C4996001B23AC /* NonMaxSuppression.swift in Sources */,
 				55DFA369219C47D3001B23AC /* SSDPostprocessor.swift in Sources */,
+				035A8A5E21AC664D00CA3B8C /* TouristSiteDetailViewController.swift in Sources */,
+				C204F82B21AEEE4800E8ABEB /* FetchMyFeeds.swift in Sources */,
 				55BC061D21809A7300FE43CA /* CameraViewController.swift in Sources */,
 				03F2F10F21952DEA00A98241 /* RoundedButton.swift in Sources */,
+				035A8A5C21AC662F00CA3B8C /* AffiliateDetailViewController.swift in Sources */,
 				55BC061B21809A7300FE43CA /* AppDelegate.swift in Sources */,
 				55DFA365219C4675001B23AC /* ssd_mobilenet_feature_extractor.mlmodel in Sources */,
+				C280DC9521AF1D5700A54D82 /* FetchDetailFeed.swift in Sources */,
 				55DFA37A219C4996001B23AC /* Array.swift in Sources */,
 				55A331772191A84D005DFA01 /* FilterCollectionView.swift in Sources */,
 				03F2F10D219529EE00A98241 /* LoginViewController.swift in Sources */,
 				03F88CF521A477FD00084E8E /* InstagramLoginViewController.swift in Sources */,
 				55DFA36B219C47D3001B23AC /* Anchors.swift in Sources */,
+				C204749A21A9B64E005742C0 /* MyFeed.swift in Sources */,
 				55DFA37E219C4996001B23AC /* CVPixelBuffer+Helpers.swift in Sources */,
 				55A3317421900944005DFA01 /* CapturedImageViewController.swift in Sources */,
+				C204747721A7FC4A005742C0 /* MyFeedViewController.swift in Sources */,
 				55DFA378219C4996001B23AC /* Math.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -741,7 +885,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5WXJ4Z4H69;
+				DEVELOPMENT_TEAM = WG2S2TXYL2;
 				INFOPLIST_FILE = "empathy-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mgeeks.empathy;
@@ -757,7 +901,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5WXJ4Z4H69;
+				DEVELOPMENT_TEAM = WG2S2TXYL2;
 				INFOPLIST_FILE = "empathy-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mgeeks.empathy;

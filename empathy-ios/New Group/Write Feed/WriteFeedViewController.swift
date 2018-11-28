@@ -36,7 +36,7 @@ class WriteFeedViewController: UIViewController {
         detailTextView.delegate = self
         detailTextView.isScrollEnabled = false
         
-        privateSwitch.onTintColor = #colorLiteral(red: 1, green: 0.3450980392, blue: 0.3450980392, alpha: 1)
+        privateSwitch.onTintColor = #colorLiteral(red: 0.1647058824, green: 0.1725490196, blue: 0.2039215686, alpha: 1)
         dateLabel.text = getCurrentDate()
         
         topHorizontalLineConstraint.constant = view.frame.width/3
@@ -50,6 +50,7 @@ class WriteFeedViewController: UIViewController {
     }
     
     @IBAction func tapCancel(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func tapConfirm(_ sender: UIButton) {
