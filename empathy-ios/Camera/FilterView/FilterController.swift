@@ -290,7 +290,7 @@ class FilterImageView: UIView {
         let imageViewX: CGFloat = (closeButton?.center.x ?? 0) + (imageView?.frame.width ?? 0)/2
         let imageViewY: CGFloat = (imageView?.frame.height ?? 0)/2 + (closeButton?.frame.height ?? 0)/2
         imageView?.center = CGPoint(x: imageViewX, y: imageViewY)
-        if filter.align_left {
+        if true/*filter.align_left*/ {
             rotateScalePanButton?.center = .zero
             rotateScalePanButton?.alpha = 0
         } else {

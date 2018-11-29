@@ -203,7 +203,7 @@
                                         <rect key="frame" x="0.0" y="40" width="22" height="68"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <button opaque="NO" alpha="0.0" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GY3-9f-YsE">
+                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GY3-9f-YsE">
                                         <rect key="frame" x="309" y="52" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="2ZR-cH-mTg"/>
@@ -312,7 +312,7 @@
                                                         <action selector="tapFilterCategory:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W4A-ao-cDZ"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zd4-JU-8k6">
+                                                <button opaque="NO" alpha="0.0" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zd4-JU-8k6">
                                                     <rect key="frame" x="140" y="0.0" width="47" height="45"/>
                                                     <state key="normal" image="iconLand"/>
                                                     <state key="selected" image="iconLandSel"/>
@@ -522,7 +522,7 @@
                                             <action selector="tapExport:" destination="AgZ-8j-h8b" eventType="touchUpInside" id="QUz-0f-a7c"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcC-sU-sJr">
+                                    <button opaque="NO" alpha="0.0" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcC-sU-sJr">
                                         <rect key="frame" x="238.5" y="45" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="44" id="7F6-kX-S1a"/>

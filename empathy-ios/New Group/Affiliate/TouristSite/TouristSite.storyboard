@@ -43,7 +43,7 @@
                                 <color key="separatorColor" name="charcoalgrey"/>
                                 <color key="sectionIndexBackgroundColor" name="charcoalgrey"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="235" id="Snm-fT-xyM">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TouristSiteTableViewCell" rowHeight="235" id="Snm-fT-xyM" customClass="TouristSiteTableViewCell" customModule="empathy_ios" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="235"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Snm-fT-xyM" id="3TL-FG-wf9">
@@ -92,10 +92,17 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="charcoalgrey"/>
                                         <connections>
+                                            <outlet property="cellImageView" destination="F0T-4O-VjG" id="drB-nr-yJk"/>
+                                            <outlet property="label1" destination="DyK-4y-7qu" id="6n4-sC-p3J"/>
+                                            <outlet property="label2" destination="YZr-dx-6je" id="nX4-1z-Caz"/>
                                             <segue destination="i0e-I6-FYa" kind="show" id="BcH-mC-Hlu"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="qly-ed-hBz" id="t4W-xq-uBI"/>
+                                    <outlet property="delegate" destination="qly-ed-hBz" id="Ek0-r4-ycK"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" name="charcoalgrey"/>
@@ -113,6 +120,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CbB-AJ-ypH"/>
                     </view>
+                    <connections>
+                        <outlet property="touristTableView" destination="dyz-Ug-IId" id="Anr-Gv-ooN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="at3-jP-PMN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
