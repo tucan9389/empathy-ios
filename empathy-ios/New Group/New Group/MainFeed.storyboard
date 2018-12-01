@@ -27,6 +27,14 @@
             </objects>
             <point key="canvasLocation" x="1033" y="-147"/>
         </scene>
+        <!--MyFeed-->
+        <scene sceneID="tCO-TN-Kaf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MyFeed" id="SHD-iD-J4p" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WdP-Uv-wh0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1038" y="-82"/>
+        </scene>
         <!--Location-->
         <scene sceneID="IvD-0G-2IN">
             <objects>
@@ -268,13 +276,23 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kkJ-l2-ElJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="249"/>
+                                                <connections>
+                                                    <segue destination="SHD-iD-J4p" kind="show" id="VJw-NN-7Hi"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" name="charcoalgrey"/>
                                         <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="kkJ-l2-ElJ" secondAttribute="bottom" id="877-3e-JLS"/>
                                             <constraint firstItem="pf0-2q-MbZ" firstAttribute="centerX" secondItem="xky-Xx-zXk" secondAttribute="centerX" id="BXW-tG-RII"/>
+                                            <constraint firstItem="kkJ-l2-ElJ" firstAttribute="top" secondItem="xky-Xx-zXk" secondAttribute="top" id="H4g-7p-vHE"/>
                                             <constraint firstItem="6f7-fp-VJV" firstAttribute="centerX" secondItem="xky-Xx-zXk" secondAttribute="centerX" id="J1x-dO-wni"/>
                                             <constraint firstItem="pf0-2q-MbZ" firstAttribute="centerY" secondItem="xky-Xx-zXk" secondAttribute="centerY" constant="8" id="Q24-xE-ObI"/>
                                             <constraint firstItem="pf0-2q-MbZ" firstAttribute="top" secondItem="6f7-fp-VJV" secondAttribute="bottom" constant="5" id="ne8-7g-K97"/>
+                                            <constraint firstItem="kkJ-l2-ElJ" firstAttribute="leading" secondItem="xky-Xx-zXk" secondAttribute="leading" id="ntZ-gn-3Pb"/>
+                                            <constraint firstAttribute="trailing" secondItem="kkJ-l2-ElJ" secondAttribute="trailing" id="w0A-x8-vSG"/>
                                         </constraints>
                                     </view>
                                 </subviews>

@@ -27,6 +27,8 @@ class WriteFeedViewController: UIViewController {
     
     var image: UIImage?
     var userInfo: UserInfo?
+    var location:String?
+    var locationEnum:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -160,24 +162,25 @@ extension WriteFeedViewController {
             // let image = UIImage(named: "bodrum")!
             
             // define parameters
-            let parameters = [
-                "ownerId": "yalikavak",
-                "title": "istanbul",
-                "contents": "",
-                "location": "",
-                "locationEnum": ""
-            ]
-            
-            let urlPath = Commons.baseUrl + "/journey/"
-            
-            Alamofire.upload(multipartFormData: { multipartFormData in
-                if let imageData = image.pngData() {
-                    multipartFormData.append(imageData, withName: "file", fileName: "file.png", mimeType: "image/png")
-                }
+            if let locationString = locationLabel.text {
+                let parameters:[String:String] = [
+                    "ownerId": "\(userInfo.userId)",
+                    "title": titleTextView.text,
+                    "contents": detailTextView.text,
+                    "location": locationString,
+                    "locationEnum": "Seoul"
+                ]
                 
-                for (key, value) in parameters {
-                    multipartFormData.append((value.data(using: .utf8))!, withName: key)
-                }}, to: "file", method: .post/*, headers: ["Authorization": "auth_token"]*/,
+                let urlPath = Commons.baseUrl + "/journey/"
+                
+                Alamofire.upload(multipartFormData: { multipartFormData in
+                    if let imageData = image.pngData() {
+                        multipartFormData.append(imageData, withName: "file", fileName: "file.png", mimeType: "image/png")
+                    }
+                
+                    for (key, value) in parameters {
+                        multipartFormData.append((value.data(using: .utf8))!, withName: key)
+                    }}, to: urlPath, method: .post/*, headers: ["Authorization": "auth_token"]*/,
                     encodingCompletion: { encodingResult in
                         switch encodingResult {
                         case .success(let upload, _, _):
@@ -186,26 +189,14 @@ extension WriteFeedViewController {
                                     return
                                 }
                                 debugPrint(response)
+                                print(response.response)
                             }
+                            self.dismiss(animated: true, completion: nil)
                         case .failure(let encodingError):
                             print("error:\(encodingError)")
                         }
-            })
-            
-            // let imageData = UIImage.jpegData(image)
-            /*
-            Alamofire.upload(multipartFormData: { (multipartFormData) in
-                multipartFormData.append(imageData, withName: "file", fileName: "file.jpeg", mimeType: "image/jpeg")
-            }, to: urlPath) { (result) in
-                 switch result {
-                 case .success:
-                    print("upload")
-//                 default : break
-                 case .failure(let encodingError):
-                    print(encodingError)
-                }
+                })
             }
- */
         }
     }
 }
