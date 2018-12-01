@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct MainFeed:Codable {
+struct MainFeed {
     let enumStr:String
     let imageURL:String
     let isFirst:String
