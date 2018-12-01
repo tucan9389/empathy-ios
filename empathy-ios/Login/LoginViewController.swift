@@ -50,18 +50,20 @@ class LoginViewController: UIViewController {
             case .success(let grantedPermissions, let declinedPermissions, let accessToken):
                 print("Logged in!")
                 print(accessToken)
+                
                 self.getUserInformation { userInfo, error in
                     if let error = error {(print(error.localizedDescription))}
                     
-                    if let userInfo = userInfo, let id = userInfo["id"], let name = (userInfo["name"] as? String), let email=userInfo["email"], let pictureURL = (userInfo["picture"] as? [String:Any])?["data"] as? [String:Any]{
+                    if let userInfo = userInfo, let id = userInfo["id"], let name = (userInfo["name"] as? String), let email=userInfo["email"], let pictureURL = (userInfo["picture"] as? [String:Any])?["data"] as? [String:Any] {
                         print("\(id)////\(name)////\(email)")
                         print("URL:::\(pictureURL["url"])")
                         if let url = (pictureURL["url"] as? String) {
-                            self.postLoginFacebook(name, url)
+                            self.postLoginFacebook(name, url, accessToken.authenticationToken)
                         }
                     }
                 }
                 if let viewController = UIStoryboard.init(name: "MainFeed", bundle: Bundle.main).instantiateViewController(withIdentifier: "MainFeedViewController") as? MainFeedViewController {
+                    viewController.userInfo = self.userInformation
                     self.navigationController?.pushViewController(viewController, animated: true)
                     self.present(viewController, animated: true, completion: nil)
                 }
@@ -84,11 +86,11 @@ class LoginViewController: UIViewController {
 
 // MARK - request
 extension LoginViewController {
-    func postLoginFacebook(_ name:String, _ pictureURL:String) {
+    func postLoginFacebook(_ name:String, _ pictureURL:String, _ token:String) {
         let urlPath = "\(Commons.baseUrl)/user/"
 //        let
         Alamofire.request(urlPath,
-            method: .post, parameters: ["name":name, "loginApi":"facebook" , "picturURL":pictureURL],
+                          method: .post, parameters: ["name":name, "loginApi":"facebook" , "picturURL":pictureURL, "token": token],
             encoding: JSONEncoding.default, headers: nil).responseJSON { response in
                 print("Request: \(String(describing: response.request))")   // original url request
                 print("Response: \(String(describing: response.response))") // http url response
