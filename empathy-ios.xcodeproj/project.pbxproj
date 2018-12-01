@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0357512F21B20B4D0048323A /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0357512E21B20B4D0048323A /* UserInfo.swift */; };
+		0357513121B231250048323A /* MainFeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0357513021B231250048323A /* MainFeedCollectionViewCell.swift */; };
+		0357513321B233A10048323A /* OtherPeoplJourney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0357513221B233A10048323A /* OtherPeoplJourney.swift */; };
+		0357513521B234160048323A /* MainFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0357513421B234160048323A /* MainFeed.swift */; };
+		0357513721B234E70048323A /* LocationEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0357513621B234E70048323A /* LocationEnum.swift */; };
 		0358621B21ABC3E000CF5727 /* Location.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0358621A21ABC3E000CF5727 /* Location.storyboard */; };
 		035A8A4F21AC4E2500CA3B8C /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035A8A4E21AC4E2500CA3B8C /* LocationViewController.swift */; };
 		035A8A5421AC512700CA3B8C /* TouristSite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 035A8A5321AC512700CA3B8C /* TouristSite.storyboard */; };
@@ -84,6 +89,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0357512E21B20B4D0048323A /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		0357513021B231250048323A /* MainFeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainFeedCollectionViewCell.swift; path = "empathy-ios/New Group/Main Feed/MainFeedCollectionViewCell.swift"; sourceTree = SOURCE_ROOT; };
+		0357513221B233A10048323A /* OtherPeoplJourney.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherPeoplJourney.swift; sourceTree = "<group>"; };
+		0357513421B234160048323A /* MainFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeed.swift; sourceTree = "<group>"; };
+		0357513621B234E70048323A /* LocationEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEnum.swift; sourceTree = "<group>"; };
 		0358621A21ABC3E000CF5727 /* Location.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Location.storyboard; sourceTree = "<group>"; };
 		035A8A4E21AC4E2500CA3B8C /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		035A8A5321AC512700CA3B8C /* TouristSite.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TouristSite.storyboard; sourceTree = "<group>"; };
@@ -228,6 +238,7 @@
 			children = (
 				03A9EF5221AAADB200FD7F2D /* MainFeed.storyboard */,
 				03A9EF5421AAADBD00FD7F2D /* MainFeedViewController.swift */,
+				0357513021B231250048323A /* MainFeedCollectionViewCell.swift */,
 			);
 			name = "Main Feed";
 			path = "New Group";
@@ -413,6 +424,10 @@
 			children = (
 				C204749921A9B64E005742C0 /* MyFeed.swift */,
 				C280DC9221AF1D2700A54D82 /* FeedDetail.swift */,
+				0357512E21B20B4D0048323A /* UserInfo.swift */,
+				0357513221B233A10048323A /* OtherPeoplJourney.swift */,
+				0357513421B234160048323A /* MainFeed.swift */,
+				0357513621B234E70048323A /* LocationEnum.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -680,9 +695,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C204F82F21AEEFD200E8ABEB /* NetworkErrorNotification.swift in Sources */,
+				0357513721B234E70048323A /* LocationEnum.swift in Sources */,
 				035A8A5621AC5FD800CA3B8C /* TouristSiteViewController.swift in Sources */,
 				C204F82D21AEEECF00E8ABEB /* Commons.swift in Sources */,
 				55DFA380219C4996001B23AC /* MLMultiArray+Image.swift in Sources */,
+				0357513521B234160048323A /* MainFeed.swift in Sources */,
 				03F88CF821A5129900084E8E /* Constants.swift in Sources */,
 				55DFA37C219C4996001B23AC /* Predictions.swift in Sources */,
 				55DFA37B219C4996001B23AC /* BoundingBox.swift in Sources */,
@@ -701,6 +718,7 @@
 				55DFA369219C47D3001B23AC /* SSDPostprocessor.swift in Sources */,
 				035A8A5E21AC664D00CA3B8C /* TouristSiteDetailViewController.swift in Sources */,
 				C204F82B21AEEE4800E8ABEB /* FetchMyFeeds.swift in Sources */,
+				0357513121B231250048323A /* MainFeedCollectionViewCell.swift in Sources */,
 				55BC061D21809A7300FE43CA /* CameraViewController.swift in Sources */,
 				03F2F10F21952DEA00A98241 /* RoundedButton.swift in Sources */,
 				035A8A5C21AC662F00CA3B8C /* AffiliateDetailViewController.swift in Sources */,
@@ -713,6 +731,8 @@
 				03F88CF521A477FD00084E8E /* InstagramLoginViewController.swift in Sources */,
 				55DFA36B219C47D3001B23AC /* Anchors.swift in Sources */,
 				C204749A21A9B64E005742C0 /* MyFeed.swift in Sources */,
+				0357512F21B20B4D0048323A /* UserInfo.swift in Sources */,
+				0357513321B233A10048323A /* OtherPeoplJourney.swift in Sources */,
 				55DFA37E219C4996001B23AC /* CVPixelBuffer+Helpers.swift in Sources */,
 				55A3317421900944005DFA01 /* CapturedImageViewController.swift in Sources */,
 				C204747721A7FC4A005742C0 /* MyFeedViewController.swift in Sources */,
@@ -893,8 +913,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5WXJ4Z4H69;
+				DEVELOPMENT_TEAM = WG2S2TXYL2;
 				INFOPLIST_FILE = "empathy-ios/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -912,8 +933,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5WXJ4Z4H69;
+				DEVELOPMENT_TEAM = WG2S2TXYL2;
 				INFOPLIST_FILE = "empathy-ios/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

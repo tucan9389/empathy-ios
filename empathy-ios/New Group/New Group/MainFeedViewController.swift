@@ -11,8 +11,10 @@ import UIKit
 class MainFeedViewController: UIViewController {
 
     @IBOutlet weak var peopleJourneyCollectionView: UICollectionView!
-    
     @IBOutlet weak var smileLabel: UILabel!
+    
+    var userInfo:UserInfo?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,7 +40,15 @@ extension MainFeedViewController: UICollectionViewDelegate,UICollectionViewDataS
         return 18
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = peopleJourneyCollectionView.dequeueReusableCell(withReuseIdentifier: "peopleJourney", for: indexPath)
+        guard let cell = peopleJourneyCollectionView.dequeueReusableCell(withReuseIdentifier: "peopleJourney", for: indexPath) as? MainFeedCollectionViewCell else {
+            return UICollectionViewCell()
+        }
         return cell
+    }
+}
+
+extension MainFeedViewController {
+    func requestMainFeedInfo(){
+        
     }
 }
