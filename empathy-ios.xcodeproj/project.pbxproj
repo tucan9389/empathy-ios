@@ -46,6 +46,7 @@
 		55090CBA21B2DEE600147D20 /* TrackingDotHalo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 55090CAD21B2DEE600147D20 /* TrackingDotHalo@2x.png */; };
 		55090CBB21B2DEE600147D20 /* icon_clustering@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 55090CAE21B2DEE600147D20 /* icon_clustering@2x.png */; };
 		55090CBC21B2DEE600147D20 /* TrackingDot.png in Resources */ = {isa = PBXBuildFile; fileRef = 55090CAF21B2DEE600147D20 /* TrackingDot.png */; };
+		55090CBE21B2F0EF00147D20 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55090CBD21B2F0EF00147D20 /* LocationManager.swift */; };
 		55A3317421900944005DFA01 /* CapturedImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A3317321900944005DFA01 /* CapturedImageViewController.swift */; };
 		55A331772191A84D005DFA01 /* FilterCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A331762191A84D005DFA01 /* FilterCollectionView.swift */; };
 		55A331792192A0A0005DFA01 /* FilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A331782192A0A0005DFA01 /* FilterController.swift */; };
@@ -167,6 +168,7 @@
 		55090CAD21B2DEE600147D20 /* TrackingDotHalo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TrackingDotHalo@2x.png"; sourceTree = "<group>"; };
 		55090CAE21B2DEE600147D20 /* icon_clustering@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_clustering@2x.png"; sourceTree = "<group>"; };
 		55090CAF21B2DEE600147D20 /* TrackingDot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TrackingDot.png; sourceTree = "<group>"; };
+		55090CBD21B2F0EF00147D20 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		55A3317321900944005DFA01 /* CapturedImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturedImageViewController.swift; sourceTree = "<group>"; };
 		55A331762191A84D005DFA01 /* FilterCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionView.swift; sourceTree = "<group>"; };
 		55A331782192A0A0005DFA01 /* FilterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterController.swift; sourceTree = "<group>"; };
@@ -441,6 +443,7 @@
 				5577097E21AA144800363CE3 /* Camera */,
 				03F88CF921A520C900084E8E /* Feed */,
 				03F2F1092194AECE00A98241 /* Login */,
+				55090CBD21B2F0EF00147D20 /* LocationManager.swift */,
 				55BC062121809A7400FE43CA /* Assets.xcassets */,
 				55BC062321809A7400FE43CA /* LaunchScreen.storyboard */,
 				55BC062621809A7400FE43CA /* Info.plist */,
@@ -837,6 +840,7 @@
 				55BC061D21809A7300FE43CA /* CameraViewController.swift in Sources */,
 				03F2F10F21952DEA00A98241 /* RoundedButton.swift in Sources */,
 				035A8A5C21AC662F00CA3B8C /* AffiliateDetailViewController.swift in Sources */,
+				55090CBE21B2F0EF00147D20 /* LocationManager.swift in Sources */,
 				55BC061B21809A7300FE43CA /* AppDelegate.swift in Sources */,
 				55DFA365219C4675001B23AC /* ssd_mobilenet_feature_extractor.mlmodel in Sources */,
 				C280DC9521AF1D5700A54D82 /* FetchDetailFeed.swift in Sources */,
