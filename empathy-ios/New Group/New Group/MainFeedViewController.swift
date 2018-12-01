@@ -7,19 +7,31 @@
 //
 
 import UIKit
+import Alamofire
 
 class MainFeedViewController: UIViewController {
 
     @IBOutlet weak var peopleJourneyCollectionView: UICollectionView!
     @IBOutlet weak var smileLabel: UILabel!
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var weekdayLabel: UILabel!
+    @IBOutlet weak var placeHolderView: UIView!
+    @IBOutlet weak var myJourneyView: UIView!
+    @IBOutlet weak var myJourneyImageView: UIImageView!
+    @IBOutlet weak var myJourneyDateLabel: UILabel!
+    @IBOutlet weak var myJourneyTitleLabel: UILabel!
     
     var userInfo:UserInfo?
+    var mainFeedInfo:MainFeed?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         smileLabel.transform = CGAffineTransform(rotationAngle:  CGFloat.pi / 2)
+        if let id = userInfo?.userId {
+            requestMainFeedInfo("Seoul", String(id))
+        }
     }
     
 
@@ -37,18 +49,74 @@ class MainFeedViewController: UIViewController {
 
 extension MainFeedViewController: UICollectionViewDelegate,UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 18
+        if let numberOfItem = mainFeedInfo?.otherPeopleList.count {
+            if numberOfItem < 18 {
+                return numberOfItem
+            }
+            else {
+                return 18
+            }
+        }
+        else {
+            return 0
+        }
     }
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = peopleJourneyCollectionView.dequeueReusableCell(withReuseIdentifier: "peopleJourney", for: indexPath) as? MainFeedCollectionViewCell else {
             return UICollectionViewCell()
+        }
+        if let info = mainFeedInfo?.otherPeopleList[indexPath.row] {
+            if let ownerImageURLString = info.ownerProfileUrl as? String, let journeyImageURLString = info.imageUrl as? String {
+                cell.config(info.ownerName, ownerImageURLString, journeyImageURL: journeyImageURLString)
+            }
         }
         return cell
     }
 }
 
 extension MainFeedViewController {
-    func requestMainFeedInfo(){
+    func requestMainFeedInfo(_ city:String, _ userId:String){
+        if let user = userInfo {
+            let urlPath = Commons.baseUrl + "/journey/main/\(city)/\(userId)"
+            Alamofire.request(urlPath).responseJSON { response in
+                print("Request: \(String(describing: response.request))")   // original url request
+                print("Response: \(String(describing: response.response))") // http url response
+                print("Result: \(response.result)")                         // response serialization result
+                
+                if let json = response.result.value as? [String:Any] {
+                    print("JSON: \(json)") // serialized json response
+                    
+                    if let enumStr = json["enumStr"] as? String, let mainText = json["mainText"] as? String, let imageURL = json["imageURL"] as? String, let isFirst = json["isFirst"] as? String, let weekday = json["weekday"] as? String {
+                        if (json["otherPeopleList"] as? [OtherPeopleJourney])?.count == 0 {
+                            self.mainFeedInfo = MainFeed.init(enumStr: enumStr, imageURL: imageURL, isFirst: isFirst, mainText: mainText, otherPeopleList: [], weekday: weekday)
+                        }
+                        else if let otherPeopleLists = json["otherPeopleList"] as? [OtherPeopleJourney] {
+                            self.mainFeedInfo = MainFeed.init(enumStr: enumStr, imageURL: imageURL, isFirst: isFirst, mainText: mainText, otherPeopleList: otherPeopleLists, weekday: weekday)
+                        }
+                    }
+                }
+                if let info = self.mainFeedInfo {
+                    self.update(mainfeedInfo: info)
+                }
+            }
+        }
         
+    }
+    
+    func update(mainfeedInfo : MainFeed) {
+        if mainfeedInfo.isFirst == "true" {
+            placeHolderView.isHidden = false
+            myJourneyView.isHidden = true
+        }
+        else {
+            placeHolderView.isHidden = true
+            myJourneyView.isHidden = false
+            
+        }
+        cityLabel.text = mainfeedInfo.enumStr
+        weekdayLabel.text = mainfeedInfo.weekday
+        
+        peopleJourneyCollectionView.reloadData()
     }
 }
