@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class WriteFeedViewController: UIViewController {
 
@@ -25,6 +26,7 @@ class WriteFeedViewController: UIViewController {
     @IBOutlet weak var trailingVerticalLineConstraint: NSLayoutConstraint!
     
     var image: UIImage?
+    var userInfo: UserInfo?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +56,9 @@ class WriteFeedViewController: UIViewController {
     }
     
     @IBAction func tapConfirm(_ sender: UIButton) {
+        if let info = userInfo {
+            uploadFeed(info)
+        }
     }
     
     func getCurrentDate() -> String {
@@ -143,5 +148,64 @@ extension WriteFeedViewController : UITextViewDelegate {
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+}
+
+// request
+extension WriteFeedViewController {
+    func uploadFeed(_ userInfo:UserInfo) {
+        
+        if let image = self.selectedPictureImageView.image {
+            
+            // let image = UIImage(named: "bodrum")!
+            
+            // define parameters
+            let parameters = [
+                "ownerId": "yalikavak",
+                "title": "istanbul",
+                "contents": "",
+                "location": "",
+                "locationEnum": ""
+            ]
+            
+            let urlPath = Commons.baseUrl + "/journey/"
+            
+            Alamofire.upload(multipartFormData: { multipartFormData in
+                if let imageData = image.pngData() {
+                    multipartFormData.append(imageData, withName: "file", fileName: "file.png", mimeType: "image/png")
+                }
+                
+                for (key, value) in parameters {
+                    multipartFormData.append((value.data(using: .utf8))!, withName: key)
+                }}, to: "file", method: .post/*, headers: ["Authorization": "auth_token"]*/,
+                    encodingCompletion: { encodingResult in
+                        switch encodingResult {
+                        case .success(let upload, _, _):
+                            upload.response { [weak self] response in
+                                guard let strongSelf = self else {
+                                    return
+                                }
+                                debugPrint(response)
+                            }
+                        case .failure(let encodingError):
+                            print("error:\(encodingError)")
+                        }
+            })
+            
+            // let imageData = UIImage.jpegData(image)
+            /*
+            Alamofire.upload(multipartFormData: { (multipartFormData) in
+                multipartFormData.append(imageData, withName: "file", fileName: "file.jpeg", mimeType: "image/jpeg")
+            }, to: urlPath) { (result) in
+                 switch result {
+                 case .success:
+                    print("upload")
+//                 default : break
+                 case .failure(let encodingError):
+                    print(encodingError)
+                }
+            }
+ */
+        }
     }
 }

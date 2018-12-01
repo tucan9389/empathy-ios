@@ -20,6 +20,9 @@ class MyFeedViewController: UIViewController {
     
     var imagePicker = UIImagePickerController()
     
+    var userInfo:UserInfo?
+    var myJourneyLists:[MyJourney]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,33 +32,39 @@ class MyFeedViewController: UIViewController {
         tableView.dataSource = self
         tableView.separatorStyle = .none
         
-        fetchMyFeeds(ownerId: 1)
         
-        initializeNotificationObserver()
+        if let info = userInfo {
+            fetchMyFeeds(ownerId: info.userId)
+//            initializeNotificationObserver()
+        }
         
 //        //dummy
-        myFeeds.append(MyFeed(contents: "왕십리 시장 탐험을 다녀오다", creationTime: "11.03 2018", imageUrl: "", journeyId: 1, location: "서울", ownerProfileUrl: "", title: "왕십리 시장 텀험을 다녀오다"))
+//        myFeeds.append(MyFeed(contents: "왕십리 시장 탐험을 다녀오다", creationTime: "11.03 2018", imageUrl: "", journeyId: 1, location: "서울", ownerProfileUrl: "", title: "왕십리 시장 텀험을 다녀오다"))
+    }
+    @IBAction func tapBackButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
-    @objc func didReceiveMyFeedsNotification(_ noti: Notification) {
-        guard let myFeeds: [MyFeed] = noti.userInfo?["myFeeds"] as? [MyFeed] else {
-            return
-        }
-        
-        self.myFeeds = myFeeds
-        
-        DispatchQueue.main.async {
-            if myFeeds.count == 0 {
-                self.emptyView.isHidden = false
-            } else {
-                self.tableView.reloadData()
-            }
-        }
-    }
+//    @objc func didReceiveMyFeedsNotification(_ noti: Notification) {
+//        guard let myFeeds: [MyFeed] = noti.userInfo?["myFeeds"] as? [MyFeed] else {
+//            return
+//        }
+//
+//        self.myFeeds = myFeeds
+//
+////        DispatchQueue.main.async {
+//            if myFeeds.count == 0 {
+//                self.emptyView.isHidden = false
+//            } else {
+//                self.emptyView.isHidden = true
+//                self.tableView.reloadData()
+//            }
+////        }
+//    }
     
-    private func initializeNotificationObserver() {
-        NotificationCenter.default.addObserver(self, selector: #selector(self.didReceiveMyFeedsNotification(_:)), name: DidReceiveMyFeedsNotification, object: nil)
-    }
+//    private func initializeNotificationObserver() {
+//        NotificationCenter.default.addObserver(self, selector: #selector(self.didReceiveMyFeedsNotification(_:)), name: DidReceiveMyFeedsNotification, object: nil)
+//    }
     
     private func showDeleteMyFeedAlert(indexPath: IndexPath) {
         let alertController = UIAlertController(title: "여정 삭제하기", message: "작성 하신 여정을 삭제하시겠어요?", preferredStyle: UIAlertController.Style.alert)
@@ -138,14 +147,52 @@ extension MyFeedViewController: UITableViewDelegate {
     }
 }
 
+// album
 extension MyFeedViewController:UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let viewController = UIStoryboard.init(name: "WriteFeed", bundle: nil).instantiateViewController(withIdentifier: "WriteFeedViewController") as? WriteFeedViewController {
             if let img = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
                 viewController.image = img
+                viewController.userInfo = userInfo
             }
-//            present(viewController, animated: true, completion: nil)
-//            navigationController?.pushViewController(viewController, animated: true)
+            self.dismiss(animated: true) {
+                self.present(viewController, animated: true, completion: nil)
+            }
         }
+    }
+}
+
+
+// request
+extension MyFeedViewController {
+    func fetchMyFeeds(ownerId: Int) {
+        let urlPath = Commons.baseUrl + "/journey/myjourney/\(ownerId)"
+        Alamofire.request(urlPath).responseJSON { response in
+            print("Request: \(String(describing: response.request))")   // original url request
+            print("Response: \(String(describing: response.response))") // http url response
+            print("Result: \(response.result)")                         // response serialization result
+            
+            if let json = response.result.value as? [String:Any] {
+                print("JSON: \(json)") // serialized json response
+                // TODO : 초기화 -> cell에 뿌리는 부분!
+            }
+            
+            if let info = self.myJourneyLists {
+                self.update(myJourneyList: info)
+            }
+            else {
+                self.update(myJourneyList: [])
+            }
+        }
+    }
+    func update(myJourneyList:[MyJourney]) {
+        if myJourneyList.count == 0 {
+            emptyView.isHidden = false
+        }
+        else {
+            emptyView.isHidden = true
+            tableView.reloadData()
+        }
+        
     }
 }
