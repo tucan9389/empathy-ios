@@ -18,8 +18,7 @@ class MainFeedViewController: UIViewController {
     @IBOutlet weak var placeHolderView: UIView!
     @IBOutlet weak var myJourneyView: UIView!
     @IBOutlet weak var myJourneyImageView: UIImageView!
-    @IBOutlet weak var myJourneyDateLabel: UILabel!
-    @IBOutlet weak var myJourneyTitleLabel: UILabel!
+    @IBOutlet weak var myJourneyLabel: UILabel!
     
     var userInfo:UserInfo?
     var mainFeedInfo:MainFeed?
@@ -108,11 +107,15 @@ extension MainFeedViewController {
         if mainfeedInfo.isFirst == "true" {
             placeHolderView.isHidden = false
             myJourneyView.isHidden = true
+            
         }
         else {
             placeHolderView.isHidden = true
             myJourneyView.isHidden = false
-            
+            myJourneyLabel.text = mainfeedInfo.mainText
+            if  let journeyURL = URL(string: mainfeedInfo.imageURL) {
+                myJourneyImageView.kf.setImage(with: journeyURL)
+            }
         }
         cityLabel.text = mainfeedInfo.enumStr
         weekdayLabel.text = mainfeedInfo.weekday
