@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0357512F21B20B4D0048323A /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0357512E21B20B4D0048323A /* UserInfo.swift */; };
 		0358621B21ABC3E000CF5727 /* Location.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0358621A21ABC3E000CF5727 /* Location.storyboard */; };
 		035A8A4F21AC4E2500CA3B8C /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035A8A4E21AC4E2500CA3B8C /* LocationViewController.swift */; };
 		035A8A5421AC512700CA3B8C /* TouristSite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 035A8A5321AC512700CA3B8C /* TouristSite.storyboard */; };
@@ -84,6 +85,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0357512E21B20B4D0048323A /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		0358621A21ABC3E000CF5727 /* Location.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Location.storyboard; sourceTree = "<group>"; };
 		035A8A4E21AC4E2500CA3B8C /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		035A8A5321AC512700CA3B8C /* TouristSite.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TouristSite.storyboard; sourceTree = "<group>"; };
@@ -413,6 +415,7 @@
 			children = (
 				C204749921A9B64E005742C0 /* MyFeed.swift */,
 				C280DC9221AF1D2700A54D82 /* FeedDetail.swift */,
+				0357512E21B20B4D0048323A /* UserInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -713,6 +716,7 @@
 				03F88CF521A477FD00084E8E /* InstagramLoginViewController.swift in Sources */,
 				55DFA36B219C47D3001B23AC /* Anchors.swift in Sources */,
 				C204749A21A9B64E005742C0 /* MyFeed.swift in Sources */,
+				0357512F21B20B4D0048323A /* UserInfo.swift in Sources */,
 				55DFA37E219C4996001B23AC /* CVPixelBuffer+Helpers.swift in Sources */,
 				55A3317421900944005DFA01 /* CapturedImageViewController.swift in Sources */,
 				C204747721A7FC4A005742C0 /* MyFeedViewController.swift in Sources */,
@@ -893,7 +897,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5WXJ4Z4H69;
+				DEVELOPMENT_TEAM = WG2S2TXYL2;
 				INFOPLIST_FILE = "empathy-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -912,7 +916,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5WXJ4Z4H69;
+				DEVELOPMENT_TEAM = WG2S2TXYL2;
 				INFOPLIST_FILE = "empathy-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
