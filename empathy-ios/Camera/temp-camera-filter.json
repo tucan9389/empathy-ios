@@ -49,10 +49,42 @@
         "type" : "pose-filter" ,
         "filters": [
             {
-                "type_id" : 3,
+                "type_id" : 6,
                 "type" : "one" ,
                 "name" : "human_1" ,
-                "imageURL" : "b5" ,
+                "imageURL" : "cute" ,
+                "standard" : "1" ,
+                "align-left" : false ,
+                "gravity" : "bottom-left"
+            }, {
+                "type_id" : 7,
+                "type" : "one" ,
+                "name" : "human_1" ,
+                "imageURL" : "DAY" ,
+                "standard" : "1" ,
+                "align-left" : false ,
+                "gravity" : "bottom-left"
+            }, {
+                "type_id" : 8,
+                "type" : "one" ,
+                "name" : "human_1" ,
+                "imageURL" : "right" ,
+                "standard" : "1" ,
+                "align-left" : false ,
+                "gravity" : "bottom-left"
+            }, {
+                "type_id" : 9,
+                "type" : "one" ,
+                "name" : "human_1" ,
+                "imageURL" : "right" ,
+                "standard" : "1" ,
+                "align-left" : false ,
+                "gravity" : "bottom-left"
+            }, {
+                "type_id" : 10,
+                "type" : "one" ,
+                "name" : "human_1" ,
+                "imageURL" : "stand" ,
                 "standard" : "1" ,
                 "align-left" : false ,
                 "gravity" : "bottom-left"

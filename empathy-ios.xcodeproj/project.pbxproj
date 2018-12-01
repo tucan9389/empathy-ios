@@ -199,6 +199,7 @@
 				035A8A5721AC601500CA3B8C /* Affiliate.storyboard */,
 				035A8A5921AC660B00CA3B8C /* AffiliateViewController.swift */,
 				035A8A5B21AC662F00CA3B8C /* AffiliateDetailViewController.swift */,
+				559A2FF421AF810300E0C89E /* T-Map Library */,
 			);
 			path = Affiliate;
 			sourceTree = "<group>";
@@ -277,6 +278,13 @@
 				55BC061E21809A7300FE43CA /* Camera.storyboard */,
 			);
 			path = Camera;
+			sourceTree = "<group>";
+		};
+		559A2FF421AF810300E0C89E /* T-Map Library */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "T-Map Library";
 			sourceTree = "<group>";
 		};
 		55A331752191A7E1005DFA01 /* FilterView */ = {
@@ -885,7 +893,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WG2S2TXYL2;
+				DEVELOPMENT_TEAM = 5WXJ4Z4H69;
 				INFOPLIST_FILE = "empathy-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -904,7 +912,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WG2S2TXYL2;
+				DEVELOPMENT_TEAM = 5WXJ4Z4H69;
 				INFOPLIST_FILE = "empathy-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
