@@ -17,27 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="N6g-fE-TQ2">
-                                <rect key="frame" x="42" y="147" width="180" height="180"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="N6g-fE-TQ2" secondAttribute="height" multiplier="1:1" id="m48-Xl-H8W"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ilz-Xv-DqQ" customClass="RoundedButton" customModule="empathy_ios" customModuleProvider="target">
-                                <rect key="frame" x="56" y="497" width="302" height="52"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="Ls1-IY-uA1"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="16"/>
-                                <state key="normal" title="인스타그램으로 로그인">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="mRV-Y6-uoC" kind="show" id="A13-g8-qFq"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BgL-vn-eyU" customClass="RoundedButton" customModule="empathy_ios" customModuleProvider="target">
-                                <rect key="frame" x="56" y="579" width="302" height="52"/>
+                                <rect key="frame" x="56" y="489" width="302" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="QrQ-ZB-rgQ"/>
                                 </constraints>
@@ -46,26 +27,54 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="qLK-rP-KqJ">
+                                <rect key="frame" x="167" y="252" width="80" height="80"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="28P-3Y-cvt">
+                                <rect key="frame" x="181" y="332" width="52" height="72"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="공간에 감성을">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="20" name="AppleSDGothicNeo-Regular"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" metaFont="system" size="17"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="더하다">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="20" name="AppleSDGothicNeo-SemiBold"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconQuotation" translatesAutoresizingMaskIntoConstraints="NO" id="zvf-u3-vNe">
+                                <rect key="frame" x="195" y="228" width="24" height="24"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.16435712575912476" green="0.17195159196853638" blue="0.20514744520187378" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="28P-3Y-cvt" firstAttribute="centerY" secondItem="Che-kT-UKW" secondAttribute="centerY" id="1kb-0Z-BgW"/>
+                            <constraint firstItem="BgL-vn-eyU" firstAttribute="top" secondItem="28P-3Y-cvt" secondAttribute="bottom" constant="85" id="2wY-C2-Hrx"/>
+                            <constraint firstItem="qLK-rP-KqJ" firstAttribute="centerX" secondItem="Che-kT-UKW" secondAttribute="centerX" id="3NQ-ts-3g1"/>
+                            <constraint firstItem="zvf-u3-vNe" firstAttribute="centerX" secondItem="Che-kT-UKW" secondAttribute="centerX" id="Alh-6J-Mde"/>
                             <constraint firstItem="jdb-5s-3ht" firstAttribute="trailing" secondItem="BgL-vn-eyU" secondAttribute="trailing" constant="56" id="EFI-cF-scn"/>
+                            <constraint firstItem="qLK-rP-KqJ" firstAttribute="top" secondItem="zvf-u3-vNe" secondAttribute="bottom" id="GRt-3D-fbS"/>
                             <constraint firstItem="BgL-vn-eyU" firstAttribute="centerX" secondItem="Che-kT-UKW" secondAttribute="centerX" id="KGT-nO-Zbj"/>
-                            <constraint firstItem="BgL-vn-eyU" firstAttribute="top" secondItem="Ilz-Xv-DqQ" secondAttribute="bottom" constant="30" id="KXQ-jd-seg"/>
-                            <constraint firstItem="Ilz-Xv-DqQ" firstAttribute="centerX" secondItem="Che-kT-UKW" secondAttribute="centerX" id="Q8d-ZR-Us9"/>
-                            <constraint firstItem="N6g-fE-TQ2" firstAttribute="top" secondItem="jdb-5s-3ht" secondAttribute="top" constant="127" id="URw-70-FGC"/>
-                            <constraint firstItem="Ilz-Xv-DqQ" firstAttribute="leading" secondItem="jdb-5s-3ht" secondAttribute="leading" constant="56" id="VTk-vt-cdD"/>
-                            <constraint firstItem="Ilz-Xv-DqQ" firstAttribute="top" secondItem="N6g-fE-TQ2" secondAttribute="bottom" constant="170" id="Zao-9T-BDZ"/>
-                            <constraint firstItem="jdb-5s-3ht" firstAttribute="trailing" secondItem="N6g-fE-TQ2" secondAttribute="trailing" constant="192" id="ilQ-uI-jdA"/>
-                            <constraint firstItem="jdb-5s-3ht" firstAttribute="trailing" secondItem="Ilz-Xv-DqQ" secondAttribute="trailing" constant="56" id="l76-ch-0kd"/>
-                            <constraint firstItem="N6g-fE-TQ2" firstAttribute="leading" secondItem="jdb-5s-3ht" secondAttribute="leading" constant="42" id="pni-5N-2qZ"/>
+                            <constraint firstItem="28P-3Y-cvt" firstAttribute="top" secondItem="qLK-rP-KqJ" secondAttribute="bottom" id="gpn-0k-3Ld"/>
+                            <constraint firstItem="28P-3Y-cvt" firstAttribute="centerX" secondItem="Che-kT-UKW" secondAttribute="centerX" id="h17-nh-lAM"/>
                             <constraint firstItem="BgL-vn-eyU" firstAttribute="leading" secondItem="jdb-5s-3ht" secondAttribute="leading" constant="56" id="xfA-Am-vqt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jdb-5s-3ht"/>
                     </view>
                     <connections>
                         <outlet property="facebookLoginButton" destination="BgL-vn-eyU" id="EZh-1r-rHw"/>
-                        <outlet property="instagramLoginButton" destination="Ilz-Xv-DqQ" id="mzZ-jQ-9f9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7kX-Qg-VMm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -118,6 +127,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon" width="180" height="180"/>
+        <image name="iconQuotation" width="24" height="24"/>
+        <image name="logo" width="80" height="80"/>
     </resources>
 </document>

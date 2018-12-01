@@ -8,10 +8,11 @@
 
 import UIKit
 import FacebookLogin
+import FacebookCore
 
 class LoginViewController: UIViewController {
 
-    @IBOutlet weak var instagramLoginButton: RoundedButton!
+//    @IBOutlet weak var instagramLoginButton: RoundedButton!
     @IBOutlet weak var facebookLoginButton: RoundedButton!
     
     override func viewDidLoad() {
@@ -37,7 +38,7 @@ class LoginViewController: UIViewController {
     //
     @objc func facebookLoginButtonClicked() {
         let loginManager = LoginManager()
-        loginManager.logIn(readPermissions: [.publicProfile], viewController: self) { loginResult in
+        loginManager.logIn(readPermissions: [.publicProfile, .email], viewController: self) { loginResult in
             switch loginResult {
             case .failed(let error):
                 print(error)
@@ -46,8 +47,34 @@ class LoginViewController: UIViewController {
             case .success(let grantedPermissions, let declinedPermissions, let accessToken):
                 print("Logged in!")
                 print(accessToken)
+                self.getUserInformation { userInfo, error in
+                    if let error = error {(print(error.localizedDescription))}
+                    
+                    if let userInfo = userInfo, let id = userInfo["id"], let name = userInfo["name"], let email=userInfo["email"] {
+                        print("\(id)////\(name)////\(email)")
+                    }
+                    
+                    if let userInfo = userInfo, let pictureURL = (userInfo["picture"] as? [String:Any])?["data"] as? [String:Any] {
+                        print("\(pictureURL)")
+                    }
+                }
+                if let viewController = UIStoryboard.init(name: "MainFeed", bundle: Bundle.main).instantiateViewController(withIdentifier: "MainFeedViewController") as? MainFeedViewController {
+                    self.navigationController?.pushViewController(viewController, animated: true)
+                    self.present(viewController, animated: true, completion: nil)
+                }
             }
         }
     }
 
+    func getUserInformation( completion: @escaping (_ : [String:Any]?, _ : Error?) -> Void) {
+        let request = GraphRequest(graphPath: "me", parameters: ["fields" :"id,name, email, picture"])
+        request.start { response, result in
+            switch result {
+            case .failed(let error):
+                completion(nil, error)
+            case .success(let graphResponse):
+                completion(graphResponse.dictionaryValue, nil)
+            }
+        }
+    }
 }
