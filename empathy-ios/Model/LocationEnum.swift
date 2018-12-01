@@ -26,4 +26,5 @@ enum LocationEnum:String {
     case Jeollabukdo = "Jeollabukdo"
     case JeollanamDo = "JeollanamDo"
     case Jejudo = "Jejudo"
+    case none
 }
