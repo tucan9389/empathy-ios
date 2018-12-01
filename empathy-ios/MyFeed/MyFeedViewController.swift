@@ -18,8 +18,12 @@ class MyFeedViewController: UIViewController {
     private let cellIdentifier = "my_feed_cell"
     private var myFeeds: [MyFeed] = []
     
+    var imagePicker = UIImagePickerController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        imagePicker.delegate = self
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -69,6 +73,11 @@ class MyFeedViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
+    @IBAction func tapWriteFeed(_ sender: UIButton) {
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.allowsEditing = true
+        present(imagePicker, animated: true, completion: nil)
+    }
 }
 
 extension MyFeedViewController: UITableViewDataSource {
@@ -126,5 +135,17 @@ extension MyFeedViewController: UITableViewDelegate {
         deleteAction.image = UIImage(named: "iconRemove")
 
         return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
+}
+
+extension MyFeedViewController:UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let viewController = UIStoryboard.init(name: "WriteFeed", bundle: nil).instantiateViewController(withIdentifier: "WriteFeedViewController") as? WriteFeedViewController {
+            if let img = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+                viewController.image = img
+            }
+//            present(viewController, animated: true, completion: nil)
+//            navigationController?.pushViewController(viewController, animated: true)
+        }
     }
 }

@@ -167,32 +167,36 @@
                                     <constraint firstItem="7sU-NJ-Fmc" firstAttribute="top" secondItem="CK8-VX-F9l" secondAttribute="bottom" constant="33" id="owo-0M-0R0"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnFloating" translatesAutoresizingMaskIntoConstraints="NO" id="PGn-94-X5M">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1q-1b-TyO">
                                 <rect key="frame" x="303" y="115" width="56" height="56"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="56" id="2zL-5b-tv8"/>
-                                    <constraint firstAttribute="height" constant="56" id="LuZ-cX-u6x"/>
+                                    <constraint firstAttribute="height" constant="56" id="B4J-3F-a5K"/>
+                                    <constraint firstAttribute="width" constant="56" id="ctQ-4Y-M5Q"/>
                                 </constraints>
-                            </imageView>
+                                <state key="normal" image="btnFloating"/>
+                                <connections>
+                                    <action selector="tapWriteFeed:" destination="Ek0-PW-ZQI" eventType="touchUpInside" id="t5A-8U-nRB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.16470588235294117" green="0.17254901960784313" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="ip1-KW-any" firstAttribute="bottom" secondItem="Ifq-Lh-ugd" secondAttribute="bottom" id="2FP-3J-7Ae"/>
                             <constraint firstItem="ip1-KW-any" firstAttribute="bottom" secondItem="0si-Hr-vCa" secondAttribute="bottom" id="4jq-KN-H2l"/>
+                            <constraint firstItem="n1q-1b-TyO" firstAttribute="top" secondItem="ip1-KW-any" secondAttribute="top" constant="95" id="64d-hq-OHr"/>
                             <constraint firstItem="2IR-3o-4vW" firstAttribute="leading" secondItem="fLz-Wr-Hs7" secondAttribute="leading" id="8FB-zc-KhV"/>
                             <constraint firstItem="Nds-2B-jb1" firstAttribute="leading" secondItem="ip1-KW-any" secondAttribute="leading" constant="8" id="8GG-VM-C7B"/>
                             <constraint firstItem="0si-Hr-vCa" firstAttribute="top" secondItem="2IR-3o-4vW" secondAttribute="bottom" constant="58" id="8ZA-vm-Xho"/>
+                            <constraint firstItem="ip1-KW-any" firstAttribute="trailing" secondItem="n1q-1b-TyO" secondAttribute="trailing" constant="16" id="9my-1m-zKm"/>
                             <constraint firstItem="fLz-Wr-Hs7" firstAttribute="centerY" secondItem="Nds-2B-jb1" secondAttribute="centerY" id="JFC-4v-3ke"/>
                             <constraint firstItem="ip1-KW-any" firstAttribute="trailing" secondItem="0si-Hr-vCa" secondAttribute="trailing" id="Lb8-lz-9PN"/>
                             <constraint firstItem="ip1-KW-any" firstAttribute="trailing" secondItem="Ifq-Lh-ugd" secondAttribute="trailing" id="Nel-ry-VYT"/>
                             <constraint firstItem="Nds-2B-jb1" firstAttribute="top" secondItem="ip1-KW-any" secondAttribute="top" constant="2" id="Rsm-yB-MKI"/>
-                            <constraint firstItem="ip1-KW-any" firstAttribute="trailing" secondItem="PGn-94-X5M" secondAttribute="trailing" constant="16" id="YcN-Nm-HVl"/>
                             <constraint firstItem="0si-Hr-vCa" firstAttribute="leading" secondItem="ip1-KW-any" secondAttribute="leading" id="afl-hv-81e"/>
                             <constraint firstItem="Ifq-Lh-ugd" firstAttribute="top" secondItem="2IR-3o-4vW" secondAttribute="bottom" constant="58" id="bCd-3w-2FR"/>
                             <constraint firstItem="Ifq-Lh-ugd" firstAttribute="leading" secondItem="ip1-KW-any" secondAttribute="leading" id="hre-rV-iQd"/>
                             <constraint firstItem="2IR-3o-4vW" firstAttribute="top" secondItem="fLz-Wr-Hs7" secondAttribute="bottom" constant="10" id="jlB-Cg-LzP"/>
                             <constraint firstItem="fLz-Wr-Hs7" firstAttribute="leading" secondItem="Nds-2B-jb1" secondAttribute="trailing" constant="5" id="mr1-yl-Fvn"/>
-                            <constraint firstItem="PGn-94-X5M" firstAttribute="top" secondItem="ip1-KW-any" secondAttribute="top" constant="95" id="xZB-Tw-iTu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ip1-KW-any"/>
                     </view>
