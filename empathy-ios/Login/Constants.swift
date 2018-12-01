@@ -17,3 +17,7 @@ struct INSTAGRAM_IDS {
     static let INSTAGRAM_ACCESS_TOKEN =  "access_token"
     static let INSTAGRAM_SCOPE = "basic+public_content"
 }
+
+struct TMAP_IDS {
+    static let KEY = "9a3b0938-ed0e-4561-a732-e4a8298dc8d8"
+}
