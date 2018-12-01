@@ -59,6 +59,7 @@ class TouristSiteViewController: UIViewController {
             if let targetId = touristArray[index]["targetId"] as? String {
                 destinationVC.targetId = targetId
                 destinationVC.contentType = contentType
+                destinationVC.locationCoordinate2D = locValue
             }
         }
     }
@@ -74,6 +75,8 @@ extension TouristSiteViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         print("locations = \(locValue.latitude) \(locValue.longitude)")
+        locationManager.stopUpdatingLocation()
+        locationManager.delegate = nil
         
         if self.locValue == nil {
             self.locValue = locValue
@@ -137,12 +140,12 @@ extension TouristSiteViewController {
         let urlPath: String = "/info/tourAPI/\(contentType)/\(locValue.latitude)/\(locValue.longitude)/100/1"
         
         Alamofire.request("\(baseURL)\(urlPath)").responseJSON { response in
-            print("Request: \(String(describing: response.request))")   // original url request
-            print("Response: \(String(describing: response.response))") // http url response
-            print("Result: \(response.result)")                         // response serialization result
+//            print("Request: \(String(describing: response.request))")   // original url request
+//            print("Response: \(String(describing: response.response))") // http url response
+//            print("Result: \(response.result)")                         // response serialization result
             
             if let json = response.result.value {
-                print("JSON: \(json)") // serialized json response
+                //print("JSON: \(json)") // serialized json response
                 self.touristArray = json as? [[String : Any?]] ?? []
             }
             self.touristTableView.reloadData()
