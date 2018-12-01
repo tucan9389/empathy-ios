@@ -561,6 +561,9 @@ class CameraViewController: UIViewController {
     @IBAction func tapLibraryImageClose(_ sender: Any) {
         setVideoPreviewImage()
     }
+    @IBAction func tapClose(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
 }
 
 extension CameraViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
