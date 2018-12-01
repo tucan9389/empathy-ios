@@ -34,8 +34,6 @@ class TouristSiteDetailViewController: UIViewController {
         
         let _mapView = TMapView(frame: self.tmapBGView.bounds)
         _mapView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-//        _mapView.delegate = self
-//        _mapView.gpsManagersDelegate = self
         _mapView.setSKTMapApiKey(TMAP_IDS.KEY)
         
         tmapBGView.addSubview(_mapView)
@@ -79,20 +77,7 @@ class TouristSiteDetailViewController: UIViewController {
                     print("error: ", error)
                 }
             }
-            //self.touristTableView.reloadData()
         }
-        
-        
-//        TMapView* _mapView = [[TMapView alloc] initWithFrame:self.mapContainerView.bounds];
-//        [_mapView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
-//        [_mapView setDelegate:self];
-//        [_mapView setGpsManagersDelegate:self];
-//        [_mapView setSKTMapApiKey:TMAP_APPKEY];     // 발급 받은 apiKey 설정
-//        [self.mapContainerView addSubview:_mapView];
-//        [TMapTapi setSKTMapAuthenticationWithDelegate:self apiKey:TMAP_APPKEY];
-
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -183,21 +168,3 @@ struct TouristSiteDetailModel: Codable {
     let title: String?
     let withPet: String?
 }
-
-//extension TouristSiteDetailViewController: TMapTapiDelegate {
-//
-//}
-//
-//extension TouristSiteDetailViewController: TMapViewDelegate{
-//
-//}
-//
-//extension TouristSiteDetailViewController: TMapGpsManagerDelegate {
-//    func locationChanged(_ newTmp: TMapPoint!) {
-//
-//    }
-//
-//    func headingChanged(_ heading: Double) {
-//
-//    }
-//}
