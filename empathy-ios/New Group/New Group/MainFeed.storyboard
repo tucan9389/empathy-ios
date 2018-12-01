@@ -150,7 +150,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="F2c-Ma-HHy" kind="show" id="7ZO-D6-V1s"/>
+                                            <segue destination="F2c-Ma-HHy" kind="show" identifier="toMyFeed" id="7ZO-D6-V1s"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Os-zs-t7b">
@@ -323,8 +323,6 @@
                     </view>
                     <connections>
                         <outlet property="cityLabel" destination="HZH-eB-5VO" id="27K-AO-TNU"/>
-                        <outlet property="default1Label" destination="UY1-jf-7Xu" id="9nI-iY-frl"/>
-                        <outlet property="default2Label" destination="yFJ-pL-nCW" id="GtN-k1-h55"/>
                         <outlet property="myJourneyImageView" destination="esy-Aw-cO5" id="Nz1-EL-PSf"/>
                         <outlet property="myJourneyLabel" destination="pf0-2q-MbZ" id="YQA-uL-sq7"/>
                         <outlet property="myJourneyView" destination="Nvj-iw-rVL" id="15D-m4-Ia7"/>

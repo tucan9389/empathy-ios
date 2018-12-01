@@ -12,6 +12,7 @@
 		0357513321B233A10048323A /* OtherPeoplJourney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0357513221B233A10048323A /* OtherPeoplJourney.swift */; };
 		0357513521B234160048323A /* MainFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0357513421B234160048323A /* MainFeed.swift */; };
 		0357513721B234E70048323A /* LocationEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0357513621B234E70048323A /* LocationEnum.swift */; };
+		0357513921B2D14A0048323A /* MyJourney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0357513821B2D14A0048323A /* MyJourney.swift */; };
 		0358621B21ABC3E000CF5727 /* Location.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0358621A21ABC3E000CF5727 /* Location.storyboard */; };
 		035A8A4F21AC4E2500CA3B8C /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035A8A4E21AC4E2500CA3B8C /* LocationViewController.swift */; };
 		035A8A5421AC512700CA3B8C /* TouristSite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 035A8A5321AC512700CA3B8C /* TouristSite.storyboard */; };
@@ -94,6 +95,7 @@
 		0357513221B233A10048323A /* OtherPeoplJourney.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherPeoplJourney.swift; sourceTree = "<group>"; };
 		0357513421B234160048323A /* MainFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeed.swift; sourceTree = "<group>"; };
 		0357513621B234E70048323A /* LocationEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEnum.swift; sourceTree = "<group>"; };
+		0357513821B2D14A0048323A /* MyJourney.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyJourney.swift; sourceTree = "<group>"; };
 		0358621A21ABC3E000CF5727 /* Location.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Location.storyboard; sourceTree = "<group>"; };
 		035A8A4E21AC4E2500CA3B8C /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		035A8A5321AC512700CA3B8C /* TouristSite.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TouristSite.storyboard; sourceTree = "<group>"; };
@@ -428,6 +430,7 @@
 				0357513221B233A10048323A /* OtherPeoplJourney.swift */,
 				0357513421B234160048323A /* MainFeed.swift */,
 				0357513621B234E70048323A /* LocationEnum.swift */,
+				0357513821B2D14A0048323A /* MyJourney.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -726,6 +729,7 @@
 				55DFA365219C4675001B23AC /* ssd_mobilenet_feature_extractor.mlmodel in Sources */,
 				C280DC9521AF1D5700A54D82 /* FetchDetailFeed.swift in Sources */,
 				55DFA37A219C4996001B23AC /* Array.swift in Sources */,
+				0357513921B2D14A0048323A /* MyJourney.swift in Sources */,
 				55A331772191A84D005DFA01 /* FilterCollectionView.swift in Sources */,
 				03F2F10D219529EE00A98241 /* LoginViewController.swift in Sources */,
 				03F88CF521A477FD00084E8E /* InstagramLoginViewController.swift in Sources */,
