@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class WriteFeedViewController: UIViewController {
 
@@ -25,6 +26,7 @@ class WriteFeedViewController: UIViewController {
     @IBOutlet weak var trailingVerticalLineConstraint: NSLayoutConstraint!
     
     var image: UIImage?
+    var userInfo:UserInfo?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +56,9 @@ class WriteFeedViewController: UIViewController {
     }
     
     @IBAction func tapConfirm(_ sender: UIButton) {
+        if let info = userInfo {
+            uploadFeed(info)
+        }
     }
     
     func getCurrentDate() -> String {
@@ -143,5 +148,30 @@ extension WriteFeedViewController : UITextViewDelegate {
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+}
+
+// request
+extension WriteFeedViewController {
+    func uploadFeed(_ userInfo:UserInfo) {
+        let urlPath = Commons.baseUrl + "/journey/"
+        
+//        let imageData: NSMutableData = NSMutableData.dataWithData(UIImage.jpegData(self.selectedPictureImageView.image));
+        if let image = self.selectedPictureImageView.image {
+            let imageData = UIImage.jpegData(image)
+            /*
+            Alamofire.upload(multipartFormData: { (multipartFormData) in
+                multipartFormData.append(imageData, withName: "file", fileName: "file.jpeg", mimeType: "image/jpeg")
+            }, to: urlPath) { (result) in
+                 switch result {
+                 case .success:
+                    print("upload")
+//                 default : break
+                 case .failure(let encodingError):
+                    print(encodingError)
+                }
+            }
+ */
+        }
     }
 }

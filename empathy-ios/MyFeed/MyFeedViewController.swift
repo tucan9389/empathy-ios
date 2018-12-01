@@ -153,6 +153,7 @@ extension MyFeedViewController:UIImagePickerControllerDelegate, UINavigationCont
         if let viewController = UIStoryboard.init(name: "WriteFeed", bundle: nil).instantiateViewController(withIdentifier: "WriteFeedViewController") as? WriteFeedViewController {
             if let img = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
                 viewController.image = img
+                viewController.userInfo = userInfo
             }
             self.dismiss(animated: true) {
                 self.present(viewController, animated: true, completion: nil)
