@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qly-ed-hBz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tiv-ZI-V2d">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -95,7 +95,7 @@
                                             <outlet property="cellImageView" destination="F0T-4O-VjG" id="drB-nr-yJk"/>
                                             <outlet property="label1" destination="DyK-4y-7qu" id="6n4-sC-p3J"/>
                                             <outlet property="label2" destination="YZr-dx-6je" id="nX4-1z-Caz"/>
-                                            <segue destination="i0e-I6-FYa" kind="show" id="BcH-mC-Hlu"/>
+                                            <segue destination="i0e-I6-FYa" kind="show" identifier="gotoTouristSiteDetatail" id="BcH-mC-Hlu"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -120,13 +120,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CbB-AJ-ypH"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Ip8-14-RJV"/>
                     <connections>
                         <outlet property="touristTableView" destination="dyz-Ug-IId" id="Anr-Gv-ooN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="at3-jP-PMN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="297.10144927536237" y="-257.60869565217394"/>
+            <point key="canvasLocation" x="1204.3478260869565" y="-257.60869565217394"/>
         </scene>
         <!--Tourist Site Detail View Controller-->
         <scene sceneID="N6v-23-lLA">
@@ -142,7 +143,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pEI-Jm-Ea5">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1008"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qDc-ei-eNe">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qDc-ei-eNe">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="qDc-ei-eNe" secondAttribute="height" multiplier="1:1" id="c3Z-WS-UMN"/>
@@ -360,6 +361,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbl-Zq-roy">
                                 <rect key="frame" x="8" y="28" width="38" height="38"/>
                                 <state key="normal" image="iconBack"/>
+                                <connections>
+                                    <action selector="touchBackButton:" destination="i0e-I6-FYa" eventType="touchUpInside" id="2Dw-XP-iWy"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" name="charcoalgrey"/>
@@ -376,10 +380,40 @@
                         <viewLayoutGuide key="safeArea" id="v9T-rv-RbV"/>
                     </view>
                     <size key="freeformSize" width="414" height="1028"/>
+                    <connections>
+                        <outlet property="addressLabel" destination="zg3-OK-AAy" id="q9y-ZN-Fbe"/>
+                        <outlet property="bussinessHoursLabel" destination="AwE-0z-Fer" id="1zz-Rz-7Q7"/>
+                        <outlet property="creditCardLabel" destination="Fvv-HG-LSu" id="kyd-su-wLB"/>
+                        <outlet property="dayOffLabel" destination="TnL-qL-YvY" id="hlf-Vk-ff7"/>
+                        <outlet property="descriptionLabel" destination="NCc-Oy-YWb" id="UGG-Ao-Jqs"/>
+                        <outlet property="titleLabel" destination="EaT-tO-nqZ" id="vIn-is-gcR"/>
+                        <outlet property="topImageView" destination="qDc-ei-eNe" id="2mT-gH-Sfh"/>
+                        <outlet property="withPetLabel" destination="OEN-Rf-S7t" id="cx9-Sp-LF1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="caR-v8-ZVI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="981.15942028985512" y="-258.42391304347831"/>
+            <point key="canvasLocation" x="1888.4057971014495" y="-258.42391304347831"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="s9v-iQ-Xpp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="tiv-ZI-V2d" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Nmk-2e-nyW">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AwU-QP-GgJ">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="qly-ed-hBz" kind="relationship" relationship="rootViewController" id="iuK-CB-0Sz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7fo-Y7-OK0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="297.10144927536237" y="-257.60869565217394"/>
         </scene>
     </scenes>
     <resources>
