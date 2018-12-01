@@ -13,7 +13,7 @@
         <!--My Feed View Controller-->
         <scene sceneID="34G-ye-d8q">
             <objects>
-                <viewController id="Ek0-PW-ZQI" customClass="MyFeedViewController" customModule="empathy_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyFeedViewController" id="Ek0-PW-ZQI" customClass="MyFeedViewController" customModule="empathy_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YYX-ad-wvx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -62,7 +62,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xCE-p7-azy">
-                                                    <rect key="frame" x="127" y="0.0" width="248" height="73"/>
+                                                    <rect key="frame" x="127" y="0.0" width="287" height="73"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="73" id="Ook-6v-MmR"/>
                                                     </constraints>
@@ -81,7 +81,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FgE-P8-Els">
-                                                    <rect key="frame" x="127" y="107.33333333333333" width="248" height="1"/>
+                                                    <rect key="frame" x="127" y="107.33333333333333" width="287" height="1"/>
                                                     <color key="backgroundColor" red="0.40784313725490196" green="0.40784313725490196" blue="0.40784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="SyI-5g-YOR"/>
