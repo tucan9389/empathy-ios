@@ -14,7 +14,7 @@
         <!--Affiliate View Controller-->
         <scene sceneID="G2A-dI-qbJ">
             <objects>
-                <viewController id="gfC-CN-T0w" customClass="AffiliateViewController" customModule="empathy_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AffiliateViewController" id="gfC-CN-T0w" customClass="AffiliateViewController" customModule="empathy_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Ng-a5-IOc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -93,6 +93,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdE-Do-ocj">
                                 <rect key="frame" x="8" y="28" width="38" height="38"/>
                                 <state key="normal" image="iconBack"/>
+                                <connections>
+                                    <action selector="tapBackButton:" destination="gfC-CN-T0w" eventType="touchUpInside" id="93S-sa-eAg"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" name="charcoalgrey"/>
