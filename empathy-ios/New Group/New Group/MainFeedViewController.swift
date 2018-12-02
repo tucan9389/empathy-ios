@@ -25,8 +25,9 @@ class MainFeedViewController: UIViewController {
     var mainFeedInfo:MainFeed?
     
     var random:Int?
-    let locationManager = CLLocationManager()
-    var locValue: CLLocationCoordinate2D?
+    var locationEnum:LocationEnum?
+    
+    var otherPeopleFeedId:Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,14 +44,14 @@ class MainFeedViewController: UIViewController {
             print(locationCoordinate2D?.longitude, locationCoordinate2D?.longitude)
             
             if let locationCoordinate2D = locationCoordinate2D {
-                let locationEnum: LocationEnum = LocationManager.shared.getNearestLocationEnum(location: locationCoordinate2D)
+                self.locationEnum = LocationManager.shared.getNearestLocationEnum(location: locationCoordinate2D)
                 
-                print(locationEnum)
-                self.locationLabel.text = locationEnum.rawValue
-                
-                if let id = self.userInfo?.userId {
-                    self.requestMainFeedInfo(locationEnum.rawValue, String(id))
-                }
+                print(self.locationEnum)
+//                self.locationLabel.text = self.locationEnum!.rawValue
+                self.locationLabel.text = "Seoul"
+            }
+            if let id = self.userInfo?.userId {
+                self.requestMainFeedInfo("Seoul", String(id))
             }
         }
     }
@@ -81,10 +82,20 @@ class MainFeedViewController: UIViewController {
         if (segue.identifier == "toMyFeed") || (segue.identifier == "toMyFeed2"), let destination = segue.destination as? MyFeedViewController {
             destination.userInfo = self.userInfo
         }
+        else if segue.identifier == "toFeedDetail", let destination = segue.destination as? FeedDetailViewController, let detailId = otherPeopleFeedId {
+            destination.journeyDetailId = detailId
+        }
     }
 }
 
 extension MainFeedViewController: UICollectionViewDelegate,UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("🤪🤪\(mainFeedInfo?.otherPeopleList[indexPath.row])")
+        if let info = mainFeedInfo?.otherPeopleList[indexPath.row] {
+            otherPeopleFeedId = info.journeyId
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let numberOfItem = mainFeedInfo?.otherPeopleList.count {
             if numberOfItem < 18 {
@@ -110,6 +121,7 @@ extension MainFeedViewController: UICollectionViewDelegate,UICollectionViewDataS
         }
         return cell
     }
+    
 }
 
 extension MainFeedViewController {
