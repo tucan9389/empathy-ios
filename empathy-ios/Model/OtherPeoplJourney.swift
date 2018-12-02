@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct OtherPeopleJourney:Codable {
-    let journeyId:Int
-    let ownerProfileUrl:String
-    let ownerName:String
-    let imageUrl:String
+struct OtherPeopleJourney: Codable {
+    let journeyId:Int?
+    let ownerProfileUrl:String?
+    let ownerName:String?
+    let imageUrl:String?
 }
