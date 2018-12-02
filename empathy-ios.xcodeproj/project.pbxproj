@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		034605F421B37FC600AA6000 /* MyJourneyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034605F321B37FC600AA6000 /* MyJourneyList.swift */; };
 		0357512F21B20B4D0048323A /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0357512E21B20B4D0048323A /* UserInfo.swift */; };
 		0357513121B231250048323A /* MainFeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0357513021B231250048323A /* MainFeedCollectionViewCell.swift */; };
 		0357513321B233A10048323A /* OtherPeoplJourney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0357513221B233A10048323A /* OtherPeoplJourney.swift */; };
@@ -104,6 +105,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		034605F321B37FC600AA6000 /* MyJourneyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyJourneyList.swift; sourceTree = "<group>"; };
 		0357512E21B20B4D0048323A /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		0357513021B231250048323A /* MainFeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainFeedCollectionViewCell.swift; path = "empathy-ios/New Group/Main Feed/MainFeedCollectionViewCell.swift"; sourceTree = SOURCE_ROOT; };
 		0357513221B233A10048323A /* OtherPeoplJourney.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherPeoplJourney.swift; sourceTree = "<group>"; };
@@ -530,6 +532,7 @@
 				0357513421B234160048323A /* MainFeed.swift */,
 				0357513621B234E70048323A /* LocationEnum.swift */,
 				0357513821B2D14A0048323A /* MyJourney.swift */,
+				034605F321B37FC600AA6000 /* MyJourneyList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -838,6 +841,7 @@
 				035A8A5C21AC662F00CA3B8C /* AffiliateDetailViewController.swift in Sources */,
 				55090CBE21B2F0EF00147D20 /* LocationManager.swift in Sources */,
 				55BC061B21809A7300FE43CA /* AppDelegate.swift in Sources */,
+				034605F421B37FC600AA6000 /* MyJourneyList.swift in Sources */,
 				55DFA365219C4675001B23AC /* ssd_mobilenet_feature_extractor.mlmodel in Sources */,
 				C280DC9521AF1D5700A54D82 /* FetchDetailFeed.swift in Sources */,
 				55DFA37A219C4996001B23AC /* Array.swift in Sources */,

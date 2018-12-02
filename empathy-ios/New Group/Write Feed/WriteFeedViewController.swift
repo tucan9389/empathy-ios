@@ -160,7 +160,8 @@ extension WriteFeedViewController {
         if let image = self.selectedPictureImageView.image {
             
             // let image = UIImage(named: "bodrum")!
-            
+            print("😂😂\(detailTextView.text)")
+            print("😘😘\(locationLabel.text)")
             // define parameters
             if let locationString = locationLabel.text {
                 let parameters:[String:String] = [

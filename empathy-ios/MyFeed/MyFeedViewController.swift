@@ -173,9 +173,19 @@ extension MyFeedViewController {
             print("Response: \(String(describing: response.response))") // http url response
             print("Result: \(response.result)")                         // response serialization result
             
-            if let json = response.result.value as? [String:Any] {
+            if let json = response.result.value as? [MyJourney] {
                 print("JSON: \(json)") // serialized json response
                 // TODO : 초기화 -> cell에 뿌리는 부분!
+                
+            }
+            
+            if let data = response.data {
+                let decoder = JSONDecoder()
+                print("JSON: \(data)")
+                do {
+                } catch let e {
+                    print(e)
+                }
             }
             
             if let info = self.myJourneyLists {

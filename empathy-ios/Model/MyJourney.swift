@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct MyJourney {
+struct MyJourney : Codable{
     let contents:String
     let creationTime: String
     let imageUrl: String

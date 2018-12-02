@@ -85,7 +85,7 @@ extension LoginViewController {
         let urlPath = "\(Commons.baseUrl)/user/"
 //        let
         Alamofire.request(urlPath,
-                          method: .post, parameters: ["name":name, "loginApi":"facebook" , "picturURL":pictureURL, "appUserId": appUserId],
+                          method: .post, parameters: ["name":name, "loginApi":"facebook" , "profileUrl":pictureURL, "appUserId": appUserId],
             encoding: JSONEncoding.default, headers: nil).responseJSON { response in
                 print("Request: \(String(describing: response.request))")   // original url request
                 print("Response: \(String(describing: response.response))") // http url response

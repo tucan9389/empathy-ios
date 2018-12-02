@@ -52,7 +52,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I4T-ol-UuX">
-                                <rect key="frame" x="17" y="37" width="26" height="27"/>
+                                <rect key="frame" x="17" y="37" width="26" height="27.333333333333329"/>
                                 <state key="normal" image="iconEditArea"/>
                                 <connections>
                                     <segue destination="uhI-aI-pf9" kind="show" id="36d-CT-r6I"/>
@@ -65,13 +65,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="다른 사람의 여정들" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1S-ee-zkV">
-                                <rect key="frame" x="18" y="99" width="135" height="22"/>
+                                <rect key="frame" x="18" y="99.333333333333329" width="135" height="22"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oQv-js-YXK">
-                                <rect key="frame" x="0.0" y="134" width="414" height="218"/>
+                                <rect key="frame" x="0.0" y="134.33333333333334" width="414" height="218.00000000000003"/>
                                 <color key="backgroundColor" name="charcoalgrey"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="218" id="xUa-d9-JJe"/>
@@ -90,6 +90,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="158" height="204"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z3Y-Xi-Kan">
+                                                    <rect key="frame" x="0.0" y="0.0" width="158" height="204"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rYv-fR-wVa">
                                                     <rect key="frame" x="0.0" y="0.0" width="158" height="158"/>
                                                     <constraints>
@@ -112,13 +116,17 @@
                                         </view>
                                         <color key="backgroundColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                         <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="z3Y-Xi-Kan" secondAttribute="bottom" id="2Pt-Tm-iRZ"/>
                                             <constraint firstItem="Zyq-e9-C1Q" firstAttribute="bottom" secondItem="rYv-fR-wVa" secondAttribute="bottom" multiplier="1.15" id="3uj-Bl-f72"/>
                                             <constraint firstItem="rYv-fR-wVa" firstAttribute="top" secondItem="v7u-2l-YIR" secondAttribute="top" id="CmQ-gk-jUB"/>
                                             <constraint firstItem="tBG-eg-kBg" firstAttribute="top" secondItem="Zyq-e9-C1Q" secondAttribute="bottom" constant="3.3333333333333144" id="LUG-by-S6x"/>
                                             <constraint firstItem="tBG-eg-kBg" firstAttribute="centerX" secondItem="v7u-2l-YIR" secondAttribute="centerX" id="NW7-Zt-Kot"/>
                                             <constraint firstItem="Zyq-e9-C1Q" firstAttribute="width" secondItem="rYv-fR-wVa" secondAttribute="width" multiplier="0.4" id="Ng5-jc-rBt"/>
+                                            <constraint firstAttribute="trailing" secondItem="z3Y-Xi-Kan" secondAttribute="trailing" id="Vvi-qR-Xjv"/>
                                             <constraint firstAttribute="trailing" secondItem="rYv-fR-wVa" secondAttribute="trailing" id="bQE-5X-0fE"/>
+                                            <constraint firstItem="z3Y-Xi-Kan" firstAttribute="top" secondItem="v7u-2l-YIR" secondAttribute="top" id="cJ0-9f-xVE"/>
                                             <constraint firstItem="Zyq-e9-C1Q" firstAttribute="centerX" secondItem="v7u-2l-YIR" secondAttribute="centerX" id="eo0-gn-KMi"/>
+                                            <constraint firstItem="z3Y-Xi-Kan" firstAttribute="leading" secondItem="v7u-2l-YIR" secondAttribute="leading" id="mpT-yN-Kqs"/>
                                             <constraint firstItem="rYv-fR-wVa" firstAttribute="leading" secondItem="v7u-2l-YIR" secondAttribute="leading" id="nH2-hZ-eR1"/>
                                         </constraints>
                                         <connections>
@@ -134,10 +142,10 @@
                                 </connections>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ydO-BY-6gj" userLabel="placeholderView">
-                                <rect key="frame" x="0.0" y="352" width="414" height="249"/>
+                                <rect key="frame" x="0.0" y="352.33333333333331" width="414" height="248.66666666666669"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="bhQ-eW-qwP">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="249"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="248.66666666666666"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="하루하루가 모여 여정이 될" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UY1-jf-7Xu">
                                         <rect key="frame" x="42" y="71" width="103" height="43.333333333333343"/>
@@ -146,13 +154,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나의 오늘을 기록해보세요" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFJ-pL-nCW">
-                                        <rect key="frame" x="42.000000000000007" y="123.3333333333333" width="93.666666666666686" height="43.333333333333329"/>
+                                        <rect key="frame" x="42.000000000000007" y="123.33333333333336" width="93.666666666666686" height="43.333333333333329"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hzJ-fn-EPu">
-                                        <rect key="frame" x="269" y="195" width="125" height="30"/>
+                                        <rect key="frame" x="269" y="194.66666666666669" width="125" height="30"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
                                         <state key="normal" title="나의 여정 기록하기 &gt;">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -192,7 +200,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="br4-13-x3g">
-                                <rect key="frame" x="0.0" y="601.33333333333337" width="414" height="134.66666666666663"/>
+                                <rect key="frame" x="0.0" y="601.66666666666663" width="414" height="134.33333333333337"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G5O-pV-LuO">
                                         <rect key="frame" x="39.333333333333336" y="33" width="111.66666666666666" height="2"/>
@@ -231,7 +239,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KZs-l5-jDy">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="134.66666666666666"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="134.33333333333334"/>
                                         <connections>
                                             <action selector="tapToursiteButton:" destination="Mno-GZ-aOy" eventType="touchUpInside" id="UfF-CR-Ovw"/>
                                         </connections>
@@ -262,13 +270,13 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nvj-iw-rVL">
-                                <rect key="frame" x="0.0" y="352" width="414" height="249"/>
+                                <rect key="frame" x="0.0" y="352.33333333333331" width="414" height="248.66666666666669"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="esy-Aw-cO5">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="249"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="esy-Aw-cO5">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="248.66666666666666"/>
                                     </imageView>
                                     <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xky-Xx-zXk">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="249"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="248.66666666666666"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="나의 여정 살펴보기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gK-es-B7d">
                                                 <rect key="frame" x="24" y="15" width="120" height="20"/>
@@ -287,7 +295,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kkJ-l2-ElJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="249"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="248.66666666666666"/>
                                                 <connections>
                                                     <segue destination="SHD-iD-J4p" kind="show" identifier="toMyFeed2" id="VJw-NN-7Hi"/>
                                                 </connections>
@@ -346,6 +354,7 @@
                             <constraint firstItem="ydO-BY-6gj" firstAttribute="height" secondItem="br4-13-x3g" secondAttribute="height" multiplier="1.85" id="qIi-uz-1sv"/>
                             <constraint firstItem="Nvj-iw-rVL" firstAttribute="bottom" secondItem="bhQ-eW-qwP" secondAttribute="bottom" id="tia-GB-Kzs"/>
                             <constraint firstItem="ydO-BY-6gj" firstAttribute="top" secondItem="oQv-js-YXK" secondAttribute="bottom" id="ucy-Gd-MfG"/>
+                            <constraint firstItem="fM9-5j-eqh" firstAttribute="top" secondItem="ad2-Cf-3tD" secondAttribute="top" constant="21.670000000000002" id="yJQ-rv-5ar"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ad2-Cf-3tD"/>
                     </view>
