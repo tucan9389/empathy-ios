@@ -26,7 +26,7 @@ class WriteFeedViewController: UIViewController {
     @IBOutlet weak var trailingVerticalLineConstraint: NSLayoutConstraint!
     
     var image: UIImage?
-    var userInfo: UserInfo?
+    lazy var userInfo: UserInfo? = UserInfoManager.shared.userInfo
     var location:String?
     var locationEnum:String?
     
@@ -48,6 +48,9 @@ class WriteFeedViewController: UIViewController {
         leadingVerticalLineConstraint.constant = view.frame.width/3
         trailingVerticalLineConstraint.constant = view.frame.width/3
         
+        if let locationEnum = locationEnum {
+            locationLabel.text = locationEnum
+        }
         
         selectedPictureImageView.image = image
         hideKeyboardByTap()
