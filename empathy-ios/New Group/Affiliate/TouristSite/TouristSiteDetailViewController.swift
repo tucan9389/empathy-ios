@@ -150,7 +150,8 @@ class TouristSiteDetailViewController: UIViewController {
         }
     }
     @IBAction func touchBackButton(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+//        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
     
     

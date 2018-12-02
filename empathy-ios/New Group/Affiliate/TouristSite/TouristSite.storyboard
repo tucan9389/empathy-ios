@@ -14,7 +14,7 @@
         <!--Tourist Site View Controller-->
         <scene sceneID="Wlr-tf-OCt">
             <objects>
-                <viewController id="qly-ed-hBz" customClass="TouristSiteViewController" customModule="empathy_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TouristSiteViewController" id="qly-ed-hBz" customClass="TouristSiteViewController" customModule="empathy_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CnU-nh-ggF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

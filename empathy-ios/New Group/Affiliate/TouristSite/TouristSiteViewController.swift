@@ -66,8 +66,8 @@ class TouristSiteViewController: UIViewController {
  
 
     @IBAction func tapBackAction(_ sender: UIButton) {
-        //dismiss(animated: true, completion: nil)
-        self.navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
+//        self.navigationController?.popViewController(animated: true)
     }
 }
 

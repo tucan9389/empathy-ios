@@ -71,6 +71,9 @@ class AffiliateViewController: UIViewController {
         }
     }
 
+    @IBAction func tapBackButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
 }
 

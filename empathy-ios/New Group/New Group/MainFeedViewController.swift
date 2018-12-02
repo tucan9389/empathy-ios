@@ -23,6 +23,8 @@ class MainFeedViewController: UIViewController {
     var userInfo:UserInfo?
     var mainFeedInfo:MainFeed?
     
+    var random:Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,9 +33,28 @@ class MainFeedViewController: UIViewController {
         if let id = userInfo?.userId {
             requestMainFeedInfo("Seoul", String(id))
         }
+        
     }
     
     
+    @IBAction func tapToursiteButton(_ sender: Any) {
+        random = Int.random(in: 0 ... 10)
+        if let randomNumber = random {
+            if randomNumber%2 == 0 {
+                if let viewController = UIStoryboard.init(name: "TouristSite", bundle: Bundle.main).instantiateViewController(withIdentifier: "TouristSiteViewController") as? TouristSiteViewController {
+//                    self.navigationController?.pushViewController(viewController, animated: true)
+                    present(viewController, animated: true, completion: nil)
+                }
+                
+            }
+            else {
+                if let viewController = UIStoryboard.init(name: "Affiliate", bundle: Bundle.main).instantiateViewController(withIdentifier: "AffiliateViewController") as? AffiliateViewController {
+//                    self.navigationController?.pushViewController(viewController, animated: true)
+                    present(viewController, animated: true, completion: nil)
+                }
+            }
+        }
+    }
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
