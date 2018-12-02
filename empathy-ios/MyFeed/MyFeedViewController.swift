@@ -167,6 +167,7 @@ extension MyFeedViewController:UIImagePickerControllerDelegate, UINavigationCont
 extension MyFeedViewController {
     func fetchMyFeeds(ownerId: Int) {
         let urlPath = Commons.baseUrl + "/journey/myjourney/\(ownerId)"
+//        Alamofire.request(urlPath).response
         Alamofire.request(urlPath).responseJSON { response in
             print("Request: \(String(describing: response.request))")   // original url request
             print("Response: \(String(describing: response.response))") // http url response
