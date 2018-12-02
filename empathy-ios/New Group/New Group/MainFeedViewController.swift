@@ -19,21 +19,40 @@ class MainFeedViewController: UIViewController {
     @IBOutlet weak var myJourneyView: UIView!
     @IBOutlet weak var myJourneyImageView: UIImageView!
     @IBOutlet weak var myJourneyLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
     
     var userInfo:UserInfo?
     var mainFeedInfo:MainFeed?
     
     var random:Int?
+    let locationManager = CLLocationManager()
+    var locValue: CLLocationCoordinate2D?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         smileLabel.transform = CGAffineTransform(rotationAngle:  CGFloat.pi / 2)
-        if let id = userInfo?.userId {
-            requestMainFeedInfo("Seoul", String(id))
-        }
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
         
+        LocationManager.shared.requestLocation { (locationCoordinate2D) in
+            print(locationCoordinate2D?.longitude, locationCoordinate2D?.longitude)
+            
+            if let locationCoordinate2D = locationCoordinate2D {
+                let locationEnum: LocationEnum = LocationManager.shared.getNearestLocationEnum(location: locationCoordinate2D)
+                
+                print(locationEnum)
+                self.locationLabel.text = locationEnum.rawValue
+                
+                if let id = self.userInfo?.userId {
+                    self.requestMainFeedInfo(locationEnum.rawValue, String(id))
+                }
+            }
+        }
     }
     
     

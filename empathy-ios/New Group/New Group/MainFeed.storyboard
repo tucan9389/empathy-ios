@@ -54,9 +54,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I4T-ol-UuX">
                                 <rect key="frame" x="17" y="37" width="26" height="27.333333333333329"/>
                                 <state key="normal" image="iconEditArea"/>
-                                <connections>
-                                    <segue destination="uhI-aI-pf9" kind="show" id="36d-CT-r6I"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울특별시 왕십로 222 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fM9-5j-eqh">
                                 <rect key="frame" x="137" y="41.666666666666664" width="140" height="18"/>
@@ -360,6 +357,7 @@
                     </view>
                     <connections>
                         <outlet property="cityLabel" destination="HZH-eB-5VO" id="27K-AO-TNU"/>
+                        <outlet property="locationLabel" destination="fM9-5j-eqh" id="sBV-YV-Yma"/>
                         <outlet property="myJourneyImageView" destination="esy-Aw-cO5" id="Nz1-EL-PSf"/>
                         <outlet property="myJourneyLabel" destination="pf0-2q-MbZ" id="YQA-uL-sq7"/>
                         <outlet property="myJourneyView" destination="Nvj-iw-rVL" id="15D-m4-Ia7"/>
