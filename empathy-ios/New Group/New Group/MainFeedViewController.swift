@@ -82,17 +82,17 @@ class MainFeedViewController: UIViewController {
         if (segue.identifier == "toMyFeed") || (segue.identifier == "toMyFeed2"), let destination = segue.destination as? MyFeedViewController {
             destination.userInfo = self.userInfo
         }
-        else if segue.identifier == "toFeedDetail", let destination = segue.destination as? FeedDetailViewController, let detailId = otherPeopleFeedId {
-            destination.journeyDetailId = detailId
-        }
+        
     }
 }
 
 extension MainFeedViewController: UICollectionViewDelegate,UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("🤪🤪\(mainFeedInfo?.otherPeopleList[indexPath.row])")
-        if let info = mainFeedInfo?.otherPeopleList[indexPath.row] {
-            otherPeopleFeedId = info.journeyId
+//        print("🤪🤪\(mainFeedInfo?.otherPeopleList[indexPath.row])")
+        if let info = mainFeedInfo?.otherPeopleList[indexPath.row], let viewController = UIStoryboard.init(name: "FeedDetail", bundle: Bundle.main).instantiateViewController(withIdentifier: "FeedDetailViewController") as? FeedDetailViewController {
+//            otherPeopleFeedId = info.journeyId
+            viewController.journeyDetailId = info.journeyId
+            self.present(viewController, animated: true, completion: nil)
         }
     }
     
@@ -139,7 +139,7 @@ extension MainFeedViewController {
                     do {
                         let mainFeedInfo = try decoder.decode(MainFeed.self, from: data)
                         self.mainFeedInfo  = mainFeedInfo
-                        print("⭐️mainFeedInfo:", mainFeedInfo)
+//                        print("⭐️mainFeedInfo:", mainFeedInfo)
                         //self.update(detailInfo: detailInfo)
                     } catch let DecodingError.dataCorrupted(context) {
                         print(context)
@@ -155,11 +155,13 @@ extension MainFeedViewController {
                     } catch {
                         print("error: ", error)
                     }
+                    DispatchQueue.main.async {
+                        if let info = self.mainFeedInfo {
+                            self.update(mainfeedInfo: info)
+                        }
+                    }
                 }
                 
-                if let info = self.mainFeedInfo {
-                    self.update(mainfeedInfo: info)
-                }
             }
         }
         

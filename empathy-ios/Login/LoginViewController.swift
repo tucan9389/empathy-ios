@@ -87,12 +87,12 @@ extension LoginViewController {
         Alamofire.request(urlPath,
                           method: .post, parameters: ["name":name, "loginApi":"facebook" , "profileUrl":pictureURL, "appUserId": appUserId],
             encoding: JSONEncoding.default, headers: nil).responseJSON { response in
-                print("Request: \(String(describing: response.request))")   // original url request
-                print("Response: \(String(describing: response.response))") // http url response
-                print("Result: \(response.result)")                         // response serialization result
+//                print("Request: \(String(describing: response.request))")   // original url request
+//                print("Response: \(String(describing: response.response))") // http url response
+//                print("Result: \(response.result)")                         // response serialization result
                 
                 if let json = (response.result.value as? Int){
-                    print(json)
+//                    print(json)
                     self.userInformation = UserInfo.init(userId: json, name: name, pictureURL: pictureURL)
                     UserInfoManager.shared.userInfo = self.userInformation
                 }
