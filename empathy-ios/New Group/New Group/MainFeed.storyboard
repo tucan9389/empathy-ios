@@ -11,14 +11,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--FeedDetail-->
-        <scene sceneID="z1z-mN-7e0">
-            <objects>
-                <viewControllerPlaceholder storyboardName="FeedDetail" id="OrL-RS-Hbz" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="l8e-gJ-UBg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1020" y="-334"/>
-        </scene>
         <!--Camera-->
         <scene sceneID="vOi-mJ-xXO">
             <objects>
@@ -138,7 +130,6 @@
                                             <outlet property="journeyImageView" destination="rYv-fR-wVa" id="rmJ-PN-pwE"/>
                                             <outlet property="userImageView" destination="Zyq-e9-C1Q" id="YZ1-qs-Nhu"/>
                                             <outlet property="userNameLabel" destination="tBG-eg-kBg" id="zyj-KP-eD0"/>
-                                            <segue destination="OrL-RS-Hbz" kind="show" identifier="toFeedDetail" id="tpc-3j-1GH"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
