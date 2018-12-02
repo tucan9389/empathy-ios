@@ -532,7 +532,7 @@
                                             <action selector="tapExport:" destination="AgZ-8j-h8b" eventType="touchUpInside" id="QUz-0f-a7c"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" alpha="0.0" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcC-sU-sJr">
+                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcC-sU-sJr">
                                         <rect key="frame" x="238.5" y="45" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="44" id="7F6-kX-S1a"/>
