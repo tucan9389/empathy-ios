@@ -11,6 +11,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--FeedDetail-->
+        <scene sceneID="z1z-mN-7e0">
+            <objects>
+                <viewControllerPlaceholder storyboardName="FeedDetail" id="OrL-RS-Hbz" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l8e-gJ-UBg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1020" y="-334"/>
+        </scene>
         <!--Camera-->
         <scene sceneID="vOi-mJ-xXO">
             <objects>
@@ -41,7 +49,7 @@
                 <viewControllerPlaceholder storyboardName="Location" id="uhI-aI-pf9" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ph-Lp-M8s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1036" y="-247"/>
+            <point key="canvasLocation" x="-55" y="-471"/>
         </scene>
         <!--Main Feed View Controller-->
         <scene sceneID="1y0-6G-QZk">
@@ -54,9 +62,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I4T-ol-UuX">
                                 <rect key="frame" x="17" y="37" width="26" height="27.333333333333329"/>
                                 <state key="normal" image="iconEditArea"/>
-                                <connections>
-                                    <segue destination="uhI-aI-pf9" kind="show" id="36d-CT-r6I"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울특별시 왕십로 222 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fM9-5j-eqh">
                                 <rect key="frame" x="137" y="41.666666666666664" width="140" height="18"/>
@@ -94,13 +99,13 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="158" height="204"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rYv-fR-wVa">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rYv-fR-wVa">
                                                     <rect key="frame" x="0.0" y="0.0" width="158" height="158"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="rYv-fR-wVa" secondAttribute="height" multiplier="1:1" id="ktf-02-q3Y"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zyq-e9-C1Q">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zyq-e9-C1Q">
                                                     <rect key="frame" x="47.333333333333329" y="118.66666666666669" width="63.333333333333329" height="63"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Zyq-e9-C1Q" secondAttribute="height" multiplier="1:1" id="GKD-Ka-7FQ"/>
@@ -133,6 +138,7 @@
                                             <outlet property="journeyImageView" destination="rYv-fR-wVa" id="rmJ-PN-pwE"/>
                                             <outlet property="userImageView" destination="Zyq-e9-C1Q" id="YZ1-qs-Nhu"/>
                                             <outlet property="userNameLabel" destination="tBG-eg-kBg" id="zyj-KP-eD0"/>
+                                            <segue destination="OrL-RS-Hbz" kind="show" identifier="toFeedDetail" id="tpc-3j-1GH"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -258,7 +264,6 @@
                                     <constraint firstItem="9Dc-9k-9td" firstAttribute="width" secondItem="br4-13-x3g" secondAttribute="width" multiplier="0.32" id="JQR-iA-cHu"/>
                                     <constraint firstItem="KZs-l5-jDy" firstAttribute="top" secondItem="br4-13-x3g" secondAttribute="top" id="Qz7-ed-X50"/>
                                     <constraint firstItem="vDu-fN-ljy" firstAttribute="centerX" secondItem="br4-13-x3g" secondAttribute="centerX" id="YB3-RC-L01"/>
-                                    <constraint firstItem="vDu-fN-ljy" firstAttribute="leading" secondItem="9Dc-9k-9td" secondAttribute="trailing" constant="19.666666666666657" id="Zib-L4-zAJ"/>
                                     <constraint firstItem="fsA-fM-AJ3" firstAttribute="top" secondItem="HZH-eB-5VO" secondAttribute="bottom" constant="2" id="crf-Si-zBv"/>
                                     <constraint firstItem="Xvg-JQ-o2O" firstAttribute="top" secondItem="br4-13-x3g" secondAttribute="top" constant="17" id="fFt-ZY-EEk"/>
                                     <constraint firstItem="fsA-fM-AJ3" firstAttribute="centerX" secondItem="br4-13-x3g" secondAttribute="centerX" id="fo9-oo-GBT"/>
@@ -360,6 +365,7 @@
                     </view>
                     <connections>
                         <outlet property="cityLabel" destination="HZH-eB-5VO" id="27K-AO-TNU"/>
+                        <outlet property="locationLabel" destination="fM9-5j-eqh" id="sBV-YV-Yma"/>
                         <outlet property="myJourneyImageView" destination="esy-Aw-cO5" id="Nz1-EL-PSf"/>
                         <outlet property="myJourneyLabel" destination="pf0-2q-MbZ" id="YQA-uL-sq7"/>
                         <outlet property="myJourneyView" destination="Nvj-iw-rVL" id="15D-m4-Ia7"/>

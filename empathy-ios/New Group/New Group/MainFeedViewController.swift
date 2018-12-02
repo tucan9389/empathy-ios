@@ -19,21 +19,41 @@ class MainFeedViewController: UIViewController {
     @IBOutlet weak var myJourneyView: UIView!
     @IBOutlet weak var myJourneyImageView: UIImageView!
     @IBOutlet weak var myJourneyLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
     
     var userInfo:UserInfo?
     var mainFeedInfo:MainFeed?
     
     var random:Int?
+    var locationEnum:LocationEnum?
+    
+    var otherPeopleFeedId:Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         smileLabel.transform = CGAffineTransform(rotationAngle:  CGFloat.pi / 2)
-        if let id = userInfo?.userId {
-            requestMainFeedInfo("Seoul", String(id))
-        }
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
         
+        LocationManager.shared.requestLocation { (locationCoordinate2D) in
+            print(locationCoordinate2D?.longitude, locationCoordinate2D?.longitude)
+            
+            if let locationCoordinate2D = locationCoordinate2D {
+                self.locationEnum = LocationManager.shared.getNearestLocationEnum(location: locationCoordinate2D)
+                
+                print(self.locationEnum)
+//                self.locationLabel.text = self.locationEnum!.rawValue
+                self.locationLabel.text = "Seoul"
+            }
+            if let id = self.userInfo?.userId {
+                self.requestMainFeedInfo("Seoul", String(id))
+            }
+        }
     }
     
     
@@ -62,10 +82,20 @@ class MainFeedViewController: UIViewController {
         if (segue.identifier == "toMyFeed") || (segue.identifier == "toMyFeed2"), let destination = segue.destination as? MyFeedViewController {
             destination.userInfo = self.userInfo
         }
+        else if segue.identifier == "toFeedDetail", let destination = segue.destination as? FeedDetailViewController, let detailId = otherPeopleFeedId {
+            destination.journeyDetailId = detailId
+        }
     }
 }
 
 extension MainFeedViewController: UICollectionViewDelegate,UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("🤪🤪\(mainFeedInfo?.otherPeopleList[indexPath.row])")
+        if let info = mainFeedInfo?.otherPeopleList[indexPath.row] {
+            otherPeopleFeedId = info.journeyId
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let numberOfItem = mainFeedInfo?.otherPeopleList.count {
             if numberOfItem < 18 {
@@ -91,6 +121,7 @@ extension MainFeedViewController: UICollectionViewDelegate,UICollectionViewDataS
         }
         return cell
     }
+    
 }
 
 extension MainFeedViewController {

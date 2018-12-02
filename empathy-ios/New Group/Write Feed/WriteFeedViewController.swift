@@ -48,6 +48,9 @@ class WriteFeedViewController: UIViewController {
         leadingVerticalLineConstraint.constant = view.frame.width/3
         trailingVerticalLineConstraint.constant = view.frame.width/3
         
+        if let locationEnum = locationEnum {
+            locationLabel.text = locationEnum
+        }
         
         selectedPictureImageView.image = image
         hideKeyboardByTap()
