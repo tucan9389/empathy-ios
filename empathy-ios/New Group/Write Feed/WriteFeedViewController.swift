@@ -26,7 +26,7 @@ class WriteFeedViewController: UIViewController {
     @IBOutlet weak var trailingVerticalLineConstraint: NSLayoutConstraint!
     
     var image: UIImage?
-    var userInfo: UserInfo?
+    lazy var userInfo: UserInfo? = UserInfoManager.shared.userInfo
     var location:String?
     var locationEnum:String?
     

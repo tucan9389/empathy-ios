@@ -119,6 +119,8 @@ class TouristSiteDetailViewController: UIViewController {
     func update(detailInfo: TouristSiteDetailModel) {
         self.detailInfo = detailInfo
         
+        self.locationCoordinate2D = detailInfo.getLocationCoordinate2D()
+        
         if let url = URL(string: detailInfo.imageURL ?? "") {
             topImageView.kf.setImage(with: url)
         }
@@ -168,4 +170,9 @@ struct TouristSiteDetailModel: Codable {
     let overviewText: String?
     let title: String?
     let withPet: String?
+    
+    func getLocationCoordinate2D() -> CLLocationCoordinate2D {
+        return CLLocationCoordinate2D(latitude: Double(self.mapy ?? "0") ?? 0,
+                                      longitude: Double(self.mapx ?? "0") ?? 0)
+    }
 }

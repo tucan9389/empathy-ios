@@ -13,3 +13,10 @@ struct UserInfo: Codable {
     let name:String
     let pictureURL:String
 }
+
+class UserInfoManager: NSObject {
+    
+    static let shared = UserInfoManager()
+    var userInfo: UserInfo?
+    
+}

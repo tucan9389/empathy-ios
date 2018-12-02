@@ -94,6 +94,7 @@ extension LoginViewController {
                 if let json = (response.result.value as? Int){
                     print(json)
                     self.userInformation = UserInfo.init(userId: json, name: name, pictureURL: pictureURL)
+                    UserInfoManager.shared.userInfo = self.userInformation
                 }
                 
                 if let viewController = UIStoryboard.init(name: "MainFeed", bundle: Bundle.main).instantiateViewController(withIdentifier: "MainFeedViewController") as? MainFeedViewController {
