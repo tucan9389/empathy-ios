@@ -65,7 +65,7 @@ extension MainFeedViewController: UICollectionViewDelegate,UICollectionViewDataS
         }
         if let info = mainFeedInfo?.otherPeopleList[indexPath.row] {
             if let ownerImageURLString = info.ownerProfileUrl as? String, let journeyImageURLString = info.imageUrl as? String {
-                cell.config(info.ownerName, ownerImageURLString, journeyImageURL: journeyImageURLString)
+                cell.config(info.ownerName ?? "-", ownerImageURLString , journeyImageURL: journeyImageURLString ?? "-")
             }
         }
         return cell
@@ -81,22 +81,32 @@ extension MainFeedViewController {
                 print("Response: \(String(describing: response.response))") // http url response
                 print("Result: \(response.result)")                         // response serialization result
                 
-                if let json = response.result.value as? [String:Any] {
-                    print("JSON: \(json)") // serialized json response
-                    
-                    if let enumStr = json["enumStr"] as? String, let mainText = json["mainText"] as? String, let imageURL = json["imageURL"] as? String, let isFirst = json["isFirst"] as? String, let weekday = json["weekday"] as? String {
-                        if let otherPeopleLists = json["otherPeopleList"] as? [OtherPeopleJourney] {
-                            if otherPeopleLists.count == 0 {
-                                self.mainFeedInfo = MainFeed.init(enumStr: enumStr, imageURL: imageURL, isFirst: isFirst, mainText: mainText, otherPeopleList: [], weekday: weekday)
-                            }
-                            else {
-                                self.mainFeedInfo = MainFeed.init(enumStr: enumStr, imageURL: imageURL, isFirst: isFirst, mainText: mainText, otherPeopleList: otherPeopleLists, weekday: weekday)
-                            }
-                        }
-                        if let info = self.mainFeedInfo {
-                            self.update(mainfeedInfo: info)
-                        }
+                
+                if let data = response.data {
+                    let decoder = JSONDecoder()
+                    do {
+                        let mainFeedInfo = try decoder.decode(MainFeed.self, from: data)
+                        self.mainFeedInfo  = mainFeedInfo
+                        print("⭐️mainFeedInfo:", mainFeedInfo)
+                        //self.update(detailInfo: detailInfo)
+                    } catch let DecodingError.dataCorrupted(context) {
+                        print(context)
+                    } catch let DecodingError.keyNotFound(key, context) {
+                        print("Key '\(key)' not found:", context.debugDescription)
+                        print("codingPath:", context.codingPath)
+                    } catch let DecodingError.valueNotFound(value, context) {
+                        print("Value '\(value)' not found:", context.debugDescription)
+                        print("codingPath:", context.codingPath)
+                    } catch let DecodingError.typeMismatch(type, context)  {
+                        print("Type '\(type)' mismatch:", context.debugDescription)
+                        print("codingPath:", context.codingPath)
+                    } catch {
+                        print("error: ", error)
                     }
+                }
+                
+                if let info = self.mainFeedInfo {
+                    self.update(mainfeedInfo: info)
                 }
             }
         }
