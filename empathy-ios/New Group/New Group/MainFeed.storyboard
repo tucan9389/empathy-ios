@@ -279,7 +279,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kkJ-l2-ElJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="249"/>
                                                 <connections>
-                                                    <segue destination="SHD-iD-J4p" kind="show" id="VJw-NN-7Hi"/>
+                                                    <segue destination="SHD-iD-J4p" kind="show" identifier="toMyFeed2" id="VJw-NN-7Hi"/>
                                                 </connections>
                                             </button>
                                         </subviews>

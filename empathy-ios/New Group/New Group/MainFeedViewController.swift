@@ -38,7 +38,7 @@ class MainFeedViewController: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toMyFeed", let destination = segue.destination as? MyFeedViewController {
+        if (segue.identifier == "toMyFeed") || (segue.identifier == "toMyFeed2"), let destination = segue.destination as? MyFeedViewController {
             destination.userInfo = self.userInfo
         }
     }
@@ -85,16 +85,18 @@ extension MainFeedViewController {
                     print("JSON: \(json)") // serialized json response
                     
                     if let enumStr = json["enumStr"] as? String, let mainText = json["mainText"] as? String, let imageURL = json["imageURL"] as? String, let isFirst = json["isFirst"] as? String, let weekday = json["weekday"] as? String {
-                        if (json["otherPeopleList"] as? [OtherPeopleJourney])?.count == 0 {
-                            self.mainFeedInfo = MainFeed.init(enumStr: enumStr, imageURL: imageURL, isFirst: isFirst, mainText: mainText, otherPeopleList: [], weekday: weekday)
+                        if let otherPeopleLists = json["otherPeopleList"] as? [OtherPeopleJourney] {
+                            if otherPeopleLists.count == 0 {
+                                self.mainFeedInfo = MainFeed.init(enumStr: enumStr, imageURL: imageURL, isFirst: isFirst, mainText: mainText, otherPeopleList: [], weekday: weekday)
+                            }
+                            else {
+                                self.mainFeedInfo = MainFeed.init(enumStr: enumStr, imageURL: imageURL, isFirst: isFirst, mainText: mainText, otherPeopleList: otherPeopleLists, weekday: weekday)
+                            }
                         }
-                        else if let otherPeopleLists = json["otherPeopleList"] as? [OtherPeopleJourney] {
-                            self.mainFeedInfo = MainFeed.init(enumStr: enumStr, imageURL: imageURL, isFirst: isFirst, mainText: mainText, otherPeopleList: otherPeopleLists, weekday: weekday)
+                        if let info = self.mainFeedInfo {
+                            self.update(mainfeedInfo: info)
                         }
                     }
-                }
-                if let info = self.mainFeedInfo {
-                    self.update(mainfeedInfo: info)
                 }
             }
         }
@@ -105,7 +107,6 @@ extension MainFeedViewController {
         if mainfeedInfo.isFirst == "true" {
             placeHolderView.isHidden = false
             myJourneyView.isHidden = true
-            
         }
         else {
             placeHolderView.isHidden = true
